@@ -9,7 +9,7 @@
 3. ✅ Git 사용자 정보 설정 완료
 4. ✅ `gh-pages` 브랜치에 푸시 완료
 
-**참고**: `error: No such remote: 'origin'` 메시지는 정상입니다. 
+**참고**: `error: No such remote: 'origin'` 메시지는 정상입니다.
 - `peaceiris/actions-gh-pages` 액션이 먼저 기존 원격 저장소를 제거하려고 시도합니다
 - 처음 실행할 때는 원격 저장소가 없어서 에러가 발생하지만, 바로 새로운 원격 저장소를 추가하므로 문제 없습니다
 
