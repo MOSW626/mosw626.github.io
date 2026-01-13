@@ -13,8 +13,8 @@ export const notionProjects = {
       category: '로봇 개발',
       role: '개발자',
       contribution: '50%',
-      link: 'https://mosw.notion.site/',
-      github: 'https://mosw.notion.site/ISP-90474110b9a248d5897c7ad48a59afde?source=copy_link',
+      link: 'https://mosw.notion.site/ISP-90474110b9a248d5897c7ad48a59afde?source=copy_link',
+      github: 'https://github.com/MOSW626/automobile-stability-control_ISP',
       images: [
         '/assets/projects/isp1.jpg',
         '/assets/projects/isp2.jpg',
