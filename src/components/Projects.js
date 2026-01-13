@@ -273,8 +273,17 @@ const Projects = () => {
                                   <Card.Title className="h5 mb-0">{repo.title}</Card.Title>
                                   <FaGithub size={20} className="text-muted" />
                                 </div>
-                                <Card.Text className="mb-3">
-                                  {repo.description}
+                                <Card.Text className="mb-3" style={{ 
+                                  overflow: 'hidden', 
+                                  textOverflow: 'ellipsis',
+                                  display: '-webkit-box',
+                                  WebkitLineClamp: 3,
+                                  WebkitBoxOrient: 'vertical',
+                                  minHeight: '60px'
+                                }}>
+                                  {repo.description && repo.description.length > 0 
+                                    ? repo.description 
+                                    : '설명이 없습니다.'}
                                 </Card.Text>
                                 <div className="mb-3">
                                   <div className="d-flex align-items-center gap-2 flex-wrap">

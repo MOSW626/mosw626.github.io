@@ -40,7 +40,17 @@ export const fetchGitHubRepos = async (username = 'MOSW626') => {
               const readmeData = await readmeResponse.json();
               // Base64 디코딩
               const decoded = atob(readmeData.content.replace(/\s/g, ''));
-              readme = decoded.substring(0, 500); // 처음 500자만
+              // Markdown 제거 및 텍스트만 추출
+              const textOnly = decoded
+                .replace(/#{1,6}\s+/g, '') // 헤더 제거
+                .replace(/\*\*([^*]+)\*\*/g, '$1') // 볼드 제거
+                .replace(/\*([^*]+)\*/g, '$1') // 이탤릭 제거
+                .replace(/\[([^\]]+)\]\([^\)]+\)/g, '$1') // 링크 제거
+                .replace(/```[\s\S]*?```/g, '') // 코드 블록 제거
+                .replace(/`([^`]+)`/g, '$1') // 인라인 코드 제거
+                .replace(/\n{3,}/g, '\n\n') // 여러 줄바꿈 정리
+                .trim();
+              readme = textOnly.substring(0, 200); // 처음 200자만
             }
           } catch (e) {
             // README가 없으면 무시
@@ -48,10 +58,19 @@ export const fetchGitHubRepos = async (username = 'MOSW626') => {
           }
         }
 
+        // 설명 정리: description이 없거나 너무 짧으면 README 사용
+        let finalDescription = repo.description;
+        if (!finalDescription || finalDescription.length < 10) {
+          finalDescription = readme;
+        }
+        if (!finalDescription || finalDescription.length < 10) {
+          finalDescription = '설명이 없습니다.';
+        }
+
         return {
           id: repo.id,
           title: repo.name,
-          description: repo.description || readme || '설명이 없습니다.',
+          description: finalDescription,
           github: repo.html_url,
           language: repo.language,
           stars: repo.stargazers_count,

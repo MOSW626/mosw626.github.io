@@ -3,6 +3,7 @@
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
   padding: 20px 0;
+  z-index: 1030; /* Ensure navbar is above content */
 }
 
 .navbar-transparent .navbar-nav .nav-link {

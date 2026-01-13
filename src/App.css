@@ -9,6 +9,11 @@ section {
   display: block;
 }
 
+/* App container with padding for fixed navbar */
+.App {
+  padding-top: 80px; /* Fixed navbar height compensation */
+}
+
 .section-title {
   font-size: 2.5rem;
   font-weight: bold;

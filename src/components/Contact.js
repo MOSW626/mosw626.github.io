@@ -28,14 +28,18 @@ const Contact = () => {
     const mailtoLink = `mailto:ays6533@naver.com?subject=${subject}&body=${body}`;
 
     // mailto 링크 열기
-    window.location.href = mailtoLink;
-
-    // 사용자에게 알림
-    setShowAlert(true);
-    setTimeout(() => {
-      setShowAlert(false);
-      setFormData({ name: '', email: '', message: '' });
-    }, 3000);
+    try {
+      window.location.href = mailtoLink;
+      // 사용자에게 알림
+      setShowAlert(true);
+      setTimeout(() => {
+        setShowAlert(false);
+        setFormData({ name: '', email: '', message: '' });
+      }, 5000);
+    } catch (error) {
+      // mailto가 작동하지 않는 경우 대체 방법
+      alert('이메일 앱을 열 수 없습니다. 직접 이메일을 보내주세요: ays6533@naver.com');
+    }
   };
 
   const contactInfo = [
@@ -105,16 +109,13 @@ const Contact = () => {
                 <h3 className="mb-4">메시지 보내기</h3>
                 {showAlert && (
                   <Alert variant="success" className="mb-3">
-                    이메일 클라이언트가 열렸습니다. 메시지를 확인하고 전송해주세요.
+                    이메일 앱이 열렸습니다. 메시지를 확인하고 전송 버튼을 눌러주세요.
                   </Alert>
                 )}
                 <Alert variant="info" className="mb-3">
                   <small>
-                    <strong>참고:</strong> 현재는 mailto 링크를 사용합니다.
-                    이메일 클라이언트가 열리면 메시지를 확인하고 전송해주세요.
-                    <br />
-                    더 나은 방법으로는 <a href="https://formspree.io" target="_blank" rel="noopener noreferrer">Formspree</a>나
-                    <a href="https://www.emailjs.com" target="_blank" rel="noopener noreferrer">EmailJS</a> 같은 서비스를 사용할 수 있습니다.
+                    <strong>📧 이메일 앱 열기:</strong> 전송하기 버튼을 클릭하면 기본 이메일 앱(메일, Outlook 등)이 열립니다.
+                    앱에서 메시지를 확인한 후 전송 버튼을 눌러주세요.
                   </small>
                 </Alert>
                 <Form onSubmit={handleSubmit}>
