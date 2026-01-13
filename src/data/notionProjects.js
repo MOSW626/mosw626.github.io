@@ -14,7 +14,7 @@ export const notionProjects = {
       role: '개발자',
       contribution: '50%',
       link: 'https://mosw.notion.site/',
-      github: 'https://github.com/MOSW626/Control_ISP',
+      github: 'https://mosw.notion.site/ISP-90474110b9a248d5897c7ad48a59afde?source=copy_link',
       images: [
         '/assets/projects/isp1.jpg',
         '/assets/projects/isp2.jpg',
@@ -203,7 +203,7 @@ export const notionProjects = {
       category: '영상 제작',
       duration: '3:42',
       link: 'https://mosw.notion.site/',
-      youtube: 'https://www.youtube.com/watch?v=YOUR_VIDEO_ID', // YouTube URL 추가 필요
+      youtube: 'https://youtu.be/IOqnhKe1itQ?si=XGXTZe0Ehs-9pNYU', // YouTube URL 추가 필요
       achievements: [
         '공식 졸업영상 제작',
         '전체 제작 과정 담당',
