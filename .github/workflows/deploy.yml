@@ -31,6 +31,9 @@ jobs:
         env:
           CI: false
 
+      - name: Create .nojekyll file
+        run: touch build/.nojekyll
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         if: github.ref == 'refs/heads/main'
