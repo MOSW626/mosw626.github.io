@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YS AN — 어드민 패널</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body { background: #f8f9fa; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+
+    /* 로그인 화면 */
+    #loginScreen {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+    }
+    .login-box {
+      background: white;
+      border-radius: 16px;
+      padding: 2.5rem 2rem;
+      width: 100%;
+      max-width: 380px;
+      box-shadow: 0 20px 60px rgba(0,0,0,.4);
+    }
+    .login-box h2 { font-size: 1.5rem; color: #1e293b; margin-bottom: .3rem; }
+    .login-box small { color: #64748b; }
+    .btn-login { background: linear-gradient(135deg, #2563eb, #1d4ed8); color: white; border: none; width: 100%; padding: .75rem; border-radius: 8px; font-weight: 600; font-size: 1rem; }
+    .btn-login:hover { background: linear-gradient(135deg, #1d4ed8, #1e40af); color: white; }
+
+    /* 어드민 본체 */
+    #adminApp { display: none; }
+    .admin-header { background: linear-gradient(135deg, #1e293b, #0f172a); color: white; padding: 1.2rem 2rem; display: flex; align-items: center; justify-content: space-between; }
+    .admin-header h1 { font-size: 1.3rem; margin: 0; }
+    .admin-header small { color: #94a3b8; font-size: .8rem; }
+    .btn-logout { background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.2); color: white; font-size: .8rem; padding: .3rem .8rem; border-radius: 6px; }
+    .btn-logout:hover { background: rgba(255,255,255,.2); color: white; }
+
+    .nav-tabs .nav-link { color: #495057; }
+    .nav-tabs .nav-link.active { font-weight: 600; }
+    .card { border: none; box-shadow: 0 1px 4px rgba(0,0,0,.08); border-radius: 12px; }
+    .card-header { background: white; border-bottom: 1px solid #eee; font-weight: 600; border-radius: 12px 12px 0 0 !important; }
+    .item-card { background: #f8faff; border: 1px solid #e2e8f0 !important; border-radius: 8px !important; margin-bottom: 12px; box-shadow: none !important; }
+    .btn-deploy { background: linear-gradient(135deg, #2563eb, #1d4ed8); color: white; border: none; padding: .6rem 1.6rem; border-radius: 8px; font-weight: 600; }
+    .btn-deploy:hover { background: linear-gradient(135deg, #1d4ed8, #1e40af); color: white; }
+    .status-bar { background: white; border-top: 1px solid #eee; padding: .75rem 1.5rem; font-size: .85rem; color: #64748b; position: sticky; bottom: 0; z-index: 100; }
+    .status-bar.success { background: #f0fdf4; color: #166534; border-top-color: #86efac; }
+    .status-bar.error { background: #fef2f2; color: #991b1b; border-top-color: #fca5a5; }
+    textarea { resize: vertical; min-height: 80px; }
+    .add-btn { border: 2px dashed #cbd5e1; background: transparent; color: #64748b; width: 100%; padding: .6rem; border-radius: 8px; transition: all .2s; }
+    .add-btn:hover { border-color: #2563eb; color: #2563eb; background: #eff6ff; }
+    .remove-btn { color: #ef4444; background: none; border: none; font-size: 1rem; padding: 0 .3rem; line-height: 1; }
+    .remove-btn:hover { color: #dc2626; }
+  </style>
+</head>
+<body>
+
+<!-- ===== 로그인 화면 ===== -->
+<div id="loginScreen">
+  <div class="login-box">
+    <h2>🛠️ 어드민 패널</h2>
+    <small>YS AN 포트폴리오 관리</small>
+    <div class="mt-4">
+      <label class="form-label fw-semibold">비밀번호</label>
+      <input type="password" class="form-control mb-3" id="loginPw" placeholder="비밀번호 입력"
+             onkeydown="if(event.key==='Enter') doLogin()" />
+      <div id="loginError" class="text-danger small mb-2" style="display:none">❌ 비밀번호가 틀렸습니다.</div>
+      <button class="btn-login btn" onclick="doLogin()">로그인</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 어드민 본체 ===== -->
+<div id="adminApp">
+  <div class="admin-header">
+    <div>
+      <h1>🛠️ YS AN — 어드민 패널</h1>
+      <small>변경 후 "저장 &amp; 배포" 버튼을 누르면 GitHub에 자동 업로드됩니다.</small>
+    </div>
+    <button class="btn-logout btn" onclick="doLogout()">로그아웃</button>
+  </div>
+
+  <div class="container-fluid py-4 px-4">
+    <ul class="nav nav-tabs mb-4" id="mainTabs">
+      <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab" href="#tab-profile">👤 프로필</a></li>
+      <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#tab-projects">🤖 프로젝트</a></li>
+      <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#tab-orgs">🏢 경력</a></li>
+      <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#tab-skills">⚙️ 스킬</a></li>
+      <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#tab-github">💻 GitHub 설명</a></li>
+    </ul>
+
+    <div class="tab-content">
+
+      <!-- ===== 프로필 탭 ===== -->
+      <div class="tab-pane fade show active" id="tab-profile">
+        <div class="card mb-4">
+          <div class="card-header">기본 정보</div>
+          <div class="card-body">
+            <div class="row g-3">
+              <div class="col-md-4"><label class="form-label fw-semibold">이름</label><input type="text" class="form-control" id="p_name" /></div>
+              <div class="col-md-4"><label class="form-label fw-semibold">이메일</label><input type="email" class="form-control" id="p_email" /></div>
+              <div class="col-md-4"><label class="form-label fw-semibold">GitHub 유저명</label><input type="text" class="form-control" id="p_github" /></div>
+            </div>
+          </div>
+        </div>
+        <div class="card mb-4">
+          <div class="card-header">소셜 링크</div>
+          <div class="card-body">
+            <div class="row g-3">
+              <div class="col-md-4"><label class="form-label fw-semibold">GitHub URL</label><input type="url" class="form-control" id="p_link_github" /></div>
+              <div class="col-md-4"><label class="form-label fw-semibold">Notion URL</label><input type="url" class="form-control" id="p_link_notion" /></div>
+              <div class="col-md-4"><label class="form-label fw-semibold">블로그 URL</label><input type="url" class="form-control" id="p_link_blog" /></div>
+            </div>
+          </div>
+        </div>
+        <div class="card mb-4">
+          <div class="card-header">타이핑 애니메이션 문자열 <small class="text-muted fw-normal">(홈 화면에서 순서대로 타이핑됨)</small></div>
+          <div class="card-body">
+            <div id="typing_list"></div>
+            <button class="add-btn mt-2" onclick="addTypingItem()">+ 문자열 추가</button>
+          </div>
+        </div>
+        <div class="card mb-4">
+          <div class="card-header">자기소개 텍스트</div>
+          <div class="card-body">
+            <div class="mb-3">
+              <label class="form-label fw-semibold">홈 히어로 설명 <small class="text-muted">(HTML 태그 사용 가능, 예: &lt;strong&gt;대통령상&lt;/strong&gt;)</small></label>
+              <textarea class="form-control" id="p_hero" rows="3"></textarea>
+            </div>
+            <div class="mb-3"><label class="form-label fw-semibold">Overview — 첫 문단</label><textarea class="form-control" id="p_ov1" rows="3"></textarea></div>
+            <div class="mb-3"><label class="form-label fw-semibold">Overview — 두번째 문단</label><textarea class="form-control" id="p_ov2" rows="2"></textarea></div>
+            <div class="mb-3"><label class="form-label fw-semibold">About — 첫 문단</label><textarea class="form-control" id="p_ab1" rows="3"></textarea></div>
+            <div><label class="form-label fw-semibold">About — 두번째 문단</label><textarea class="form-control" id="p_ab2" rows="3"></textarea></div>
+          </div>
+        </div>
+        <button class="btn btn-deploy" onclick="saveAndDeploy('profile', gatherProfile)">💾 저장 &amp; 배포</button>
+      </div>
+
+      <!-- ===== 프로젝트 탭 ===== -->
+      <div class="tab-pane fade" id="tab-projects">
+        <ul class="nav nav-pills mb-3">
+          <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab" href="#tab-robot">🤖 로봇 개발</a></li>
+          <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#tab-video">🎬 영상 제작</a></li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane fade show active" id="tab-robot">
+            <div id="robot_list"></div>
+            <button class="add-btn my-3" onclick="addProject('robot')">+ 로봇 개발 프로젝트 추가</button>
+          </div>
+          <div class="tab-pane fade" id="tab-video">
+            <div id="video_list"></div>
+            <button class="add-btn my-3" onclick="addProject('video')">+ 영상 제작 프로젝트 추가</button>
+          </div>
+        </div>
+        <button class="btn btn-deploy mt-3" onclick="saveAndDeploy('projects', gatherProjects)">💾 저장 &amp; 배포</button>
+      </div>
+
+      <!-- ===== 경력 탭 ===== -->
+      <div class="tab-pane fade" id="tab-orgs">
+        <div id="org_list"></div>
+        <button class="add-btn my-3" onclick="addOrg()">+ 기관/경력 추가</button><br>
+        <button class="btn btn-deploy mt-2" onclick="saveAndDeploy('organizations', gatherOrgs)">💾 저장 &amp; 배포</button>
+      </div>
+
+      <!-- ===== 스킬 탭 ===== -->
+      <div class="tab-pane fade" id="tab-skills">
+        <div id="skill_list"></div>
+        <button class="add-btn my-3" onclick="addSkillCategory()">+ 카테고리 추가</button><br>
+        <button class="btn btn-deploy mt-2" onclick="saveAndDeploy('skills', gatherSkills)">💾 저장 &amp; 배포</button>
+      </div>
+
+      <!-- ===== GitHub 설명 탭 ===== -->
+      <div class="tab-pane fade" id="tab-github">
+        <div class="card mb-4">
+          <div class="card-header">GitHub 레포지토리 설명</div>
+          <div class="card-body">
+            <p class="text-muted small mb-3">레포지토리 이름(key)과 한 줄 설명을 입력하세요. 프로젝트 카드에 표시됩니다.</p>
+            <div id="gh_list"></div>
+            <button class="add-btn mt-2" onclick="addGhItem()">+ 레포 설명 추가</button>
+          </div>
+        </div>
+        <button class="btn btn-deploy" onclick="saveAndDeploy('githubDescriptions', gatherGhDescs)">💾 저장 &amp; 배포</button>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="status-bar" id="statusBar">
+    <span id="statusMsg">데이터 로딩 중...</span>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+const API = 'http://localhost:3001/api';
+let TOKEN = localStorage.getItem('admin_token') || '';
+let data = {};
+
+// ─── 인증 ────────────────────────────────────────────────
+function authHeaders() {
+  return { 'Content-Type': 'application/json', 'Authorization': `Bearer ${TOKEN}` };
+}
+
+async function doLogin() {
+  const pw = document.getElementById('loginPw').value;
+  const err = document.getElementById('loginError');
+  err.style.display = 'none';
+  try {
+    const res = await fetch(`${API}/login`, {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ password: pw })
+    });
+    if (!res.ok) { err.style.display = 'block'; return; }
+    const json = await res.json();
+    TOKEN = json.token;
+    localStorage.setItem('admin_token', TOKEN);
+    showAdmin();
+  } catch (e) {
+    err.textContent = '❌ 서버에 연결할 수 없습니다.';
+    err.style.display = 'block';
+  }
+}
+
+function doLogout() {
+  localStorage.removeItem('admin_token');
+  TOKEN = '';
+  document.getElementById('adminApp').style.display = 'none';
+  document.getElementById('loginScreen').style.display = 'flex';
+  document.getElementById('loginPw').value = '';
+}
+
+async function showAdmin() {
+  document.getElementById('loginScreen').style.display = 'none';
+  document.getElementById('adminApp').style.display = 'block';
+  await loadAll();
+}
+
+// 저장된 토큰이 있으면 바로 어드민 표시 시도
+(async () => {
+  if (TOKEN) {
+    try {
+      const res = await fetch(`${API}/git/status`, { headers: authHeaders() });
+      if (res.ok) { showAdmin(); return; }
+    } catch (_) {}
+    localStorage.removeItem('admin_token');
+    TOKEN = '';
+  }
+})();
+
+// ─── 데이터 로드 ─────────────────────────────────────────
+async function loadAll() {
+  const names = ['profile', 'projects', 'organizations', 'skills', 'githubDescriptions'];
+  for (const name of names) {
+    const res = await fetch(`${API}/data/${name}`, { headers: authHeaders() });
+    if (res.status === 401) { doLogout(); return; }
+    data[name] = await res.json();
+  }
+  renderProfile(); renderProjects(); renderOrgs(); renderSkills(); renderGhDescs();
+  setStatus('✅ 데이터 로드 완료', 'success');
+}
+
+function setStatus(msg, type = '') {
+  const bar = document.getElementById('statusBar');
+  bar.className = 'status-bar' + (type ? ' ' + type : '');
+  document.getElementById('statusMsg').textContent = msg;
+}
+
+// ─── 저장 & 배포 ─────────────────────────────────────────
+async function saveAndDeploy(name, gatherFn) {
+  setStatus('⏳ 저장 중...', '');
+  try {
+    const payload = gatherFn();
+    const saveRes = await fetch(`${API}/data/${name}`, {
+      method: 'POST', headers: authHeaders(), body: JSON.stringify(payload)
+    });
+    if (saveRes.status === 401) { doLogout(); return; }
+    if (!saveRes.ok) throw new Error('저장 실패');
+    data[name] = payload;
+
+    setStatus('⏳ GitHub에 푸쉬 중...', '');
+    const syncRes = await fetch(`${API}/git/sync`, {
+      method: 'POST', headers: authHeaders(),
+      body: JSON.stringify({ message: `어드민: ${name} 업데이트` })
+    });
+    const syncJson = await syncRes.json();
+    if (!syncRes.ok) throw new Error(syncJson.error || 'git sync 실패');
+    setStatus('✅ ' + syncJson.message, 'success');
+  } catch (e) {
+    setStatus('❌ ' + e.message, 'error');
+  }
+}
+
+// ─── 프로필 ──────────────────────────────────────────────
+function renderProfile() {
+  const p = data.profile || {};
+  document.getElementById('p_name').value = p.name || '';
+  document.getElementById('p_email').value = p.email || '';
+  document.getElementById('p_github').value = p.githubUsername || '';
+  document.getElementById('p_link_github').value = (p.socialLinks||{}).github || '';
+  document.getElementById('p_link_notion').value = (p.socialLinks||{}).notion || '';
+  document.getElementById('p_link_blog').value = (p.socialLinks||{}).blog || '';
+  document.getElementById('p_hero').value = p.heroDescription || '';
+  document.getElementById('p_ov1').value = p.overviewBio1 || '';
+  document.getElementById('p_ov2').value = p.overviewBio2 || '';
+  document.getElementById('p_ab1').value = p.aboutBio1 || '';
+  document.getElementById('p_ab2').value = p.aboutBio2 || '';
+  const list = document.getElementById('typing_list');
+  list.innerHTML = '';
+  (p.typingStrings || []).forEach(s => appendTypingItem(s));
+}
+
+function appendTypingItem(val = '') {
+  const list = document.getElementById('typing_list');
+  const row = document.createElement('div');
+  row.className = 'd-flex gap-2 mb-2 typing-item';
+  row.innerHTML = `<input type="text" class="form-control" value="${escHtml(val)}" /><button class="remove-btn" onclick="this.closest('.typing-item').remove()">✕</button>`;
+  list.appendChild(row);
+}
+function addTypingItem() { appendTypingItem(); }
+
+function gatherProfile() {
+  return {
+    name: v('p_name'), email: v('p_email'), githubUsername: v('p_github'),
+    typingStrings: [...document.querySelectorAll('.typing-item input')].map(i=>i.value).filter(Boolean),
+    heroDescription: v('p_hero'), overviewBio1: v('p_ov1'), overviewBio2: v('p_ov2'),
+    aboutBio1: v('p_ab1'), aboutBio2: v('p_ab2'),
+    socialLinks: { github: v('p_link_github'), notion: v('p_link_notion'), blog: v('p_link_blog') }
+  };
+}
+
+// ─── 프로젝트 ─────────────────────────────────────────────
+function renderProjects() {
+  const p = data.projects || {};
+  renderProjectList('robot_list', p.robotDevelopment || [], 'robot');
+  renderProjectList('video_list', p.videoProduction || [], 'video');
+}
+function renderProjectList(id, items, type) {
+  const c = document.getElementById(id); c.innerHTML = '';
+  items.forEach(item => appendProjectCard(id, item, type));
+}
+function appendProjectCard(containerId, item = {}, type) {
+  const container = document.getElementById(containerId);
+  const card = document.createElement('div');
+  card.className = 'card item-card';
+  const extraFields = type === 'video'
+    ? `<div class="col-md-3"><label class="form-label">재생 시간</label><input type="text" class="form-control field-duration" value="${escHtml(item.duration||'')}" placeholder="3:42" /></div>
+       <div class="col-md-5"><label class="form-label">YouTube URL</label><input type="url" class="form-control field-youtube" value="${escHtml(item.youtube||'')}" /></div>`
+    : `<div class="col-md-4"><label class="form-label">역할</label><input type="text" class="form-control field-role" value="${escHtml(item.role||'')}" /></div>
+       <div class="col-md-4"><label class="form-label">기여도</label><input type="text" class="form-control field-contribution" value="${escHtml(item.contribution||'')}" placeholder="50%" /></div>`;
+  card.innerHTML = `
+    <div class="card-body">
+      <div class="d-flex justify-content-between align-items-start mb-2">
+        <span class="fw-semibold text-primary">${escHtml(item.title||'새 프로젝트')}</span>
+        <button class="remove-btn" onclick="this.closest('.item-card').remove()">✕ 삭제</button>
+      </div>
+      <div class="row g-2 mb-2">
+        <div class="col-md-6"><label class="form-label">제목</label><input type="text" class="form-control field-title" value="${escHtml(item.title||'')}" oninput="this.closest('.item-card').querySelector('.fw-semibold').textContent=this.value||'새 프로젝트'" /></div>
+        <div class="col-md-6"><label class="form-label">기간</label><input type="text" class="form-control field-period" value="${escHtml(item.period||'')}" placeholder="2023.03 - 2023.09" /></div>
+      </div>
+      <div class="mb-2"><label class="form-label">한 줄 설명</label><input type="text" class="form-control field-description" value="${escHtml(item.description||'')}" /></div>
+      <div class="mb-2"><label class="form-label">상세 설명</label><textarea class="form-control field-full" rows="3">${escHtml(item.fullDescription||'')}</textarea></div>
+      <div class="row g-2 mb-2">${extraFields}</div>
+      <div class="row g-2 mb-2">
+        <div class="col-md-6"><label class="form-label">Notion 링크</label><input type="url" class="form-control field-link" value="${escHtml(item.link||'')}" /></div>
+        <div class="col-md-6"><label class="form-label">GitHub 링크</label><input type="url" class="form-control field-github" value="${escHtml(item.github||'')}" /></div>
+      </div>
+      <div class="mb-2"><label class="form-label">기술 스택 <small class="text-muted">(쉼표 구분)</small></label><input type="text" class="form-control field-tech" value="${escHtml((item.technologies||[]).join(', '))}" /></div>
+      <div class="mb-2"><label class="form-label">태그 <small class="text-muted">(쉼표 구분)</small></label><input type="text" class="form-control field-tags" value="${escHtml((item.tags||[]).join(', '))}" /></div>
+      <div><label class="form-label">주요 성과 <small class="text-muted">(줄바꿈 구분)</small></label><textarea class="form-control field-achievements" rows="3">${escHtml((item.achievements||[]).join('\n'))}</textarea></div>
+    </div>`;
+  container.appendChild(card);
+}
+function addProject(type) { appendProjectCard(type==='robot'?'robot_list':'video_list', {}, type); }
+function gatherProjects() {
+  return {
+    robotDevelopment: [...document.querySelectorAll('#robot_list .item-card')].map(c=>gatherProjectCard(c,'robot')),
+    videoProduction: [...document.querySelectorAll('#video_list .item-card')].map(c=>gatherProjectCard(c,'video'))
+  };
+}
+function gatherProjectCard(card, type) {
+  const g = cls => (card.querySelector(cls)||{}).value||'';
+  const base = {
+    title: g('.field-title'), description: g('.field-description'), fullDescription: g('.field-full'),
+    technologies: g('.field-tech').split(',').map(s=>s.trim()).filter(Boolean),
+    tags: g('.field-tags').split(',').map(s=>s.trim()).filter(Boolean),
+    period: g('.field-period'), category: type==='robot'?'로봇 개발':'영상 제작',
+    link: g('.field-link'), github: g('.field-github'), images: [],
+    achievements: g('.field-achievements').split('\n').map(s=>s.trim()).filter(Boolean), files: []
+  };
+  if (type==='video') { base.duration=g('.field-duration'); base.youtube=g('.field-youtube'); }
+  else { base.role=g('.field-role'); base.contribution=g('.field-contribution'); }
+  return base;
+}
+
+// ─── 경력 ─────────────────────────────────────────────────
+function renderOrgs() {
+  const c = document.getElementById('org_list'); c.innerHTML = '';
+  (data.organizations||[]).forEach(org => appendOrgCard(org));
+}
+function appendOrgCard(org = {}) {
+  const container = document.getElementById('org_list');
+  const card = document.createElement('div');
+  card.className = 'card item-card';
+  card.innerHTML = `
+    <div class="card-body">
+      <div class="d-flex justify-content-between align-items-start mb-2">
+        <span class="fw-semibold text-primary">${escHtml(org.name||'새 기관')}</span>
+        <button class="remove-btn" onclick="this.closest('.item-card').remove()">✕ 삭제</button>
+      </div>
+      <div class="row g-2 mb-2">
+        <div class="col-md-5"><label class="form-label">기관명</label><input type="text" class="form-control field-name" value="${escHtml(org.name||'')}" oninput="this.closest('.item-card').querySelector('.fw-semibold').textContent=this.value||'새 기관'" /></div>
+        <div class="col-md-4"><label class="form-label">직책/역할</label><input type="text" class="form-control field-role" value="${escHtml(org.role||'')}" /></div>
+        <div class="col-md-3"><label class="form-label">기간</label><input type="text" class="form-control field-period" value="${escHtml(org.period||'')}" /></div>
+      </div>
+      <div class="row g-2 mb-2">
+        <div class="col-md-6"><label class="form-label">홈페이지 URL</label><input type="url" class="form-control field-link" value="${escHtml(org.link||'')}" /></div>
+        <div class="col-md-6"><label class="form-label">타입</label>
+          <select class="form-select field-type">
+            <option value="university" ${org.type==='university'?'selected':''}>대학교/학교</option>
+            <option value="company" ${org.type==='company'?'selected':''}>회사/인턴</option>
+            <option value="research" ${org.type==='research'?'selected':''}>연구실</option>
+          </select>
+        </div>
+      </div>
+      <div class="mb-2"><label class="form-label">설명</label><textarea class="form-control field-desc" rows="2">${escHtml(org.description||'')}</textarea></div>
+      <div><label class="form-label">주요 성과 <small class="text-muted">(줄바꿈 구분)</small></label><textarea class="form-control field-achievements" rows="3">${escHtml((org.achievements||[]).join('\n'))}</textarea></div>
+    </div>`;
+  container.appendChild(card);
+}
+function addOrg() { appendOrgCard(); }
+function gatherOrgs() {
+  return [...document.querySelectorAll('#org_list .item-card')].map(card => ({
+    name: (card.querySelector('.field-name')||{}).value||'',
+    role: (card.querySelector('.field-role')||{}).value||'',
+    period: (card.querySelector('.field-period')||{}).value||'',
+    description: (card.querySelector('.field-desc')||{}).value||'',
+    image: null,
+    link: (card.querySelector('.field-link')||{}).value||null,
+    type: (card.querySelector('.field-type')||{}).value||'university',
+    achievements: ((card.querySelector('.field-achievements')||{}).value||'').split('\n').map(s=>s.trim()).filter(Boolean)
+  }));
+}
+
+// ─── 스킬 ─────────────────────────────────────────────────
+const ICONS = ['FaRobot','FaCode','FaTools','FaGraduationCap'];
+function renderSkills() {
+  const c = document.getElementById('skill_list'); c.innerHTML = '';
+  (data.skills||[]).forEach(skill => appendSkillCard(skill));
+}
+function appendSkillCard(skill = {}) {
+  const container = document.getElementById('skill_list');
+  const card = document.createElement('div');
+  card.className = 'card item-card';
+  const iconOpts = ICONS.map(ic=>`<option value="${ic}" ${skill.icon===ic?'selected':''}>${ic}</option>`).join('');
+  card.innerHTML = `
+    <div class="card-body">
+      <div class="d-flex justify-content-between align-items-start mb-2">
+        <span class="fw-semibold text-primary">${escHtml(skill.title||'새 카테고리')}</span>
+        <button class="remove-btn" onclick="this.closest('.item-card').remove()">✕ 삭제</button>
+      </div>
+      <div class="row g-2 mb-2">
+        <div class="col-md-4"><label class="form-label">아이콘</label><select class="form-select field-icon">${iconOpts}</select></div>
+        <div class="col-md-8"><label class="form-label">카테고리 이름</label><input type="text" class="form-control field-title" value="${escHtml(skill.title||'')}" oninput="this.closest('.item-card').querySelector('.fw-semibold').textContent=this.value||'새 카테고리'" /></div>
+      </div>
+      <div><label class="form-label">항목 <small class="text-muted">(줄바꿈 구분)</small></label><textarea class="form-control field-items" rows="4">${escHtml((skill.items||[]).join('\n'))}</textarea></div>
+    </div>`;
+  container.appendChild(card);
+}
+function addSkillCategory() { appendSkillCard(); }
+function gatherSkills() {
+  return [...document.querySelectorAll('#skill_list .item-card')].map(card => ({
+    icon: (card.querySelector('.field-icon')||{}).value||'FaRobot',
+    title: (card.querySelector('.field-title')||{}).value||'',
+    items: ((card.querySelector('.field-items')||{}).value||'').split('\n').map(s=>s.trim()).filter(Boolean)
+  }));
+}
+
+// ─── GitHub 설명 ──────────────────────────────────────────
+function renderGhDescs() {
+  const c = document.getElementById('gh_list'); c.innerHTML = '';
+  Object.entries(data.githubDescriptions||{}).forEach(([k,val]) => appendGhItem(k, val));
+}
+function appendGhItem(key='', val='') {
+  const container = document.getElementById('gh_list');
+  const row = document.createElement('div');
+  row.className = 'd-flex gap-2 mb-2 gh-item';
+  row.innerHTML = `<input type="text" class="form-control gh-key" value="${escHtml(key)}" placeholder="레포 이름" style="max-width:220px" /><input type="text" class="form-control gh-val" value="${escHtml(val)}" placeholder="한 줄 설명" /><button class="remove-btn" onclick="this.closest('.gh-item').remove()">✕</button>`;
+  container.appendChild(row);
+}
+function addGhItem() { appendGhItem(); }
+function gatherGhDescs() {
+  const obj = {};
+  document.querySelectorAll('.gh-item').forEach(row => {
+    const k = row.querySelector('.gh-key').value.trim();
+    const val = row.querySelector('.gh-val').value.trim();
+    if (k) obj[k] = val;
+  });
+  return obj;
+}
+
+// ─── 유틸 ─────────────────────────────────────────────────
+function v(id) { return (document.getElementById(id)||{}).value||''; }
+function escHtml(str) {
+  return String(str||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+</script>
+</body>
+</html>

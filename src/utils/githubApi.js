@@ -1,7 +1,8 @@
 // GitHub API를 사용하여 프로젝트 정보 가져오기
 import { githubProjectDescriptions } from '../data/githubProjects';
+import profile from '../data/profile.json';
 
-export const fetchGitHubRepos = async (username = 'MOSW626') => {
+export const fetchGitHubRepos = async (username = profile.githubUsername) => {
   try {
     const response = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=20&type=all`);
 

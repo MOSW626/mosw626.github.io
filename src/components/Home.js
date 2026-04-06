@@ -1,21 +1,18 @@
-import React, { useEffect, useRef } from 'react';
-import { Container, Row, Col, Button } from 'react-bootstrap';
-import { FaDownload, FaRobot, FaGithub, FaEnvelope } from 'react-icons/fa';
+import React, { useEffect, useRef, useState } from 'react';
+import { Container, Row, Col, Button, Toast, ToastContainer } from 'react-bootstrap';
+import { FaRobot, FaGithub, FaEnvelope, FaExternalLinkAlt } from 'react-icons/fa';
 import { HiOutlineDocumentText } from 'react-icons/hi';
 import Typed from 'typed.js';
+import profile from '../data/profile.json';
 import './Home.css';
 
 const Home = () => {
   const typedRef = useRef(null);
+  const [showToast, setShowToast] = useState(false);
 
   useEffect(() => {
     const options = {
-      strings: [
-        '로봇 공학자',
-        'Robotics Engineer',
-        'ROS 개발자',
-        'Robot Developer'
-      ],
+      strings: profile.typingStrings,
       typeSpeed: 50,
       backSpeed: 50,
       loop: true
@@ -27,63 +24,56 @@ const Home = () => {
       typed.destroy();
     };
   }, []);
-  const handleDownload = (fileType) => {
-    // CV 또는 명함 다운로드 함수
-    const link = document.createElement('a');
-    if (fileType === 'cv') {
-      // public/assets 폴더에 CV.pdf 파일을 추가해주세요
-      // 또는 다른 형식: CV.docx, CV.png 등
-      link.href = process.env.PUBLIC_URL + '/assets/CV.pdf';
-      link.download = 'YS_AN_CV.pdf';
-    } else if (fileType === 'business-card') {
-      // public/assets 폴더에 BusinessCard.pdf 파일을 추가해주세요
-      // 또는 다른 형식: BusinessCard.png, BusinessCard.jpg 등
-      link.href = process.env.PUBLIC_URL + '/assets/BusinessCard.pdf';
-      link.download = 'YS_AN_BusinessCard.pdf';
-    }
 
-    // 파일이 없을 경우를 대비한 에러 처리
-    link.onerror = () => {
-      alert('파일을 찾을 수 없습니다. public/assets 폴더에 파일을 추가해주세요.');
-    };
-
-    link.click();
+  const handleDownload = () => {
+    setShowToast(true);
   };
 
   return (
     <section id="home" className="home-section">
+      <ToastContainer position="bottom-end" className="p-4" style={{ zIndex: 9999 }}>
+        <Toast onClose={() => setShowToast(false)} show={showToast} delay={3000} autohide bg="dark">
+          <Toast.Body className="text-white">
+            📄 CV는 곧 업로드될 예정입니다!
+          </Toast.Body>
+        </Toast>
+      </ToastContainer>
       <Container>
         <Row className="align-items-center">
           <Col lg={6} className="home-content">
             <div className="home-text fade-in-up">
               <h1 className="home-title">
-                안녕하세요, <span className="highlight">YS AN</span>입니다
+                안녕하세요, <span className="highlight">{profile.name}</span>입니다
               </h1>
               <h2 className="home-subtitle">
                 <span ref={typedRef}></span>
               </h2>
-              <p className="home-description">
-                ROS를 활용한 로봇 개발과 연구를 진행하는 로봇 공학자입니다.
-              </p>
+              <p
+                className="home-description"
+                dangerouslySetInnerHTML={{ __html: profile.heroDescription }}
+              />
               <div className="home-buttons">
                 <Button
                   className="btn-custom btn-primary-custom me-3 mb-3"
-                  onClick={() => handleDownload('cv')}
+                  onClick={handleDownload}
                 >
                   <HiOutlineDocumentText className="me-2" />
                   CV 다운로드
                 </Button>
                 <Button
                   className="btn-custom btn-secondary-custom mb-3"
-                  onClick={() => handleDownload('business-card')}
+                  as="a"
+                  href={profile.socialLinks.notion}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  <FaDownload className="me-2" />
-                  명함 다운로드
+                  <FaExternalLinkAlt className="me-2" />
+                  포트폴리오 보기
                 </Button>
               </div>
               <div className="home-social">
                 <a
-                  href="https://github.com/MOSW626"
+                  href={profile.socialLinks.github}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="social-icon"
@@ -91,18 +81,10 @@ const Home = () => {
                   <FaGithub />
                 </a>
                 <a
-                  href="mailto:ays6533@naver.com"
+                  href={`mailto:${profile.email}`}
                   className="social-icon"
                 >
                   <FaEnvelope />
-                </a>
-                <a
-                  href="https://mosw.notion.site/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="social-icon"
-                >
-                  <FaRobot />
                 </a>
               </div>
             </div>
@@ -119,4 +101,3 @@ const Home = () => {
 };
 
 export default Home;
-

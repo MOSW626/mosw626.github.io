@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { FaRobot, FaGithub, FaVideo, FaArrowRight } from 'react-icons/fa';
 import { fetchGitHubRepos } from '../utils/githubApi';
 import { notionProjects } from '../data/notionProjects';
+import profile from '../data/profile.json';
 import './Overview.css';
 
 const Overview = () => {
@@ -13,7 +14,7 @@ const Overview = () => {
   useEffect(() => {
     const loadGitHubRepos = async () => {
       setLoading(true);
-      const repos = await fetchGitHubRepos('MOSW626');
+      const repos = await fetchGitHubRepos(profile.githubUsername);
       setGithubRepos(repos.slice(0, 3)); // 최신 3개만
       setLoading(false);
     };
@@ -43,16 +44,9 @@ const Overview = () => {
               <Card.Body className="p-4">
                 <Row>
                   <Col lg={8}>
-                    <h3 className="mb-3">안녕하세요, YS AN입니다</h3>
-                    <p className="mb-3">
-                      ROS(Robot Operating System)를 활용한 로봇 개발과 연구에 집중하고 있는 로봇 공학자입니다.
-                      로봇 제어, 센서 융합, SLAM, 자율주행 등 다양한 분야에서 프로젝트를 진행해왔으며,
-                      실무 경험과 연구를 통해 지속적으로 성장하고 있습니다.
-                    </p>
-                    <p className="mb-0">
-                      특히 로봇 시스템의 전체적인 아키텍처 설계부터 구현, 테스트까지의 과정에 관심이 많으며,
-                      실용적이고 효율적인 솔루션을 만드는 것을 목표로 합니다.
-                    </p>
+                    <h3 className="mb-3">안녕하세요, {profile.name}입니다</h3>
+                    <p className="mb-3">{profile.overviewBio1}</p>
+                    <p className="mb-0">{profile.overviewBio2}</p>
                   </Col>
                   <Col lg={4} className="text-center">
                     <div className="overview-stats">

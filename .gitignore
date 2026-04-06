@@ -22,3 +22,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# 어드민 비밀번호 (절대 커밋하지 않음)
+admin/.password
+

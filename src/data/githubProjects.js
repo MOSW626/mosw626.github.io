@@ -1,13 +1,4 @@
-// GitHub 프로젝트에 대한 수동 설명 추가
-// 저장소 이름을 키로 사용하여 설명을 추가하거나 덮어쓸 수 있습니다
+// 데이터 수정은 어드민 패널(npm run admin)을 이용하세요.
+import githubDescData from './githubDescriptions.json';
 
-export const githubProjectDescriptions = {
-  // 예시:
-  'mosw626.github.io': '22개인 포트폴리오 웹사이트입니다. React를 사용하여 제작했습니다.',
-  'mecha_ws': 'KAIST 메카트로닉스 시스템 설계 과목의 자율주행 로봇 프로젝트 워크스페이스입니다.',
-  'segway': '2025 MR 프로젝트 - 다리형 세그웨이 로봇 개발 프로젝트입니다.',
-
-  // 여기에 프로젝트 설명을 추가하세요
-  // 형식: '저장소이름': '설명'
-};
-
+export const githubProjectDescriptions = githubDescData;
