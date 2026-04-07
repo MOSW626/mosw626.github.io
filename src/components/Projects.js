@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Card, Accordion, Badge, Spinner } from 'react-bootstrap';
-import { FaGithub, FaRobot, FaVideo, FaChevronDown } from 'react-icons/fa';
+import { FaGithub, FaRobot, FaVideo } from 'react-icons/fa';
 import { fetchGitHubRepos } from '../utils/githubApi';
 import { notionProjects } from '../data/notionProjects';
 import ProjectModal from './ProjectModal';
@@ -9,7 +9,6 @@ import './Projects.css';
 const Projects = () => {
   const [githubRepos, setGithubRepos] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [expandedSection, setExpandedSection] = useState(null);
   const [selectedProject, setSelectedProject] = useState(null);
   const [modalType, setModalType] = useState(null);
   const [showModal, setShowModal] = useState(false);
@@ -23,10 +22,6 @@ const Projects = () => {
     };
     loadGitHubRepos();
   }, []);
-
-  const toggleSection = (section) => {
-    setExpandedSection(expandedSection === section ? null : section);
-  };
 
   const handleProjectClick = (project, type) => {
     setSelectedProject(project);

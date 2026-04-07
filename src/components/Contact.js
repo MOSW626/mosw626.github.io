@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Form, Button, Alert, Card } from 'react-bootstrap';
-import { FaEnvelope, FaGithub, FaBlog, FaPhone } from 'react-icons/fa';
+import { FaEnvelope, FaGithub, FaBlog } from 'react-icons/fa';
 import { SiNotion } from 'react-icons/si';
 import './Contact.css';
 

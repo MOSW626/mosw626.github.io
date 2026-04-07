@@ -71,7 +71,6 @@ function LoginForm({ onLogin }) {
 
 // ── JSON 에디터 탭 ──────────────────────────────────────────
 function DataEditor({ name, label, token }) {
-  const [data, setData] = useState(null);
   const [sha, setSha] = useState('');
   const [text, setText] = useState('');
   const [status, setStatus] = useState(null); // { type, message }
@@ -87,7 +86,6 @@ function DataEditor({ name, label, token }) {
       const res = await fetch(`${API_BASE}/data/${name}`, { headers: authHeaders });
       const json = await res.json();
       if (!res.ok) throw new Error(json.error || '로드 실패');
-      setData(json.data);
       setSha(json.sha || '');
       setText(JSON.stringify(json.data, null, 2));
     } catch (err) {
