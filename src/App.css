@@ -1,26 +1,24 @@
 :root {
-  --primary-color: #A5B4FC;
-  --primary-dark: #818CF8;
-  --secondary-color: #6366F1;
-  --background-dark: #0f172a;
-  --background-light: #1e293b;
+  --primary-color: #00D9FF;
+  --primary-dark: #00A8CC;
+  --secondary-color: #39FF14;
+  --background-dark: #0a0e27;
+  --background-light: #1a1f3a;
   --text-primary: #ffffff;
   --text-secondary: rgba(255, 255, 255, 0.75);
-  --border-color: rgba(255, 255, 255, 0.1);
+  --border-color: rgba(0, 217, 255, 0.2);
 }
 
 .App {
   text-align: center;
 }
 
-/* Section Styling */
 section {
   padding: 80px 0;
   min-height: auto;
   display: block;
 }
 
-/* App container with padding for fixed navbar */
 .App {
   padding-top: 0;
 }
@@ -29,78 +27,82 @@ section {
   font-size: 2.8rem;
   font-weight: 700;
   margin-bottom: 3rem;
-  color: #1e293b;
+  color: #00D9FF;
   letter-spacing: -0.5px;
+  font-family: 'JetBrains Mono', monospace;
+  text-shadow: 0 0 15px rgba(0, 217, 255, 0.2);
 }
 
 .section-subtitle {
   font-size: 1.1rem;
-  color: #64748b;
+  color: rgba(255, 255, 255, 0.7);
   margin-bottom: 2rem;
   letter-spacing: -0.2px;
 }
 
-/* Button Styles */
 .btn-custom {
   padding: 12px 28px;
-  border-radius: 12px;
+  border-radius: 4px;
   font-weight: 600;
-  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-  border: none;
+  transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+  border: 1.5px solid;
   cursor: pointer;
   letter-spacing: -0.2px;
+  font-family: 'JetBrains Mono', monospace;
+  text-transform: uppercase;
+  font-size: 0.85rem;
 }
 
 .btn-custom:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 20px rgba(0, 217, 255, 0.3);
 }
 
 .btn-primary-custom {
-  background: linear-gradient(135deg, #A5B4FC 0%, #818CF8 100%);
-  color: #0f172a;
-  border: none;
+  background: transparent;
+  color: #00D9FF;
+  border-color: #00D9FF;
+  box-shadow: 0 0 15px rgba(0, 217, 255, 0.2);
   font-weight: 600;
 }
 
 .btn-primary-custom:hover {
-  background: linear-gradient(135deg, #B5C4FC 0%, #9299F8 100%);
-  color: #0f172a;
+  background: rgba(0, 217, 255, 0.1);
+  color: #ffffff;
+  box-shadow: 0 0 25px rgba(0, 217, 255, 0.4);
 }
 
 .btn-secondary-custom {
-  background: rgba(165, 180, 252, 0.1);
-  color: #A5B4FC;
-  border: 1.5px solid rgba(165, 180, 252, 0.4);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: transparent;
+  color: #00A8CC;
+  border-color: #00A8CC;
+  box-shadow: 0 0 10px rgba(0, 168, 204, 0.2);
 }
 
 .btn-secondary-custom:hover {
-  background: rgba(165, 180, 252, 0.15);
-  border-color: rgba(165, 180, 252, 0.7);
-  color: #ffffff;
+  background: rgba(0, 168, 204, 0.1);
+  border-color: #00D9FF;
+  color: #00D9FF;
+  box-shadow: 0 0 20px rgba(0, 217, 255, 0.3);
 }
 
-/* Card Styles */
 .card-custom {
-  border: none;
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  border: 1.5px solid rgba(0, 217, 255, 0.2);
+  border-radius: 4px;
+  box-shadow: 0 0 15px rgba(0, 217, 255, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
   height: 100%;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(26, 31, 58, 0.5);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .card-custom:hover {
   transform: translateY(-8px);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 0 30px rgba(0, 217, 255, 0.2);
+  border-color: rgba(0, 217, 255, 0.4);
 }
 
-/* Animation */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -116,7 +118,6 @@ section {
   animation: fadeInUp 0.6s ease-out;
 }
 
-/* Responsive */
 @media (max-width: 1200px) {
   section {
     padding: 70px 0;
