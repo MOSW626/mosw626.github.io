@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Personal portfolio website for robotics engineer",
   "private": true,
-  "homepage": "https://mosw626.github.io",
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

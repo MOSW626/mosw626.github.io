@@ -51,10 +51,10 @@ const Footer = () => {
               </div>
               <div className="footer-text">
                 <p>
-                  Made with <FaHeart className="heart-icon" /> by YS AN
+                  Made with <FaHeart className="heart-icon" /> by 안연수 / Yeonsu An
                 </p>
                 <p className="footer-copyright">
-                  © {currentYear} YS AN. All rights reserved.
+                  © {currentYear} 안연수 / Yeonsu An. All rights reserved.
                 </p>
               </div>
             </div>

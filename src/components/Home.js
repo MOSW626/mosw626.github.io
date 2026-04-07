@@ -9,6 +9,7 @@ import './Home.css';
 const Home = () => {
   const typedRef = useRef(null);
   const [showToast, setShowToast] = useState(false);
+  const [photoError, setPhotoError] = useState(false);
 
   useEffect(() => {
     const options = {
@@ -52,6 +53,16 @@ const Home = () => {
                 className="home-description"
                 dangerouslySetInnerHTML={{ __html: profile.heroDescription }}
               />
+              {profile.achievements && profile.achievements.length > 0 && (
+                <div className="achievement-badges">
+                  {profile.achievements.map((ach, i) => (
+                    <span key={i} className="achievement-badge">
+                      <span className="achievement-emoji">{ach.emoji}</span>
+                      {ach.label}
+                    </span>
+                  ))}
+                </div>
+              )}
               <div className="home-buttons">
                 <Button
                   className="btn-custom btn-primary-custom me-3 mb-3"
@@ -90,8 +101,19 @@ const Home = () => {
             </div>
           </Col>
           <Col lg={6} className="home-image">
-            <div className="robot-animation">
-              <FaRobot className="robot-icon" />
+            <div className="profile-visual">
+              {!photoError ? (
+                <img
+                  src="/assets/profile.jpg"
+                  alt={profile.name}
+                  className="profile-photo"
+                  onError={() => setPhotoError(true)}
+                />
+              ) : (
+                <div className="robot-animation">
+                  <FaRobot className="robot-icon" />
+                </div>
+              )}
             </div>
           </Col>
         </Row>

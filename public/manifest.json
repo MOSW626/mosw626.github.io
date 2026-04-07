@@ -1,6 +1,6 @@
 {
-  "short_name": "YS AN Portfolio",
-  "name": "YS AN - Robotics Engineer Portfolio",
+  "short_name": "안연수 Portfolio",
+  "name": "안연수 (Yeonsu An) - Robotics Engineer",
   "icons": [
     {
       "src": "favicon.ico",
@@ -13,4 +13,3 @@
   "theme_color": "#000000",
   "background_color": "#ffffff"
 }
-

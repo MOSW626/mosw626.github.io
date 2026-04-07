@@ -1,15 +1,26 @@
 import React from 'react';
-import { Container, Row, Col, Card } from 'react-bootstrap';
-import { FaRobot, FaCode, FaTools, FaGraduationCap } from 'react-icons/fa';
+import { Container, Row, Col } from 'react-bootstrap';
+import { FaRobot } from 'react-icons/fa';
+import {
+  SiPython, SiCplusplus, SiJavascript,
+  SiOpencv, SiTensorflow, SiPytorch,
+  SiGit, SiLinux, SiArduino
+} from 'react-icons/si';
 import skillsData from '../data/skills.json';
 import profile from '../data/profile.json';
 import './About.css';
 
-const iconMap = {
+const ICON_MAP = {
+  SiPython: <SiPython />,
+  SiCplusplus: <SiCplusplus />,
+  SiJavascript: <SiJavascript />,
+  SiOpencv: <SiOpencv />,
+  SiTensorflow: <SiTensorflow />,
+  SiPytorch: <SiPytorch />,
+  SiGit: <SiGit />,
+  SiLinux: <SiLinux />,
+  SiArduino: <SiArduino />,
   FaRobot: <FaRobot />,
-  FaCode: <FaCode />,
-  FaTools: <FaTools />,
-  FaGraduationCap: <FaGraduationCap />
 };
 
 const About = () => {
@@ -19,13 +30,11 @@ const About = () => {
         <Row>
           <Col lg={12}>
             <h2 className="section-title">About Me</h2>
-            <p className="section-subtitle">
-              로봇 공학자로서의 경험과 기술
-            </p>
+            <p className="section-subtitle">로봇 공학자로서의 경험과 기술</p>
           </Col>
         </Row>
         <Row className="mt-4">
-          <Col lg={12} className="mb-4">
+          <Col lg={12} className="mb-5">
             <div className="about-content">
               <h3>로봇 공학 개발자</h3>
               <p>{profile.aboutBio1}</p>
@@ -34,19 +43,21 @@ const About = () => {
           </Col>
         </Row>
         <Row>
-          {skillsData.map((skill, index) => (
-            <Col lg={6} md={6} key={index} className="mb-3">
-              <Card className="card-custom skill-card">
-                <Card.Body>
-                  <div className="skill-icon">{iconMap[skill.icon] || <FaRobot />}</div>
-                  <Card.Title className="mt-3 mb-3">{skill.title}</Card.Title>
-                  <ul className="skill-list">
-                    {skill.items.map((item, idx) => (
-                      <li key={idx}>{item}</li>
-                    ))}
-                  </ul>
-                </Card.Body>
-              </Card>
+          {skillsData.map((category, ci) => (
+            <Col lg={6} md={6} key={ci} className="mb-4">
+              <div className="skill-category-card">
+                <h5 className="skill-category-title">{category.category}</h5>
+                <div className="skill-icon-grid">
+                  {category.items.map((item, ii) => (
+                    <div key={ii} className="skill-icon-item">
+                      <span className="skill-icon-svg">
+                        {ICON_MAP[item.icon] || <FaRobot />}
+                      </span>
+                      <span className="skill-icon-label">{item.name}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </Col>
           ))}
         </Row>

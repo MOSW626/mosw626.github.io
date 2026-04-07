@@ -125,96 +125,8 @@ const Projects = () => {
                 </Accordion.Body>
               </Accordion.Item>
 
-              {/* 영상 제작 프로젝트 */}
-              <Accordion.Item eventKey="1" className="mb-3">
-                <Accordion.Header>
-                  <div className="d-flex align-items-center w-100">
-                    <FaVideo className="me-2" />
-                    <strong>영상 제작 프로젝트</strong>
-                    <Badge bg="primary" className="ms-auto me-2">
-                      {notionProjects.videoProduction.length}
-                    </Badge>
-                  </div>
-                </Accordion.Header>
-                <Accordion.Body>
-                  <Row>
-                    {notionProjects.videoProduction.map((project, index) => (
-                      <Col lg={6} md={6} key={index} className="mb-4">
-                        <Card className="project-card-detailed" onClick={() => handleProjectClick(project, 'video')} style={{ cursor: 'pointer' }}>
-                          {project.images && project.images.length > 0 && (
-                            <Card.Img
-                              variant="top"
-                              src={project.images[0]}
-                              alt={project.title}
-                              className="project-thumbnail"
-                              onError={(e) => {
-                                e.target.style.display = 'none';
-                              }}
-                            />
-                          )}
-                          <Card.Body>
-                            <Card.Title className="h5 mb-3">{project.title}</Card.Title>
-                            <Card.Text className="mb-3">
-                              {project.description}
-                            </Card.Text>
-                            <div className="mb-3">
-                              <div className="tech-tags">
-                                {(project.technologies || []).slice(0, 3).map((tech, idx) => (
-                                  <Badge key={idx} bg="info" className="me-1 mb-1">
-                                    {tech}
-                                  </Badge>
-                                ))}
-                              </div>
-                            </div>
-                            <div className="d-flex justify-content-between align-items-center">
-                              <div>
-                                <div className="mb-2">
-                                  {project.tags.map((tag, idx) => (
-                                    <Badge key={idx} bg="info" className="me-1">
-                                      {tag}
-                                    </Badge>
-                                  ))}
-                                  {project.duration && (
-                                    <Badge bg="dark" className="me-1">
-                                      {project.duration}
-                                    </Badge>
-                                  )}
-                                </div>
-                                <div className="text-muted small">{project.period}</div>
-                              </div>
-                              <div className="d-flex gap-2">
-                                {project.youtube && (
-                                  <a
-                                    href={project.youtube}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="btn btn-sm btn-outline-danger"
-                                    onClick={(e) => e.stopPropagation()}
-                                  >
-                                    YouTube
-                                  </a>
-                                )}
-                                <button
-                                  className="btn btn-sm btn-outline-primary"
-                                  onClick={(e) => {
-                                    e.stopPropagation();
-                                    handleProjectClick(project, 'video');
-                                  }}
-                                >
-                                  상세 보기
-                                </button>
-                              </div>
-                            </div>
-                          </Card.Body>
-                        </Card>
-                      </Col>
-                    ))}
-                  </Row>
-                </Accordion.Body>
-              </Accordion.Item>
-
               {/* GitHub 프로젝트 */}
-              <Accordion.Item eventKey="2" className="mb-3">
+              <Accordion.Item eventKey="1" className="mb-3">
                 <Accordion.Header>
                   <div className="d-flex align-items-center w-100">
                     <FaGithub className="me-2" />
@@ -327,6 +239,95 @@ const Projects = () => {
                       })}
                     </Row>
                   )}
+                </Accordion.Body>
+              </Accordion.Item>
+
+              {/* 기타 활동 (영상 제작) — 기본 닫힘 */}
+              <Accordion.Item eventKey="2" className="mb-3">
+                <Accordion.Header>
+                  <div className="d-flex align-items-center w-100">
+                    <FaVideo className="me-2" />
+                    <strong>기타 활동</strong>
+                    <Badge bg="secondary" className="ms-2 me-auto" style={{ fontSize: '0.7rem' }}>영상 제작</Badge>
+                    <Badge bg="secondary" className="me-2">
+                      {notionProjects.videoProduction.length}
+                    </Badge>
+                  </div>
+                </Accordion.Header>
+                <Accordion.Body>
+                  <Row>
+                    {notionProjects.videoProduction.map((project, index) => (
+                      <Col lg={6} md={6} key={index} className="mb-4">
+                        <Card className="project-card-detailed" onClick={() => handleProjectClick(project, 'video')} style={{ cursor: 'pointer' }}>
+                          {project.images && project.images.length > 0 && (
+                            <Card.Img
+                              variant="top"
+                              src={project.images[0]}
+                              alt={project.title}
+                              className="project-thumbnail"
+                              onError={(e) => {
+                                e.target.style.display = 'none';
+                              }}
+                            />
+                          )}
+                          <Card.Body>
+                            <Card.Title className="h5 mb-3">{project.title}</Card.Title>
+                            <Card.Text className="mb-3">
+                              {project.description}
+                            </Card.Text>
+                            <div className="mb-3">
+                              <div className="tech-tags">
+                                {(project.technologies || []).slice(0, 3).map((tech, idx) => (
+                                  <Badge key={idx} bg="info" className="me-1 mb-1">
+                                    {tech}
+                                  </Badge>
+                                ))}
+                              </div>
+                            </div>
+                            <div className="d-flex justify-content-between align-items-center">
+                              <div>
+                                <div className="mb-2">
+                                  {project.tags.map((tag, idx) => (
+                                    <Badge key={idx} bg="info" className="me-1">
+                                      {tag}
+                                    </Badge>
+                                  ))}
+                                  {project.duration && (
+                                    <Badge bg="dark" className="me-1">
+                                      {project.duration}
+                                    </Badge>
+                                  )}
+                                </div>
+                                <div className="text-muted small">{project.period}</div>
+                              </div>
+                              <div className="d-flex gap-2">
+                                {project.youtube && (
+                                  <a
+                                    href={project.youtube}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="btn btn-sm btn-outline-danger"
+                                    onClick={(e) => e.stopPropagation()}
+                                  >
+                                    YouTube
+                                  </a>
+                                )}
+                                <button
+                                  className="btn btn-sm btn-outline-primary"
+                                  onClick={(e) => {
+                                    e.stopPropagation();
+                                    handleProjectClick(project, 'video');
+                                  }}
+                                >
+                                  상세 보기
+                                </button>
+                              </div>
+                            </div>
+                          </Card.Body>
+                        </Card>
+                      </Col>
+                    ))}
+                  </Row>
                 </Accordion.Body>
               </Accordion.Item>
             </Accordion>

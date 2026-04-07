@@ -1,5 +1,6 @@
 {
-  "name": "YS AN",
+  "name": "안연수",
+  "nameEn": "Yeonsu An",
   "githubUsername": "MOSW626",
   "email": "ays6533@naver.com",
   "typingStrings": [
@@ -9,6 +10,11 @@
     "Robot Developer"
   ],
   "heroDescription": "전국과학전람회 <strong>대통령상</strong> 수상, YSC 선정, 긱블 출연 등의 경험을 바탕으로 ROS 기반 로봇 개발과 연구에 집중하고 있습니다.",
+  "achievements": [
+    { "emoji": "🏆", "label": "전국과학전람회 대통령상" },
+    { "emoji": "📺", "label": "긱블(Geekble) 출연" },
+    { "emoji": "🔬", "label": "YSC 발표대회 선정" }
+  ],
   "overviewBio1": "로봇을 만들고, 촬영하고, 코드를 짭니다. 전국과학전람회 대통령상 수상, YSC 선정, 긱블 출연을 거치며 하드웨어부터 소프트웨어까지 직접 다루는 로봇 공학자로 성장했습니다.",
   "overviewBio2": "ROS 기반의 자율주행·SLAM 연구부터 학교 행사 영상 제작까지, 기술과 표현이 만나는 지점에서 일합니다.",
   "aboutBio1": "중학교 때부터 로봇을 직접 만들기 시작해, 고등학교 재학 중 전국과학전람회에서 대통령상을 수상했습니다. 긱블(Geekble) 출연, YSC 선정 등의 경험을 쌓으며 이론과 실제를 잇는 개발을 해왔습니다.",
