@@ -1,112 +1,101 @@
-:root {
-  --primary-color: #00D9FF;
-  --primary-dark: #00A8CC;
-  --secondary-color: #39FF14;
-  --background-dark: #0a0e27;
-  --background-light: #1a1f3a;
-  --text-primary: #ffffff;
-  --text-secondary: rgba(255, 255, 255, 0.75);
-  --border-color: rgba(0, 217, 255, 0.2);
-}
-
 .App {
-  text-align: center;
+  text-align: left;
 }
 
 section {
-  padding: 80px 0;
+  padding: 60px 0;
   min-height: auto;
   display: block;
+  background: #0f1419;
 }
 
-.App {
-  padding-top: 0;
+section:nth-child(even) {
+  background: #1a1f2e;
 }
 
 .section-title {
-  font-size: 2.8rem;
+  font-size: 2rem;
   font-weight: 700;
-  margin-bottom: 3rem;
-  color: #00D9FF;
+  margin-bottom: 2rem;
+  color: #e8e8e8;
   letter-spacing: -0.5px;
-  font-family: 'JetBrains Mono', monospace;
-  text-shadow: 0 0 15px rgba(0, 217, 255, 0.2);
 }
 
 .section-subtitle {
-  font-size: 1.1rem;
-  color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 2rem;
+  font-size: 1rem;
+  color: #a0a0a0;
+  margin-bottom: 1.5rem;
   letter-spacing: -0.2px;
 }
 
 .btn-custom {
-  padding: 12px 28px;
-  border-radius: 4px;
+  padding: 10px 20px;
+  border-radius: 6px;
   font-weight: 600;
-  transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
-  border: 1.5px solid;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  border: none;
   cursor: pointer;
   letter-spacing: -0.2px;
-  font-family: 'JetBrains Mono', monospace;
-  text-transform: uppercase;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
 }
 
 .btn-custom:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 0 20px rgba(0, 217, 255, 0.3);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .btn-primary-custom {
-  background: transparent;
-  color: #00D9FF;
-  border-color: #00D9FF;
-  box-shadow: 0 0 15px rgba(0, 217, 255, 0.2);
+  background: #4a9eff;
+  color: #ffffff;
+  border: none;
   font-weight: 600;
 }
 
 .btn-primary-custom:hover {
-  background: rgba(0, 217, 255, 0.1);
+  background: #3a8eef;
   color: #ffffff;
-  box-shadow: 0 0 25px rgba(0, 217, 255, 0.4);
 }
 
 .btn-secondary-custom {
   background: transparent;
-  color: #00A8CC;
-  border-color: #00A8CC;
-  box-shadow: 0 0 10px rgba(0, 168, 204, 0.2);
+  color: #4a9eff;
+  border: 1px solid #4a9eff;
 }
 
 .btn-secondary-custom:hover {
-  background: rgba(0, 168, 204, 0.1);
-  border-color: #00D9FF;
-  color: #00D9FF;
-  box-shadow: 0 0 20px rgba(0, 217, 255, 0.3);
+  background: rgba(74, 158, 255, 0.1);
+  border-color: #3a8eef;
+  color: #3a8eef;
 }
 
 .card-custom {
-  border: 1.5px solid rgba(0, 217, 255, 0.2);
-  border-radius: 4px;
-  box-shadow: 0 0 15px rgba(0, 217, 255, 0.1);
-  transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+  border: 1px solid #2a2f3e;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   height: 100%;
-  background: rgba(26, 31, 58, 0.5);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: #1a1f2e;
 }
 
 .card-custom:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 0 30px rgba(0, 217, 255, 0.2);
-  border-color: rgba(0, 217, 255, 0.4);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  border-color: #4a9eff;
+}
+
+.card-custom .card-title {
+  color: #e8e8e8;
+  font-weight: 700;
+}
+
+.card-custom .card-text {
+  color: #a0a0a0;
 }
 
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -120,41 +109,41 @@ section {
 
 @media (max-width: 1200px) {
   section {
-    padding: 70px 0;
-  }
-
-  .section-title {
-    font-size: 2.5rem;
-  }
-}
-
-@media (max-width: 768px) {
-  section {
-    padding: 60px 0;
-  }
-
-  .section-title {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-  }
-
-  .section-subtitle {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 576px) {
-  section {
     padding: 50px 0;
   }
 
   .section-title {
     font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 40px 0;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
     margin-bottom: 1.5rem;
   }
 
   .section-subtitle {
     font-size: 0.95rem;
-    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  section {
+    padding: 30px 0;
+  }
+
+  .section-title {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
   }
 }
