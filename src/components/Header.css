@@ -122,6 +122,52 @@
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%281, 41, 59, 0.85%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
+/* Language toggle button */
+.lang-toggle-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 6px;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  padding: 4px 10px;
+  margin-left: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.lang-toggle-btn:hover {
+  border-color: #A5B4FC;
+  color: #A5B4FC;
+}
+
+.lang-toggle-btn .lang-active {
+  color: #A5B4FC;
+}
+
+.lang-divider {
+  opacity: 0.4;
+}
+
+.navbar-scrolled .lang-toggle-btn {
+  border-color: rgba(30, 41, 59, 0.35);
+  color: #475569;
+}
+
+.navbar-scrolled .lang-toggle-btn:hover {
+  border-color: #6366F1;
+  color: #6366F1;
+}
+
+.navbar-scrolled .lang-toggle-btn .lang-active {
+  color: #6366F1;
+}
+
 @media (max-width: 991px) {
   .navbar-nav {
     text-align: center;
@@ -139,5 +185,9 @@
 
   .navbar-nav .nav-link.active {
     border-bottom: 2px solid;
+  }
+
+  .lang-toggle-btn {
+    margin: 10px auto 0;
   }
 }
