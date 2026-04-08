@@ -1,91 +1,207 @@
 .overview-section {
-  background: #ffffff;
+  background: #0f1419;
+  color: #e8e8e8;
+  padding: 60px 0;
+}
+
+.overview-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .overview-about-card {
-  border: 1px solid #e2e8f0;
-  border-radius: 15px;
-  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  border: 1px solid #2a2f3e;
+  border-radius: 8px;
+  background: #1a1f2e;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  margin-bottom: 32px;
 }
 
 .overview-about-card h3 {
-  color: #1e293b;
+  color: #e8e8e8;
   font-weight: 700;
-  font-size: 1.8rem;
+  font-size: 1.3rem;
+  margin-bottom: 12px;
 }
 
 .overview-about-card p {
-  color: #475569;
-  line-height: 1.8;
-  font-size: 1rem;
+  color: #a0a0a0;
+  line-height: 1.6;
+  font-size: 0.95rem;
 }
 
 .overview-stats {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  padding: 20px;
+  gap: 16px;
+  padding: 0;
 }
 
 .stat-item {
-  padding: 15px;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 16px;
+  background: #1a1f2e;
+  border: 1px solid #2a2f3e;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.stat-item:hover {
+  border-color: #4a9eff;
+  box-shadow: 0 4px 12px rgba(74, 158, 255, 0.2);
 }
 
 .stat-number {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 700;
-  color: #2563eb;
-  margin-bottom: 5px;
+  color: #4a9eff;
+  margin-bottom: 4px;
 }
 
 .stat-label {
   font-size: 0.9rem;
-  color: #64748b;
+  color: #a0a0a0;
   font-weight: 500;
 }
 
 .overview-card {
   height: 100%;
-  border: 1px solid #e2e8f0;
-  transition: all 0.3s ease;
+  border: 1px solid #2a2f3e;
+  border-radius: 8px;
+  background: #1a1f2e;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .overview-card:hover {
-  border-color: #2563eb;
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1);
-  transform: translateY(-2px);
+  border-color: #4a9eff;
+  box-shadow: 0 8px 24px rgba(74, 158, 255, 0.2);
+  transform: translateY(-4px);
+}
+
+.overview-card .card-body {
+  padding: 16px;
+}
+
+.overview-card .card-title {
+  color: #e8e8e8;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .overview-icon {
-  font-size: 1.5rem;
-  color: #2563eb;
+  font-size: 1.2rem;
+  color: #4a9eff;
 }
 
 .overview-projects {
-  min-height: 150px;
+  min-height: 120px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.overview-projects::-webkit-scrollbar {
+  width: 6px;
+}
+
+.overview-projects::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.overview-projects::-webkit-scrollbar-thumb {
+  background: #3a3f4e;
+  border-radius: 3px;
+}
+
+.overview-projects::-webkit-scrollbar-thumb:hover {
+  background: #4a4f5e;
 }
 
 .overview-project-item {
   padding: 8px 0;
-  border-bottom: 1px solid #f1f5f9;
+  border-bottom: 1px solid #2a2f3e;
+  font-size: 0.85rem;
 }
 
 .overview-project-item:last-child {
   border-bottom: none;
 }
 
+.overview-project-item .fw-bold {
+  color: #e8e8e8;
+}
+
+.overview-project-item .text-muted {
+  color: #a0a0a0;
+}
+
+.overview-card .btn {
+  background: transparent;
+  color: #4a9eff;
+  border: 1px solid #4a9eff;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.overview-card .btn:hover {
+  background: rgba(74, 158, 255, 0.1);
+  border-color: #3a8eef;
+  color: #3a8eef;
+}
+
 @media (max-width: 991px) {
+  .overview-section {
+    padding: 40px 0;
+  }
+
   .overview-stats {
     flex-direction: row;
-    justify-content: space-around;
-    margin-top: 20px;
+    gap: 12px;
   }
 
   .stat-item {
     flex: 1;
+    padding: 12px;
+    text-align: center;
+  }
+
+  .stat-number {
+    font-size: 1.5rem;
+  }
+
+  .stat-label {
+    font-size: 0.8rem;
   }
 }
 
+@media (max-width: 768px) {
+  .overview-about-card {
+    padding: 16px;
+    margin-bottom: 24px;
+  }
+
+  .overview-about-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .overview-about-card p {
+    font-size: 0.9rem;
+  }
+
+  .stat-item {
+    padding: 12px;
+  }
+
+  .stat-number {
+    font-size: 1.3rem;
+  }
+}
