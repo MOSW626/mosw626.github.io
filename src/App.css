@@ -252,6 +252,10 @@ body {
   gap: 12px;
 }
 
+.header-toggle {
+  display: none;
+}
+
 .header-btn {
   padding: 8px 16px;
   background: transparent;
@@ -294,17 +298,6 @@ body {
   background: #4a4f5e;
 }
 
-/* 푸터 */
-.footer {
-  background: #1a1f2e;
-  border-top: 1px solid #2a2f3e;
-  padding: 24px;
-  text-align: center;
-  color: #a0a0a0;
-  font-size: 0.85rem;
-  margin-left: 280px;
-}
-
 /* ===== 반응형 디자인 ===== */
 @media (max-width: 1024px) {
   .sidebar {
@@ -312,8 +305,7 @@ body {
     padding: 20px 16px;
   }
 
-  .main-content,
-  .footer {
+  .main-content {
     margin-left: 240px;
   }
 
@@ -344,8 +336,7 @@ body {
     left: 0;
   }
 
-  .main-content,
-  .footer {
+  .main-content {
     margin-left: 0;
   }
 

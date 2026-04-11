@@ -1,7 +1,6 @@
 import React, { useState, useContext } from 'react';
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation, Link } from 'react-router-dom';
 import './App.css';
-import Header from './components/Header';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
@@ -16,6 +15,7 @@ export const LanguageContext = React.createContext('ko');
 
 function AppContent() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [photoError, setPhotoError] = useState(false);
   const { lang, setLang } = useContext(LanguageContext);
   const location = useLocation();
 
@@ -58,14 +58,15 @@ function AppContent() {
         {/* 프로필 섹션 */}
         <div className="sidebar-profile">
           <div className="sidebar-avatar">
-            <img
-              src="/assets/profile.jpg"
-              alt={profile.name}
-              onError={(e) => {
-                e.target.style.display = 'none';
-                e.target.parentElement.innerHTML = '<div class="sidebar-avatar-icon">👤</div>';
-              }}
-            />
+            {!photoError ? (
+              <img
+                src="/assets/profile.jpg"
+                alt={profile.name}
+                onError={() => setPhotoError(true)}
+              />
+            ) : (
+              <div className="sidebar-avatar-icon">👤</div>
+            )}
           </div>
           <div className="sidebar-name">{lang === 'en' ? profile.nameEn || profile.name : profile.name}</div>
           <div className="sidebar-title">{lang === 'en' ? profile.titleEn || profile.title : profile.title}</div>
@@ -77,14 +78,14 @@ function AppContent() {
           <ul className="sidebar-nav-list">
             {navItems.map((item) => (
               <li key={item.path} className="sidebar-nav-item">
-                <a
-                  href={item.path}
+                <Link
+                  to={item.path}
                   className={`sidebar-nav-link ${isActive(item.path) ? 'active' : ''}`}
                   onClick={() => setSidebarOpen(false)}
                 >
                   <span className="sidebar-nav-icon">{item.icon}</span>
                   <span>{item.label}</span>
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -146,8 +147,7 @@ function AppContent() {
             <button
               className="header-toggle"
               onClick={() => setSidebarOpen(!sidebarOpen)}
-              style={{ display: 'none' }}
-              id="sidebar-toggle"
+              aria-label="메뉴 열기"
             >
               ☰
             </button>
@@ -164,10 +164,10 @@ function AppContent() {
             <Route path="/contact" element={<ContactPage />} />
           </Routes>
         </div>
-      </div>
 
-      {/* 푸터 */}
-      <Footer />
+        {/* 푸터 */}
+        <Footer />
+      </div>
     </div>
   );
 }
