@@ -19,6 +19,24 @@ body {
   background: #0f1419;
 }
 
+/* 사이드바 오버레이 (모바일) */
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 99;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .sidebar-overlay {
+    display: block;
+  }
+}
+
 /* 사이드바 (고정) */
 .sidebar {
   position: fixed;
@@ -62,7 +80,7 @@ body {
   width: 80px;
   height: 80px;
   border-radius: 8px;
-  background: #2a2f3e;
+  background: #2a2f3e url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%234a9eff"><circle cx="12" cy="8" r="4"/><path d="M12 14c-6 0-8 3-8 3v3h16v-3s-2-3-8-3z"/></svg>') center/50% no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -75,11 +93,6 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-.sidebar-avatar-icon {
-  font-size: 2.5rem;
-  color: #4a9eff;
 }
 
 .sidebar-name {
@@ -168,7 +181,7 @@ body {
 
 .sidebar-contact-item {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 8px;
   padding: 8px 0;
   font-size: 0.85rem;
@@ -180,12 +193,15 @@ body {
   font-size: 0.9rem;
   width: 16px;
   text-align: center;
+  flex-shrink: 0;
+  margin-top: 2px;
 }
 
 .sidebar-contact-value {
   word-break: break-all;
   color: #a0a0a0;
   font-size: 0.8rem;
+  line-height: 1.4;
 }
 
 /* 사이드바 액션 버튼 */
@@ -238,6 +254,28 @@ body {
   top: 0;
   z-index: 50;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  gap: 16px;
+}
+
+.header-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: transparent;
+  border: 1px solid #4a9eff;
+  color: #4a9eff;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header-toggle:hover {
+  background: rgba(74, 158, 255, 0.1);
+  border-color: #3a8eef;
+  color: #3a8eef;
 }
 
 .header-title {
@@ -246,32 +284,8 @@ body {
   color: #e8e8e8;
 }
 
-.header-actions {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.header-toggle {
-  display: none;
-}
-
-.header-btn {
-  padding: 8px 16px;
-  background: transparent;
-  border: 1px solid #4a9eff;
-  color: #4a9eff;
-  border-radius: 6px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.header-btn:hover {
-  background: rgba(74, 158, 255, 0.1);
-  border-color: #3a8eef;
-  color: #3a8eef;
+.header-spacer {
+  flex: 1;
 }
 
 /* 콘텐츠 영역 */
@@ -298,6 +312,16 @@ body {
   background: #4a4f5e;
 }
 
+/* 푸터 */
+.footer {
+  background: #1a1f2e;
+  border-top: 1px solid #2a2f3e;
+  padding: 24px;
+  text-align: center;
+  color: #a0a0a0;
+  font-size: 0.85rem;
+}
+
 /* ===== 반응형 디자인 ===== */
 @media (max-width: 1024px) {
   .sidebar {
@@ -319,16 +343,12 @@ body {
 }
 
 @media (max-width: 768px) {
-  .App {
-    flex-direction: column;
-  }
-
   .sidebar {
     position: fixed;
     left: -280px;
     width: 280px;
     height: 100vh;
-    transition: left 0.3s ease;
+    transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 1000;
   }
 
@@ -340,40 +360,20 @@ body {
     margin-left: 0;
   }
 
-  .header {
-    padding: 12px 16px;
-  }
-
   .header-toggle {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    background: transparent;
-    border: 1px solid #4a9eff;
-    color: #4a9eff;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 1rem;
+  }
+
+  .header {
+    padding: 12px 16px;
   }
 
   .content-wrapper {
     padding: 12px;
   }
 
-  .sidebar-profile {
-    margin-bottom: 24px;
-    padding-bottom: 16px;
-  }
-
-  .sidebar-avatar {
-    width: 60px;
-    height: 60px;
-  }
-
-  .sidebar-name {
-    font-size: 1rem;
+  .footer {
+    padding: 16px 12px;
   }
 }
 
@@ -385,13 +385,19 @@ body {
 
   .header {
     padding: 10px 12px;
+    gap: 8px;
+  }
+
+  .header-title {
+    font-size: 0.95rem;
   }
 
   .content-wrapper {
     padding: 8px;
   }
 
-  .header-title {
-    font-size: 0.95rem;
+  .footer {
+    padding: 12px 8px;
+    font-size: 0.8rem;
   }
 }

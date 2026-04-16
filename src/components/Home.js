@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState, useContext } from 'react';
+import React, { useRef, useEffect, useState, useContext } from 'react';
 import { Container, Row, Col, Button, Toast, ToastContainer } from 'react-bootstrap';
 import { FaRobot, FaGithub, FaEnvelope, FaExternalLinkAlt } from 'react-icons/fa';
 import { HiOutlineDocumentText } from 'react-icons/hi';
@@ -18,7 +18,6 @@ const Home = () => {
     const strings = lang === 'en' && profile.typingStringsEn
       ? profile.typingStringsEn
       : profile.typingStrings;
-
     const options = {
       strings,
       typeSpeed: 50,
@@ -30,7 +29,6 @@ const Home = () => {
     if (typedInstance.current) {
       typedInstance.current.destroy();
     }
-
     typedInstance.current = new Typed(typedRef.current, options);
 
     return () => {
@@ -69,15 +67,16 @@ const Home = () => {
           </Toast.Body>
         </Toast>
       </ToastContainer>
-      <Container>
-        <Row className="align-items-center">
+
+      <Container fluid className="home-container">
+        <Row className="home-hero">
           <Col lg={6} className="home-content">
             <div className="home-text fade-in-up">
               <h1 className="home-title">
                 {greeting}
               </h1>
               <h2 className="home-subtitle">
-                <span ref={typedRef}></span>
+                <span ref={typedRef} />
               </h2>
               <p
                 className="home-description"
@@ -118,12 +117,14 @@ const Home = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="social-icon"
+                  aria-label="GitHub"
                 >
                   <FaGithub />
                 </a>
                 <a
                   href={`mailto:${profile.email}`}
                   className="social-icon"
+                  aria-label="Email"
                 >
                   <FaEnvelope />
                 </a>

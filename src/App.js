@@ -9,13 +9,12 @@ import OrganizationsPage from './pages/OrganizationsPage';
 import ContactPage from './pages/ContactPage';
 import AdminPage from './pages/AdminPage';
 import profile from './data/profile.json';
-import { FaHome, FaUser, FaProjectDiagram, FaBuilding, FaEnvelope, FaGithub, FaEnvelopeOpen, FaFileDownload } from 'react-icons/fa';
+import { FaHome, FaUser, FaProjectDiagram, FaBuilding, FaEnvelope, FaGithub, FaEnvelopeOpen, FaFileDownload, FaBars } from 'react-icons/fa';
 
 export const LanguageContext = React.createContext('ko');
 
 function AppContent() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [photoError, setPhotoError] = useState(false);
   const { lang, setLang } = useContext(LanguageContext);
   const location = useLocation();
 
@@ -35,21 +34,35 @@ function AppContent() {
     }
   };
 
+  const handleCloseSidebar = () => {
+    setSidebarOpen(false);
+  };
+
+  const getPageTitle = () => {
+    switch (location.pathname) {
+      case '/':
+        return lang === 'en' ? 'Home' : '홈';
+      case '/about':
+        return lang === 'en' ? 'About' : '소개';
+      case '/projects':
+        return lang === 'en' ? 'Projects' : '프로젝트';
+      case '/organizations':
+        return lang === 'en' ? 'Organizations' : '소속';
+      case '/contact':
+        return lang === 'en' ? 'Contact' : '연락처';
+      default:
+        return '';
+    }
+  };
+
   return (
     <div className="App">
       {/* 사이드바 오버레이 (모바일) */}
       {sidebarOpen && (
         <div
-          style={{
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            background: 'rgba(0, 0, 0, 0.5)',
-            zIndex: 99,
-          }}
-          onClick={() => setSidebarOpen(false)}
+          className="sidebar-overlay"
+          onClick={handleCloseSidebar}
+          role="presentation"
         />
       )}
 
@@ -58,15 +71,14 @@ function AppContent() {
         {/* 프로필 섹션 */}
         <div className="sidebar-profile">
           <div className="sidebar-avatar">
-            {!photoError ? (
-              <img
-                src="/assets/profile.jpg"
-                alt={profile.name}
-                onError={() => setPhotoError(true)}
-              />
-            ) : (
-              <div className="sidebar-avatar-icon">👤</div>
-            )}
+            <img
+              src="/assets/profile.jpg"
+              alt={profile.name}
+              onError={(e) => {
+                e.currentTarget.style.display = 'none';
+              }}
+            />
+            {/* 이미지 로드 실패 시 폴백은 CSS background-image 또는 별도 상태로 처리 */}
           </div>
           <div className="sidebar-name">{lang === 'en' ? profile.nameEn || profile.name : profile.name}</div>
           <div className="sidebar-title">{lang === 'en' ? profile.titleEn || profile.title : profile.title}</div>
@@ -81,7 +93,7 @@ function AppContent() {
                 <Link
                   to={item.path}
                   className={`sidebar-nav-link ${isActive(item.path) ? 'active' : ''}`}
-                  onClick={() => setSidebarOpen(false)}
+                  onClick={handleCloseSidebar}
                 >
                   <span className="sidebar-nav-icon">{item.icon}</span>
                   <span>{item.label}</span>
@@ -136,22 +148,16 @@ function AppContent() {
       <div className="main-content">
         {/* 헤더 */}
         <header className="header">
-          <div className="header-title">
-            {location.pathname === '/' && (lang === 'en' ? 'Home' : '홈')}
-            {location.pathname === '/about' && (lang === 'en' ? 'About' : '소개')}
-            {location.pathname === '/projects' && (lang === 'en' ? 'Projects' : '프로젝트')}
-            {location.pathname === '/organizations' && (lang === 'en' ? 'Organizations' : '소속')}
-            {location.pathname === '/contact' && (lang === 'en' ? 'Contact' : '연락처')}
-          </div>
-          <div className="header-actions">
-            <button
-              className="header-toggle"
-              onClick={() => setSidebarOpen(!sidebarOpen)}
-              aria-label="메뉴 열기"
-            >
-              ☰
-            </button>
-          </div>
+          <button
+            className="header-toggle"
+            onClick={() => setSidebarOpen(!sidebarOpen)}
+            aria-label="Toggle sidebar"
+            aria-expanded={sidebarOpen}
+          >
+            <FaBars />
+          </button>
+          <div className="header-title">{getPageTitle()}</div>
+          <div className="header-spacer" />
         </header>
 
         {/* 콘텐츠 영역 */}
@@ -165,7 +171,7 @@ function AppContent() {
           </Routes>
         </div>
 
-        {/* 푸터 */}
+        {/* 푸터 (main-content 내부) */}
         <Footer />
       </div>
     </div>
