@@ -16,19 +16,19 @@
     "Autonomous Systems",
     "Robot Builder"
   ],
-  "heroDescription": "전국과학전람회 <strong>대통령상</strong> 수상, YSC 선정, 긱블 출연 등의 경험을 바탕으로 ROS 기반 로봇 개발과 연구에 집중하고 있습니다.",
-  "heroDescriptionEn": "Award winner of the <strong>National Science Exhibition (Presidential Prize)</strong>, selected for YSC, and featured on Geekble — focusing on ROS-based robot development and research.",
+  "heroDescription": "전국과학전람회 <strong>대통령상</strong> 수상 이후, KAIST 기계공학과에서 로봇과 소프트웨어를 함께 다루며 직접 만드는 일에 집중하고 있습니다.",
+  "heroDescriptionEn": "After the <strong>Presidential Prize at the National Science Exhibition</strong>, I'm now at KAIST Mechanical Engineering, focused on building across both robotics and software.",
   "achievements": [
     { "emoji": "🏆", "label": "전국과학전람회 대통령상" },
-    { "emoji": "📺", "label": "긱블(Geekble) 출연" },
-    { "emoji": "🔬", "label": "YSC 발표대회 선정" }
+    { "emoji": "🎓", "label": "KAIST 기계공학과" },
+    { "emoji": "🤖", "label": "Roboticus 공동창립" }
   ],
-  "overviewBio1": "로봇을 만들고, 촬영하고, 코드를 짭니다. 전국과학전람회 대통령상 수상, YSC 선정, 긱블 출연을 거치며 하드웨어부터 소프트웨어까지 직접 다루는 로봇 공학자로 성장했습니다.",
-  "overviewBio1En": "I build robots, film them, and write code. Through winning the Presidential Prize at the National Science Exhibition, being selected for YSC, and appearing on Geekble, I have grown into a robotics engineer who handles everything from hardware to software.",
+  "overviewBio1": "로봇을 만들고 코드를 짭니다. 전국과학전람회 대통령상 수상과 YSC 선정을 거쳐, 지금은 KAIST 기계공학과에서 하드웨어부터 소프트웨어까지 직접 다루는 개발자로 성장하고 있습니다.",
+  "overviewBio1En": "I build robots and write code. After winning the Presidential Prize at the National Science Exhibition and being selected for YSC, I'm now at KAIST Mechanical Engineering, growing into a developer who handles everything from hardware to software.",
   "overviewBio2": "ROS 기반의 자율주행·SLAM 연구부터 학교 행사 영상 제작까지, 기술과 표현이 만나는 지점에서 일합니다.",
   "overviewBio2En": "From ROS-based autonomous driving and SLAM research to producing school event videos, I work at the intersection of technology and expression.",
-  "aboutBio1": "중학교 때부터 로봇을 직접 만들기 시작해, 고등학교 재학 중 전국과학전람회에서 대통령상을 수상했습니다. 긱블(Geekble) 출연, YSC 선정 등의 경험을 쌓으며 이론과 실제를 잇는 개발을 해왔습니다.",
-  "aboutBio1En": "I started building robots in middle school and won the Presidential Prize at the National Science Exhibition while in high school. Through appearances on Geekble and selection for YSC, I have pursued development that bridges theory and practice.",
+  "aboutBio1": "중학교 때부터 로봇을 직접 만들기 시작해, 고등학교 재학 중 전국과학전람회에서 대통령상을 수상하고 YSC 발표대회에 선정되었습니다. 그 과정에서 이론과 실제를 잇는 개발을 해왔습니다.",
+  "aboutBio1En": "I started building robots in middle school and, while in high school, won the Presidential Prize at the National Science Exhibition and was selected for YSC. Along the way I've pursued development that bridges theory and practice.",
   "aboutBio2": "ROS 기반 자율주행·SLAM 등 로봇 시스템을 다뤄온 경험을 바탕으로, 지금은 KAIST 기계공학과에서 공부하며 웹·소프트웨어 개발로 영역을 넓히고 있습니다. 기계공학과 학생회 플랫폼(MESC) 개발을 총괄하고, 대학생 로봇 빌더 커뮤니티 Roboticus를 공동창립했으며, 가계부·영상 처리 같은 개인 프로젝트도 꾸준히 만들고 있습니다.",
   "aboutBio2En": "Building on experience with robot systems like ROS-based autonomous driving and SLAM, I'm now studying Mechanical Engineering at KAIST and expanding into web and software development. I led the build of the Mechanical Engineering Student Council platform (MESC), co-founded Roboticus — a university robot-builder community — and keep shipping personal projects such as a budget tracker and a video-processing tool.",
   "socialLinks": {

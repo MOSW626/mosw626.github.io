@@ -7,8 +7,8 @@ import './About.css';
 const TIMELINE = [
   { year: '~2020', ko: '중학교 때부터 로봇 제작 시작', en: 'Started building robots in middle school' },
   { year: '2021–2024', ko: '충북과학고등학교 재학', en: 'Chungbuk Science High School' },
-  { year: '2022', ko: '전국과학전람회 대통령상 · 긱블 출연', en: 'Presidential Prize (National Science Exhibition) · Featured on Geekble' },
-  { year: '2023', ko: 'YSC 발표대회 선정 · 학교 공식 영상 제작', en: 'Selected for YSC · Produced official school videos' },
+  { year: '2022', ko: '전국과학전람회 대통령상', en: 'Presidential Prize — National Science Exhibition' },
+  { year: '2023', ko: 'YSC 발표대회 선정', en: 'Selected for YSC' },
   { year: '2025', ko: 'KAIST 기계공학과 입학', en: 'Entered KAIST, Mechanical Engineering' },
   { year: '2025–2026', ko: '기계공학과 학생회 플랫폼(MESC) 개발 총괄', en: 'Led the Mech. Eng. Student Council platform (MESC)' },
   { year: '2026', ko: 'Roboticus 공동창립 · 개인 프로젝트 다수', en: 'Co-founded Roboticus · multiple personal projects' },
