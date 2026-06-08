@@ -1,133 +1,124 @@
 {
   "robotDevelopment": [
     {
-      "title": "ISP 개발 프로젝트",
-      "description": "PID 제어를 사용한 DC 모터 제어 시스템 개발. IMU 센서의 해상도 한계를 극복하기 위한 연구를 진행했습니다.",
-      "fullDescription": "이 프로젝트는 STEAM 연구개발(RnE) 프로젝트로, PID 제어 알고리즘을 활용한 DC 모터 제어 시스템을 개발했습니다.\n      IMU(Inertial Measurement Unit) 센서의 해상도 한계를 극복하기 위한 다양한 방법을 연구하고 테스트했습니다.\n      실제 로봇 시스템에 적용하여 안정적인 제어 성능을 달성했습니다.",
-      "technologies": ["PID 제어", "DC 모터", "IMU", "ROS", "Python"],
-      "tags": ["STEAM RnE"],
-      "period": "2023.07.01 - 2023.11.10",
+      "featured": true,
+      "title": "줄줄이 — 줄다리기 로봇 (대통령상)",
+      "titleEn": "Jul-jul-i — Tug-of-War Robot (Presidential Prize)",
+      "description": "셀프 밸런싱에서 출발해, 누운 각도를 PID로 유지하며 줄을 당기는 줄다리기 로봇. '최적 각도를 유지하다 몸이 들리면 앞으로, 누우면 뒤로 당긴다'는 줄다리기의 핵심 메커니즘을 직접 밝혀 구현했습니다. 제68회 전국과학전람회 대통령상(2,607팀 중 1점) 수상작.",
+      "descriptionEn": "A tug-of-war robot that holds a leaning angle with PID control and pulls the rope — built by uncovering the core mechanism myself: hold the optimal angle, lunge forward when tipping up, pull back when lying down. Won the Presidential Prize at the 68th National Science Exhibition (1 of 2,607 teams).",
+      "period": "2022.03 - 2022.11",
       "category": "로봇 개발",
-      "role": "개발자",
-      "contribution": "50%",
-      "link": "https://mosw.notion.site/ISP-90474110b9a248d5897c7ad48a59afde?source=copy_link",
-      "github": "https://github.com/MOSW626/automobile-stability-control_ISP",
-      "images": ["/assets/projects/isp1.jpg", "/assets/projects/isp2.jpg", "/assets/projects/isp3.jpg"],
-      "achievements": ["PID 제어 알고리즘 최적화", "IMU 센서 데이터 처리 개선", "실시간 모터 제어 시스템 구현"],
-      "files": [{"name": "프로젝트 보고서.pdf", "url": "/assets/files/isp_report.pdf"}]
-    },
-    {
-      "title": "자동 쓰레기통 개발 프로젝트",
-      "description": "자동화된 쓰레기통 시스템으로 사용자 편의성 향상",
-      "fullDescription": "자동으로 열리고 닫히는 쓰레기통 시스템을 개발했습니다. 초음파 센서를 활용하여 사용자 접근을 감지하고,\n      서보 모터를 통해 뚜껑을 자동으로 제어합니다. Arduino 기반으로 구현되었으며, 실용적인 IoT 솔루션입니다.",
-      "technologies": ["Arduino", "초음파 센서", "서보 모터", "C++"],
-      "tags": ["학교 프로젝트"],
-      "period": "2023.06.15 - 2023.06.25",
-      "category": "로봇 개발",
-      "link": "https://mosw.notion.site/",
-      "github": "",
-      "images": [],
-      "achievements": ["초음파 센서 기반 자동 감지 시스템", "서보 모터 제어 구현", "사용자 친화적 인터페이스 설계"],
-      "files": []
-    },
-    {
-      "title": "고양이 생체 모방 4륜 구동차 개발 프로젝트",
-      "description": "2023 YSC 발표대회 참가 선정. 고양이의 움직임을 모방한 4륜 구동 로봇 \"고생이\" 개발",
-      "fullDescription": "2023 YSC(Young Scientist Contest) 발표대회에 참가하여 선정된 프로젝트입니다.\n      고양이의 생체 모방을 통해 자연스러운 이동 패턴을 구현한 4륜 구동 로봇을 개발했습니다.\n      생체 모방 로봇공학의 원리를 적용하여 효율적인 이동 메커니즘을 설계했습니다.",
-      "technologies": ["생체 모방", "4륜 구동", "ROS", "Python", "OpenCV"],
-      "tags": ["YSC"],
-      "period": "2023.04.10 - 2023.09.10",
-      "category": "로봇 개발",
-      "link": "https://mosw.notion.site/",
-      "github": "",
-      "images": [],
-      "achievements": ["YSC 발표대회 참가 선정", "생체 모방 로봇 설계 및 구현", "자연스러운 이동 패턴 구현"],
-      "files": []
-    },
-    {
-      "title": "자율 주행 자동차 프로젝트",
-      "description": "센서 기반 자율 주행 시스템 개발",
-      "fullDescription": "다양한 센서(라이다, 카메라, 초음파)를 융합하여 자율 주행 기능을 구현한 프로젝트입니다.\n      ROS를 활용한 센서 융합 및 경로 계획 알고리즘을 개발했습니다. 실제 차량에 적용 가능한 수준의 시스템을 목표로 했습니다.",
-      "technologies": ["ROS", "라이다", "카메라", "SLAM", "경로 계획", "Python", "C++"],
-      "tags": ["학교 프로젝트"],
-      "period": "2022.10.01 - 2022.11.20",
-      "category": "로봇 개발",
-      "link": "https://mosw.notion.site/",
-      "github": "",
-      "images": [],
-      "achievements": ["다중 센서 융합 시스템 구현", "SLAM 알고리즘 적용", "자율 주행 경로 계획 알고리즘 개발"],
-      "files": []
-    },
-    {
-      "title": "화성 용암 동굴 행성 탐사 로봇 개발 프로젝트",
-      "description": "행성 탐사를 위한 로봇 시스템 개발",
-      "fullDescription": "화성의 용암 동굴을 탐사하기 위한 로봇 시스템을 개발했습니다.\n      극한 환경에서도 작동할 수 있는 견고한 구조와 센서 시스템을 설계했습니다.\n      원격 제어 및 자율 탐사 기능을 모두 갖춘 시스템입니다.",
-      "technologies": ["행성 탐사", "원격 제어", "센서 시스템", "ROS"],
-      "tags": ["행성 탐사 프로젝트"],
-      "period": "2022.06.12 - 2022.08.17",
-      "category": "로봇 개발",
-      "link": "https://mosw.notion.site/",
-      "github": "",
-      "images": [],
-      "achievements": ["극한 환경 대응 설계", "원격 제어 시스템 구현", "자율 탐사 알고리즘 개발"],
-      "files": []
-    },
-    {
-      "title": "OpenCV와 AI를 활용한 자율 주행 배달 로봇 제작 프로젝트",
-      "description": "OpenCV와 AI 기술을 활용한 배달 로봇 개발",
-      "fullDescription": "OpenCV를 활용한 컴퓨터 비전과 AI 기술을 결합한 자율 주행 배달 로봇을 개발했습니다.\n      물체 인식, 경로 계획, 장애물 회피 등 다양한 기능을 통합했습니다.\n      YSC와 학교 프로젝트로 진행되었으며, 실제 배달 환경을 시뮬레이션하여 테스트했습니다.",
-      "technologies": ["OpenCV", "AI", "컴퓨터 비전", "ROS", "Python", "TensorFlow"],
-      "tags": ["YSC", "학교 프로젝트"],
-      "period": "2022.04.01 - 2022.12.14",
-      "category": "로봇 개발",
-      "link": "https://mosw.notion.site/",
-      "github": "",
-      "images": [],
-      "achievements": ["OpenCV 기반 물체 인식 시스템", "AI 경로 계획 알고리즘", "실제 환경 테스트 완료"],
-      "files": []
+      "technologies": [
+        "PID 제어",
+        "셀프 밸런싱",
+        "IMU",
+        "Arduino"
+      ],
+      "youtube": "https://www.youtube.com/watch?v=pkX618hViWA"
     },
     {
       "featured": true,
-      "title": "줄다리기 로봇 개발 프로젝트",
-      "description": "전국과학전람회 참가 프로젝트",
-      "fullDescription": "전국과학전람회에 참가한 줄다리기 로봇 개발 프로젝트입니다.\n      로봇의 힘과 균형을 최적화하여 줄다리기 경기에서 우수한 성과를 거두었습니다.\n      대통령상을 수상한 프로젝트로, 긱블에도 출연했습니다.",
-      "technologies": ["로봇 설계", "힘 제어", "균형 시스템"],
-      "tags": ["전국과학전람회"],
-      "period": "2022.03.02 - 2022.09.15",
+      "title": "근근이 — 그네타기 로봇 (국무총리상)",
+      "titleEn": "Geun-geun-i — Swing-Riding Robot (Prime Minister's Award)",
+      "description": "스스로 진폭을 키워 그네를 타는 로봇. 무게중심 위치에 따라 그네 타기 전략이 달라진다는 점을 탐구하고, 초음파·IMU·IR을 거쳐 반응속도가 빠른 게이트 센서로 특정 위치에서 몸을 접고 펴도록 구현했습니다. 제67회 전국과학전람회 국무총리상(2,308팀 중 1점) 수상작.",
+      "descriptionEn": "A robot that pumps a swing by growing its own amplitude. I explored how the strategy changes with the center of mass and — after ultrasonic, IMU, and IR sensors — used a fast gate sensor to fold and extend at the right positions. Won the Prime Minister's Award at the 67th National Science Exhibition (1 of 2,308 teams).",
+      "period": "2021.03 - 2021.12",
       "category": "로봇 개발",
-      "link": "https://mosw.notion.site/",
-      "github": "",
-      "images": [],
-      "achievements": ["전국과학전람회 참가", "대통령상 수상", "긱블 출연"],
-      "files": []
+      "technologies": [
+        "게이트 센서",
+        "IMU",
+        "초음파 센서",
+        "Arduino"
+      ],
+      "youtube": "https://www.youtube.com/watch?v=j30aW_tBtJ8"
     },
     {
-      "title": "그네타기 로봇 개발 프로젝트",
-      "description": "전국과학전람회 참가 프로젝트",
-      "fullDescription": "그네를 타는 로봇을 개발한 프로젝트입니다.\n      역학 원리를 활용하여 로봇이 그네를 효율적으로 탈 수 있도록 설계했습니다.\n      전국과학전람회에 참가하여 우수한 성과를 거두었습니다.",
-      "technologies": ["역학", "로봇 설계", "제어 시스템"],
-      "tags": ["전국과학전람회"],
-      "period": "2021.04.04 - 2021.10.02",
+      "title": "택택이 — 자율주행 택배 배달 로봇",
+      "titleEn": "Taek-taek-i — Autonomous Delivery Robot",
+      "description": "건물 층간 이동 문제를 풀고자 만든 자율주행 배달 로봇. LiDAR SLAM으로 매핑·주행하고, 로봇팔과 OCR·CNN으로 엘리베이터 버튼을 인식해 누릅니다. 흔들림은 드론 원리를 참고한 이중 PID로 잡았고, 이후 U-Net 객체 인식으로 버튼 인식을 고도화했습니다.",
+      "descriptionEn": "An autonomous delivery robot built to solve moving between floors. It maps and navigates with LiDAR SLAM and uses a robot arm plus OCR/CNN to recognize and press elevator buttons. Shake is handled with a drone-inspired dual-PID loop, and button recognition was later upgraded with U-Net.",
+      "period": "2022 - 2023",
       "category": "로봇 개발",
-      "link": "https://mosw.notion.site/",
-      "github": "",
-      "images": [],
-      "achievements": ["전국과학전람회 참가", "역학 원리 적용", "효율적인 그네 타기 구현"],
-      "files": []
+      "technologies": [
+        "ROS",
+        "LiDAR SLAM",
+        "OpenCV",
+        "CNN",
+        "OCR",
+        "Python"
+      ]
     },
     {
-      "title": "자동 중화 적정 기기 제작 프로젝트",
-      "description": "자동화된 화학 실험 장비 개발",
-      "fullDescription": "화학 실험의 중화 적정 과정을 자동화한 장비를 개발했습니다.\n      정밀한 액체 제어와 센서를 활용하여 정확한 적정을 수행할 수 있도록 설계했습니다.\n      연구개발(RnE) 프로젝트로 진행되었습니다.",
-      "technologies": ["자동화", "액체 제어", "센서 시스템", "화학 실험"],
-      "tags": ["RnE"],
-      "period": "2020.07.01 - 2021.01.10",
+      "title": "탐탐이 — 행성 탐사 로봇",
+      "titleEn": "Tam-tam-i — Planetary Exploration Robot",
+      "description": "라이다와 아두이노 센서를 결합해 화성 용암동굴 같은 미지의 공간을 SLAM으로 매핑하는 행성 탐사 로봇.",
+      "descriptionEn": "A planetary exploration robot that fuses LiDAR with Arduino sensors to map unknown spaces — like Martian lava caves — using SLAM.",
+      "period": "2022",
       "category": "로봇 개발",
-      "link": "https://mosw.notion.site/",
-      "github": "",
-      "images": [],
-      "achievements": ["자동 중화 적정 시스템 구현", "정밀 액체 제어", "실험 정확도 향상"],
-      "files": []
+      "technologies": [
+        "LiDAR",
+        "SLAM",
+        "ROS",
+        "Arduino"
+      ]
+    },
+    {
+      "title": "고생이 — 고양이 생체모방 착지 로봇",
+      "titleEn": "Go-saeng-i — Cat-Inspired Landing Robot",
+      "description": "'고양이는 왜 떨어져도 안 다칠까?'에서 출발해, 떨어지는 순간 꼬리와 몸을 돌려 균형을 잡는 고양이를 생체 모방한 로봇. 게이트·거리·자이로 센서로 낙하를 감지하고, 두 바퀴가 공중에 뜬 순간 IMU로 원하는 착지 자세를 만듭니다. 2023 YSC 발표대회 선정.",
+      "descriptionEn": "Inspired by 'why don't cats get hurt when they fall?', a bio-mimetic robot that rights itself like a cat twisting its tail and body mid-air. Gate, distance, and gyro sensors detect the fall, and an IMU drives the desired landing pose once both wheels leave the ground. Selected for YSC 2023.",
+      "period": "2023",
+      "category": "로봇 개발",
+      "technologies": [
+        "생체 모방",
+        "IMU",
+        "게이트 센서",
+        "각운동량 보존"
+      ]
+    },
+    {
+      "title": "평탄이 — 흔들림 방지 장치",
+      "titleEn": "Pyeong-tan-i — Anti-Shake Stabilizer",
+      "description": "쿼드콥터의 제어 원리를 응용해 배달물의 흔들림을 능동적으로 잡아주는 안정화 장치. 택택이 배달 로봇의 적재 안정성을 높이기 위한 후속 탐구.",
+      "descriptionEn": "An active stabilizer that applies quadcopter control principles to cancel out cargo shake — a follow-up to improve load stability for the Taek-taek-i delivery robot.",
+      "period": "2023",
+      "category": "로봇 개발",
+      "technologies": [
+        "PID 제어",
+        "IMU",
+        "쿼드콥터 원리"
+      ]
+    },
+    {
+      "title": "ISP — PID 모터 제어 연구",
+      "titleEn": "ISP — PID Motor Control Study",
+      "description": "PID 제어 기반 DC 모터 제어 시스템을 개발하고, IMU 센서의 해상도 한계를 극복하기 위한 방법을 연구한 STEAM 연구개발(RnE) 프로젝트.",
+      "descriptionEn": "A STEAM R&E project developing a PID-based DC motor control system and researching ways to overcome the resolution limits of an IMU sensor.",
+      "period": "2023.07 - 2023.11",
+      "category": "로봇 개발",
+      "technologies": [
+        "PID 제어",
+        "DC 모터",
+        "IMU",
+        "ROS",
+        "Python"
+      ],
+      "link": "https://mosw.notion.site/ISP-90474110b9a248d5897c7ad48a59afde?source=copy_link",
+      "github": "https://github.com/MOSW626/automobile-stability-control_ISP"
+    },
+    {
+      "title": "자동 중화 적정 기기 (장관상)",
+      "titleEn": "Automatic Titration Device (Minister's Award)",
+      "description": "중화적정의 유량 조절이 까다롭다는 문제에서 출발해, 지시약 색을 컬러센서로 읽어 RGB 색공간을 27구획으로 나눠 pH를 측정·적정하는 기기. 색 변화를 인지하기 어려운 사람도 실험할 수 있게 했습니다. 2020 대학부설 과학영재교육원 사사과정 발표대회 최우수상(과기정통부 장관상).",
+      "descriptionEn": "Starting from how tricky titration flow control is, a device that reads the indicator color with an RGB color sensor — splitting color space into 27 regions to measure pH and titrate — so even people who can't perceive color changes can run the experiment. Won the top award (Minister of Science & ICT Award) at the 2020 gifted-education research showcase.",
+      "period": "2020.06 - 2021.02",
+      "category": "로봇 개발",
+      "technologies": [
+        "컬러 센서",
+        "Arduino",
+        "RGB 색공간",
+        "자동 제어"
+      ]
     }
   ],
   "videoProduction": [
@@ -135,42 +126,76 @@
       "title": "2024 충북과학고 졸업영상",
       "description": "충북과학고등학교 2024 33기 졸업 영상 제작",
       "fullDescription": "충북과학고등학교 33기 졸업을 기념하는 공식 졸업 영상을 제작했습니다.\n      학생들의 추억과 성장 과정을 담아 감동적인 영상으로 완성했습니다.\n      촬영, 편집, 후반 작업을 모두 담당했습니다.",
-      "technologies": ["영상 편집", "촬영", "후반 작업", "Premiere Pro", "After Effects"],
-      "tags": ["학교 졸업영상 제작"],
+      "technologies": [
+        "영상 편집",
+        "촬영",
+        "후반 작업",
+        "Premiere Pro",
+        "After Effects"
+      ],
+      "tags": [
+        "학교 졸업영상 제작"
+      ],
       "period": "2023.12.18 - 2023.12",
       "category": "영상 제작",
       "duration": "3:42",
       "link": "https://mosw.notion.site/",
       "youtube": "https://youtu.be/IOqnhKe1itQ?si=XGXTZe0Ehs-9pNYU",
-      "achievements": ["공식 졸업영상 제작", "전체 제작 과정 담당", "감동적인 스토리텔링"],
+      "achievements": [
+        "공식 졸업영상 제작",
+        "전체 제작 과정 담당",
+        "감동적인 스토리텔링"
+      ],
       "files": []
     },
     {
       "title": "2023 충북과학고 축제 라이브",
       "description": "2023 충북과학고등학교 사름제 라이브 방송",
       "fullDescription": "충북과학고등학교의 주요 행사인 사름제를 라이브로 방송했습니다.\n      실시간 스트리밍 기술을 활용하여 온라인으로도 행사를 즐길 수 있도록 했습니다.\n      멀티 카메라 시스템과 실시간 편집을 통해 전문적인 방송을 구현했습니다.",
-      "technologies": ["라이브 스트리밍", "멀티 카메라", "실시간 편집", "OBS"],
-      "tags": ["행사 라이브"],
+      "technologies": [
+        "라이브 스트리밍",
+        "멀티 카메라",
+        "실시간 편집",
+        "OBS"
+      ],
+      "tags": [
+        "행사 라이브"
+      ],
       "period": "2023.12.14",
       "category": "영상 제작",
       "duration": "4:03:10",
       "link": "https://mosw.notion.site/",
       "youtube": "",
-      "achievements": ["실시간 라이브 방송", "멀티 카메라 시스템 구축", "온라인 시청자 대응"],
+      "achievements": [
+        "실시간 라이브 방송",
+        "멀티 카메라 시스템 구축",
+        "온라인 시청자 대응"
+      ],
       "files": []
     },
     {
       "title": "2023 충북과학고 홍보영상",
       "description": "충북과학고등학교 홍보영상 제작",
       "fullDescription": "충북과학고등학교를 소개하는 홍보영상을 제작했습니다.\n      학교의 교육 철학과 학생들의 활동을 효과적으로 보여주는 영상으로 완성했습니다.\n      다양한 촬영 기법과 편집 기술을 활용했습니다.",
-      "technologies": ["홍보 영상", "촬영", "편집", "Premiere Pro"],
-      "tags": ["학교 홍보영상 제작"],
+      "technologies": [
+        "홍보 영상",
+        "촬영",
+        "편집",
+        "Premiere Pro"
+      ],
+      "tags": [
+        "학교 홍보영상 제작"
+      ],
       "period": "2023.06.10",
       "category": "영상 제작",
       "duration": "3:40",
       "link": "https://mosw.notion.site/",
       "youtube": "",
-      "achievements": ["홍보영상 제작", "효과적인 스토리텔링", "전문적인 영상 퀄리티"],
+      "achievements": [
+        "홍보영상 제작",
+        "효과적인 스토리텔링",
+        "전문적인 영상 퀄리티"
+      ],
       "files": []
     }
   ],
@@ -183,7 +208,11 @@
       "descriptionEn": "A university robot-builder network started together by the KAIST and SNU robotics clubs. I co-founded this community connecting scattered robot makers through hackathons, education, and networking.",
       "period": "2026.06 - 현재",
       "category": "프로젝트",
-      "technologies": ["공동창립", "Next.js", "Vercel"],
+      "technologies": [
+        "공동창립",
+        "Next.js",
+        "Vercel"
+      ],
       "demo": "https://roboticus.vercel.app"
     },
     {
@@ -194,7 +223,12 @@
       "descriptionEn": "An integrated web service for the Mechanical Engineering Student Council — announcements, fee lookup, budget transparency, and shared resources in one place. I owned the whole process from planning through development and maintenance.",
       "period": "2025 - 2026.08",
       "category": "프로젝트",
-      "technologies": ["Next.js", "React", "Firebase", "Vercel"],
+      "technologies": [
+        "Next.js",
+        "React",
+        "Firebase",
+        "Vercel"
+      ],
       "demo": "https://mesc-website.vercel.app/"
     },
     {
@@ -204,7 +238,10 @@
       "descriptionEn": "A personal household-budget web app for tracking income and expenses and managing budgets. I designed and built it myself, and it's still under active development.",
       "period": "2026.03 - 현재",
       "category": "프로젝트",
-      "technologies": ["React", "Firebase"],
+      "technologies": [
+        "React",
+        "Firebase"
+      ],
       "demo": "https://an-finance.web.app/"
     },
     {
@@ -214,7 +251,10 @@
       "descriptionEn": "A tool to collect, process, and organize short-form videos like Instagram Reels. A personal project still under active development.",
       "period": "2026.03 - 현재",
       "category": "프로젝트",
-      "technologies": ["React", "Firebase"],
+      "technologies": [
+        "React",
+        "Firebase"
+      ],
       "demo": "https://reels-processing.web.app/"
     }
   ]

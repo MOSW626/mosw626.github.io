@@ -30,7 +30,9 @@ const EXPERIENCE = [
 ];
 
 const AWARDS = [
-  { year: '2022', ko: '전국과학전람회 대통령상', en: 'Presidential Prize — National Science Exhibition' },
+  { year: '2022', ko: '제68회 전국과학전람회 대통령상 — 줄다리기 로봇 ‘줄줄이’ (2,607팀 중 1점)', en: 'Presidential Prize, 68th National Science Exhibition — tug-of-war robot ‘Jul-jul-i’ (1 of 2,607 teams)' },
+  { year: '2021', ko: '제67회 전국과학전람회 국무총리상 — 그네타기 로봇 ‘근근이’ (2,308팀 중 1점)', en: 'Prime Minister’s Award, 67th National Science Exhibition — swing robot ‘Geun-geun-i’ (1 of 2,308 teams)' },
+  { year: '2021', ko: '과학기술정보통신부 장관상 (최우수상) — 자동 중화 적정 기기', en: 'Minister of Science & ICT Award (Top Prize) — automatic titration device' },
   { year: '2023', ko: 'YSC 발표대회 선정', en: 'Selected for YSC (Young Scientist Contest)' },
 ];
 

@@ -7,7 +7,8 @@ import './About.css';
 const TIMELINE = [
   { year: '~2020', ko: '중학교 때부터 로봇 제작 시작', en: 'Started building robots in middle school' },
   { year: '2021–2024', ko: '충북과학고등학교 재학', en: 'Chungbuk Science High School' },
-  { year: '2022', ko: '전국과학전람회 대통령상', en: 'Presidential Prize — National Science Exhibition' },
+  { year: '2021', ko: '전국과학전람회 국무총리상 (그네타기 로봇 ‘근근이’)', en: 'Prime Minister’s Award, National Science Exhibition (‘Geun-geun-i’)' },
+  { year: '2022', ko: '전국과학전람회 대통령상 (줄다리기 로봇 ‘줄줄이’)', en: 'Presidential Prize, National Science Exhibition (‘Jul-jul-i’)' },
   { year: '2023', ko: 'YSC 발표대회 선정', en: 'Selected for YSC' },
   { year: '2025', ko: 'KAIST 기계공학과 입학', en: 'Entered KAIST, Mechanical Engineering' },
   { year: '2025–2026', ko: '기계공학과 학생회 플랫폼(MESC) 개발 총괄', en: 'Led the Mech. Eng. Student Council platform (MESC)' },
