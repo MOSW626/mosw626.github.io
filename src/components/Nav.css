@@ -24,6 +24,7 @@
 .nav__lang:hover { border-color: var(--accent); color: var(--accent); }
 .nav__gh { font-size: 1.2rem; color: var(--text); display: flex; }
 .nav__gh:hover { color: var(--accent); }
+.nav__links a.is-active { color: var(--accent); }
 
 @media (max-width: 600px) {
   .nav__links { gap: var(--space-3); }

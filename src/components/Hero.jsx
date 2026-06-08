@@ -24,8 +24,8 @@ export default function Hero() {
           ))}
         </div>
         <div className="hero__cta">
-          <a className="btn btn--primary" href="#projects">
-            {t(lang, '프로젝트 보기', 'View Projects')}
+          <a className="btn btn--primary" href="#works">
+            {t(lang, '작업 보기', 'View Work')}
           </a>
           <a className="btn btn--ghost" href={profile.socialLinks.github} target="_blank" rel="noopener noreferrer">
             <FaGithub /> GitHub

@@ -27,3 +27,7 @@
 @media (max-width: 600px) {
   .projects__grid { grid-template-columns: 1fr; }
 }
+
+.featured__more { text-align: center; margin-top: var(--space-6); }
+.featured__more a { color: var(--accent); font-weight: 600; }
+.featured__more a:hover { text-decoration: underline; }
