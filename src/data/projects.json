@@ -31,7 +31,6 @@
       "files": []
     },
     {
-      "featured": true,
       "title": "고양이 생체 모방 4륜 구동차 개발 프로젝트",
       "description": "2023 YSC 발표대회 참가 선정. 고양이의 움직임을 모방한 4륜 구동 로봇 \"고생이\" 개발",
       "fullDescription": "2023 YSC(Young Scientist Contest) 발표대회에 참가하여 선정된 프로젝트입니다.\n      고양이의 생체 모방을 통해 자연스러운 이동 패턴을 구현한 4륜 구동 로봇을 개발했습니다.\n      생체 모방 로봇공학의 원리를 적용하여 효율적인 이동 메커니즘을 설계했습니다.",
@@ -174,6 +173,50 @@
       "youtube": "",
       "achievements": ["홍보영상 제작", "효과적인 스토리텔링", "전문적인 영상 퀄리티"],
       "files": []
+    }
+  ],
+  "softwareProjects": [
+    {
+      "featured": true,
+      "title": "Roboticus — 대학생 로봇 빌더 커뮤니티",
+      "titleEn": "Roboticus — University Robot-Builder Community",
+      "description": "KAIST·SNU 로봇 동아리가 함께 시작한 대학생 로봇 빌더 네트워크. 해커톤·교육·네트워킹으로 흩어진 로봇 메이커들을 잇는 커뮤니티를 공동창립했습니다.",
+      "descriptionEn": "A university robot-builder network started together by the KAIST and SNU robotics clubs. I co-founded this community connecting scattered robot makers through hackathons, education, and networking.",
+      "period": "2026.06 - 현재",
+      "category": "프로젝트",
+      "technologies": ["공동창립", "Next.js", "Vercel"],
+      "demo": "https://roboticus.vercel.app"
+    },
+    {
+      "featured": true,
+      "title": "KAIST 기계공학과 학생회 플랫폼 (MESC)",
+      "titleEn": "KAIST Mech. Eng. Student Council Platform (MESC)",
+      "description": "공지·학생회비 조회·예산 투명성·자료실을 한곳에 모은 학생회 통합 웹 서비스. 기획부터 개발·운영·보수까지 전 과정을 총괄했습니다.",
+      "descriptionEn": "An integrated web service for the Mechanical Engineering Student Council — announcements, fee lookup, budget transparency, and shared resources in one place. I owned the whole process from planning through development and maintenance.",
+      "period": "2025 - 2026.08",
+      "category": "프로젝트",
+      "technologies": ["Next.js", "React", "Firebase", "Vercel"],
+      "demo": "https://mesc-website.vercel.app/"
+    },
+    {
+      "title": "AN Finance — 가계부 앱",
+      "titleEn": "AN Finance — Budget Tracker",
+      "description": "수입·지출을 기록하고 예산을 관리하는 개인 가계부 웹앱. 직접 기획·설계해 현재도 개발 중입니다.",
+      "descriptionEn": "A personal household-budget web app for tracking income and expenses and managing budgets. I designed and built it myself, and it's still under active development.",
+      "period": "2026.03 - 현재",
+      "category": "프로젝트",
+      "technologies": ["React", "Firebase"],
+      "demo": "https://an-finance.web.app/"
+    },
+    {
+      "title": "Reels Archive — 릴스 아카이브 도구",
+      "titleEn": "Reels Archive — Short-form Video Archive",
+      "description": "인스타그램 릴스 등 숏폼 영상을 모으고 처리·정리하는 아카이브 도구. 개인 프로젝트로 현재도 개발 중입니다.",
+      "descriptionEn": "A tool to collect, process, and organize short-form videos like Instagram Reels. A personal project still under active development.",
+      "period": "2026.03 - 현재",
+      "category": "프로젝트",
+      "technologies": ["React", "Firebase"],
+      "demo": "https://reels-processing.web.app/"
     }
   ]
 }

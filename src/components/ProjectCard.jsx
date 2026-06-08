@@ -1,8 +1,9 @@
-import { FaGithub, FaYoutube, FaExternalLinkAlt } from 'react-icons/fa';
+import { FaGithub, FaYoutube, FaExternalLinkAlt, FaGlobe } from 'react-icons/fa';
 import { useLang, pick, t } from '../i18n.js';
 import { projectLinks } from '../lib/projects.js';
 
 const LINK_META = {
+  demo: { icon: FaGlobe, label: 'Live' },
   notion: { icon: FaExternalLinkAlt, label: 'Notion' },
   github: { icon: FaGithub, label: 'GitHub' },
   youtube: { icon: FaYoutube, label: 'YouTube' },
