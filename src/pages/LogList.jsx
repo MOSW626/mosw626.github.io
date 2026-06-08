@@ -8,7 +8,7 @@ export default function LogList() {
   return (
     <section className="section page">
       <div className="container">
-        <h1 className="section__title">{t(lang, '로그', 'Log')}</h1>
+        <h1 className="section__title">{t(lang, '기록', 'Notes')}</h1>
         {LOG_POSTS.length === 0 ? (
           <p className="log-empty">{t(lang, '아직 글이 없습니다.', 'No posts yet.')}</p>
         ) : (
@@ -16,7 +16,7 @@ export default function LogList() {
             {LOG_POSTS.map((post) => {
               const v = post[lang] || post.ko || post.en;
               return (
-                <Link key={post.slug} to={`/log/${post.slug}`} className="log-card">
+                <Link key={post.slug} to={`/notes/${post.slug}`} className="log-card">
                   <div className="log-card__meta">
                     <span>{post.date}</span>
                     {post.ko && <span className="lang-badge">KO</span>}

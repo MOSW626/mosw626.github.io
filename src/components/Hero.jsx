@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { FaGithub, FaArrowDown } from 'react-icons/fa';
 import { useLang, pick, t } from '../i18n.js';
 import profile from '../data/profile.json';
@@ -27,6 +28,9 @@ export default function Hero() {
           <a className="btn btn--primary" href="#works">
             {t(lang, '작업 보기', 'View Work')}
           </a>
+          <Link className="btn btn--ghost" to="/cv">
+            {t(lang, '이력서', 'CV')}
+          </Link>
           <a className="btn btn--ghost" href={profile.socialLinks.github} target="_blank" rel="noopener noreferrer">
             <FaGithub /> GitHub
           </a>

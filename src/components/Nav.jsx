@@ -8,7 +8,8 @@ export default function Nav() {
   const { lang, setLang } = useLang();
   const links = [
     { to: '/works', label: t(lang, '작업', 'Works') },
-    { to: '/log', label: t(lang, '로그', 'Log') },
+    { to: '/notes', label: t(lang, '기록', 'Notes') },
+    { to: '/cv', label: t(lang, '이력서', 'CV') },
   ];
   return (
     <header className="nav">

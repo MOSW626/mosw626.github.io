@@ -8,6 +8,7 @@ import Home from './pages/Home.jsx';
 import Works from './pages/Works.jsx';
 import LogList from './pages/LogList.jsx';
 import LogPost from './pages/LogPost.jsx';
+import Cv from './pages/Cv.jsx';
 
 export default function App() {
   const [lang, setLang] = useState('ko');
@@ -44,8 +45,9 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/works" element={<Works />} />
-          <Route path="/log" element={<LogList />} />
-          <Route path="/log/:slug" element={<LogPost />} />
+          <Route path="/notes" element={<LogList />} />
+          <Route path="/notes/:slug" element={<LogPost />} />
+          <Route path="/cv" element={<Cv />} />
         </Routes>
       </main>
       <Footer />

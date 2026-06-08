@@ -6,7 +6,7 @@ tags: notes
 ---
 
 From now on this site is more than an introduction — it's an **archive**.
-Robots and videos live in Works; thoughts and notes live here in the Log.
+Robots and videos live in Works; thoughts and notes live here in Notes.
 
 - Robotics build retrospectives
 - Video production notes
