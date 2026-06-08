@@ -1,12 +1,13 @@
 import data from '../data/projects.json';
 
-/** projects.json 그룹 키 → 짧은 그룹 식별자 */
+/** projects.json 그룹 키 → 짧은 그룹 식별자 (표시 순서대로, 최근 활동 우선) */
 export const WORK_GROUPS = [
+  { key: 'softwareProjects', group: 'project' },
   { key: 'robotDevelopment', group: 'robot' },
   { key: 'videoProduction', group: 'video' },
 ];
 
-/** 두 그룹 배열을 하나로 합치고 각 항목에 group 식별자를 붙인다. */
+/** 그룹 배열들을 하나로 합치고 각 항목에 group 식별자를 붙인다. */
 export function flattenWorks(d = data) {
   const out = [];
   for (const { key, group } of WORK_GROUPS) {

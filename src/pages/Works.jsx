@@ -10,6 +10,7 @@ export default function Works() {
   const [group, setGroup] = useState('all');
   const filters = [
     { key: 'all', label: t(lang, '전체', 'All') },
+    { key: 'project', label: t(lang, '프로젝트', 'Projects') },
     { key: 'robot', label: t(lang, '로봇 개발', 'Robotics') },
     { key: 'video', label: t(lang, '영상 제작', 'Video') },
   ];

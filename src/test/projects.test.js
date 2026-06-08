@@ -13,4 +13,8 @@ describe('projectLinks', () => {
   it('returns empty array when no links', () => {
     expect(projectLinks({})).toEqual([]);
   });
+  it('puts a live demo link first when present', () => {
+    const links = projectLinks({ demo: 'https://d', link: 'https://n', github: 'https://g' });
+    expect(links.map((l) => l.kind)).toEqual(['demo', 'notion', 'github']);
+  });
 });
