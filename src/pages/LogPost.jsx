@@ -15,7 +15,7 @@ export default function LogPost() {
       <section className="section page">
         <div className="container">
           <p className="log-empty">{t(lang, '글을 찾을 수 없습니다.', 'Post not found.')}</p>
-          <Link className="post__back" to="/log">← {t(lang, '로그로', 'Back to Log')}</Link>
+          <Link className="post__back" to="/notes">← {t(lang, '기록으로', 'Back to Notes')}</Link>
         </div>
       </section>
     );
@@ -28,7 +28,7 @@ export default function LogPost() {
     <section className="section page">
       <div className="container">
         <article className="post">
-          <Link className="post__back" to="/log">← {t(lang, '로그로', 'Back to Log')}</Link>
+          <Link className="post__back" to="/notes">← {t(lang, '기록으로', 'Back to Notes')}</Link>
           <div className="post__meta">
             <span>{post.date}</span>
             {post.tags.map((tag) => (
