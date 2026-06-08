@@ -16,26 +16,35 @@ export default function Hero() {
   return (
     <section id="home" className="hero">
       <div className="container hero__inner reveal">
-        <p className="hero__title">{title}</p>
-        <h1 className="hero__greeting">{greeting}</h1>
-        <p className="hero__desc" dangerouslySetInnerHTML={{ __html: desc }} />
-        <div className="hero__badges">
-          {(profile.achievements || []).map((a, i) => (
-            <span key={i} className="pill">{a.emoji} {a.label}</span>
-          ))}
+        <img
+          className="hero__avatar"
+          src="/profile.jpg"
+          alt={name}
+          width="220"
+          height="220"
+        />
+        <div className="hero__text">
+          <p className="hero__title">{title}</p>
+          <h1 className="hero__greeting">{greeting}</h1>
+          <p className="hero__desc" dangerouslySetInnerHTML={{ __html: desc }} />
+          <div className="hero__badges">
+            {(profile.achievements || []).map((a, i) => (
+              <span key={i} className="pill">{a.emoji} {a.label}</span>
+            ))}
+          </div>
+          <div className="hero__cta">
+            <a className="btn btn--primary" href="#works">
+              {t(lang, '작업 보기', 'View Work')}
+            </a>
+            <Link className="btn btn--ghost" to="/cv">
+              {t(lang, '이력서', 'CV')}
+            </Link>
+            <a className="btn btn--ghost" href={profile.socialLinks.github} target="_blank" rel="noopener noreferrer">
+              <FaGithub /> GitHub
+            </a>
+          </div>
+          <a className="hero__scroll" href="#about" aria-label="Scroll to about"><FaArrowDown /></a>
         </div>
-        <div className="hero__cta">
-          <a className="btn btn--primary" href="#works">
-            {t(lang, '작업 보기', 'View Work')}
-          </a>
-          <Link className="btn btn--ghost" to="/cv">
-            {t(lang, '이력서', 'CV')}
-          </Link>
-          <a className="btn btn--ghost" href={profile.socialLinks.github} target="_blank" rel="noopener noreferrer">
-            <FaGithub /> GitHub
-          </a>
-        </div>
-        <a className="hero__scroll" href="#about" aria-label="Scroll to about"><FaArrowDown /></a>
       </div>
     </section>
   );
