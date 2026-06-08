@@ -1,18 +1,21 @@
 import { useState, useEffect } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import { LanguageContext } from './i18n.js';
+import ScrollToTop from './components/ScrollToTop.jsx';
 import Nav from './components/Nav.jsx';
-import Hero from './components/Hero.jsx';
-import About from './components/About.jsx';
-import Projects from './components/Projects.jsx';
-import Contact from './components/Contact.jsx';
 import Footer from './components/Footer.jsx';
+import Home from './pages/Home.jsx';
+import Works from './pages/Works.jsx';
+import LogList from './pages/LogList.jsx';
+import LogPost from './pages/LogPost.jsx';
 
 export default function App() {
   const [lang, setLang] = useState('ko');
+  const location = useLocation();
 
-  // 스크롤 진입 시 .reveal 요소를 노출
+  // 라우트가 바뀔 때마다 현재 화면의 .reveal 요소를 다시 관찰
   useEffect(() => {
-    const els = document.querySelectorAll('.reveal');
+    const els = document.querySelectorAll('.reveal:not(.is-visible)');
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {
@@ -26,7 +29,7 @@ export default function App() {
     );
     els.forEach((el) => io.observe(el));
     return () => io.disconnect();
-  }, []);
+  }, [location.pathname]);
 
   // 언어 변경 시 <html lang> 동기화
   useEffect(() => {
@@ -35,12 +38,15 @@ export default function App() {
 
   return (
     <LanguageContext.Provider value={{ lang, setLang }}>
+      <ScrollToTop />
       <Nav />
       <main>
-        <Hero />
-        <About />
-        <Projects />
-        <Contact />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/works" element={<Works />} />
+          <Route path="/log" element={<LogList />} />
+          <Route path="/log/:slug" element={<LogPost />} />
+        </Routes>
       </main>
       <Footer />
     </LanguageContext.Provider>
