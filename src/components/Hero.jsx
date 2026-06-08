@@ -18,7 +18,7 @@ export default function Hero() {
       <div className="container hero__inner reveal">
         <img
           className="hero__avatar"
-          src="/avatar.svg"
+          src="/profile.jpg"
           alt={name}
           width="220"
           height="220"
