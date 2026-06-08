@@ -31,7 +31,6 @@ const EXPERIENCE = [
 
 const AWARDS = [
   { year: '2022', ko: '전국과학전람회 대통령상', en: 'Presidential Prize — National Science Exhibition' },
-  { year: '2022', ko: '긱블(Geekble) 출연', en: 'Featured on Geekble' },
   { year: '2023', ko: 'YSC 발표대회 선정', en: 'Selected for YSC (Young Scientist Contest)' },
 ];
 
