@@ -1,3 +1,4 @@
+import { Link, NavLink } from 'react-router-dom';
 import { FaGithub } from 'react-icons/fa';
 import { useLang, t } from '../i18n.js';
 import profile from '../data/profile.json';
@@ -6,17 +7,22 @@ import './Nav.css';
 export default function Nav() {
   const { lang, setLang } = useLang();
   const links = [
-    { href: '#about', label: t(lang, '소개', 'About') },
-    { href: '#projects', label: t(lang, '프로젝트', 'Projects') },
-    { href: '#contact', label: t(lang, '연락처', 'Contact') },
+    { to: '/works', label: t(lang, '작업', 'Works') },
+    { to: '/log', label: t(lang, '로그', 'Log') },
   ];
   return (
     <header className="nav">
       <div className="container nav__inner">
-        <a className="nav__brand" href="#home">YS AN</a>
+        <Link className="nav__brand" to="/">YS AN</Link>
         <nav className="nav__links">
           {links.map((l) => (
-            <a key={l.href} href={l.href}>{l.label}</a>
+            <NavLink
+              key={l.to}
+              to={l.to}
+              className={({ isActive }) => (isActive ? 'is-active' : undefined)}
+            >
+              {l.label}
+            </NavLink>
           ))}
           <button
             className="nav__lang"
