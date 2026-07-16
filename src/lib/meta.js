@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 const SITE = 'YS AN';
 const DEFAULT_TITLE = 'YS AN — Robotics Archive';
@@ -25,7 +26,19 @@ function setMeta(attr, key, content) {
   el.setAttribute('content', content);
 }
 
+function setLink(rel, href) {
+  let el = document.head.querySelector(`link[rel="${rel}"]`);
+  if (!el) {
+    el = document.createElement('link');
+    el.setAttribute('rel', rel);
+    document.head.appendChild(el);
+  }
+  el.setAttribute('href', href);
+}
+
 export function usePageMeta({ title, description, image } = {}) {
+  const { pathname } = useLocation();
+
   useEffect(() => {
     document.title = buildTitle(title);
     // description 없는 페이지로 이동해도 이전 페이지 값이 잔존하지 않도록 항상 설정
@@ -34,5 +47,9 @@ export function usePageMeta({ title, description, image } = {}) {
     setMeta('property', 'og:description', resolvedDescription);
     setMeta('property', 'og:title', buildTitle(title));
     setMeta('property', 'og:image', ORIGIN + (image || '/og-default.png'));
-  }, [title, description, image]);
+
+    const url = ORIGIN + pathname;
+    setMeta('property', 'og:url', url);
+    setLink('canonical', url);
+  }, [title, description, image, pathname]);
 }

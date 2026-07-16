@@ -66,16 +66,15 @@
 | `public/works/geungeuni/award.webp` | 특기 입증/상장/상장_3.jpg (국무총리상) | 156K | 802×1144, 무변경 |
 | `public/docs/robot-history.pdf` | [ 최종 제출 ]/KAIST 특기입증자료1_안연수_로봇개발일대기.pdf | 1.5M | 그대로 복사 |
 | `public/docs/juljuri-report.pdf` | [ 최종 제출 ]/gist 제출/로봇(줄줄이) 개발을 통한 줄다리기 핵심 메커니즘 탐구_안연수.pdf | 5.8M | 그대로 복사 |
-| `public/docs/awards-certificate.pdf` | 특기 입증/상장/수상실적증명서_안연수.pdf | 332K | 그대로 복사 |
+| `public/docs/awards-certificate.pdf` | 특기 입증/상장/수상실적증명서_안연수.pdf | 332K | (공개 제외 — 생년월일 노출로 레포에서 제거됨, 원본은 소스 볼륨 보존) |
 | `public/about/workbench.webp` | 사진/IMG_7473.JPG | 252K | EXIF 90도 회전 보정 후 4032×3024(raw) → 1600×2134 |
 
 ## 검증 (Step 6)
 
-### find 출력 (public/works public/docs public/about, 41개 파일)
+### find 출력 (public/works public/docs public/about, 48개 파일 — awards-certificate.pdf 제거 반영)
 
 ```
 public/about/workbench.webp
-public/docs/awards-certificate.pdf
 public/docs/juljuri-report.pdf
 public/docs/robot-history.pdf
 public/works/geungeuni/award.webp

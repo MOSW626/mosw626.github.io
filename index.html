@@ -3,18 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#ffffff" />
     <script>
       (function () {
         try {
           var s = localStorage.getItem('theme');
           var d = window.matchMedia('(prefers-color-scheme: dark)').matches;
-          document.documentElement.dataset.theme = (s === 'light' || s === 'dark') ? s : (d ? 'dark' : 'light');
+          var t = (s === 'light' || s === 'dark') ? s : (d ? 'dark' : 'light');
+          document.documentElement.dataset.theme = t;
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', t === 'dark' ? '#0f1115' : '#ffffff');
         } catch (e) {}
       })();
     </script>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="manifest" href="/manifest.json" />
-    <meta name="theme-color" content="#ffffff" />
     <title>안연수 · Yeonsu An — Robotics Engineer</title>
     <meta name="description" content="ROS 기반 로봇 개발자 안연수의 포트폴리오. 전국과학전람회 대통령상, 긱블 출연, YSC 선정." />
     <link rel="canonical" href="https://mosw626.github.io/" />
