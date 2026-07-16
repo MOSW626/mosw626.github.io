@@ -1,10 +1,19 @@
 import { Link } from 'react-router-dom';
 import { useLang, t } from '../i18n.js';
 import { LOG_POSTS } from '../lib/logPosts.js';
+import { usePageMeta } from '../lib/meta.js';
 import './Pages.css';
 
 export default function LogList() {
   const { lang } = useLang();
+  usePageMeta({
+    title: t(lang, '기록', 'Notes'),
+    description: t(
+      lang,
+      '개발 과정과 생각을 기록한 안연수의 노트.',
+      "Yeonsu An's notes on the development process and ideas along the way."
+    ),
+  });
   return (
     <section className="section page">
       <div className="container">

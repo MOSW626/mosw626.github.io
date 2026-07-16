@@ -3,7 +3,6 @@
   "nameEn": "Yeonsu An",
   "githubUsername": "MOSW626",
   "email": "ays6533@naver.com",
-  "cvUrl": "",
   "typingStrings": [
     "로봇 공학자",
     "Robotics Engineer",
@@ -16,8 +15,10 @@
     "Autonomous Systems",
     "Robot Builder"
   ],
-  "heroDescription": "현상의 원리에 대한 궁금증을 로봇으로 구현합니다. 전국과학전람회 <strong>대통령상·국무총리상</strong>을 받은 뒤, KAIST 기계공학과에서 로봇과 소프트웨어를 함께 다루며 직접 만드는 일에 집중하고 있습니다.",
-  "heroDescriptionEn": "I turn curiosity about how things work into robots. After the <strong>Presidential and Prime Minister's Awards at the National Science Exhibition</strong>, I'm now at KAIST Mechanical Engineering, focused on building across both robotics and software.",
+  "heroDescription": "현상의 원리에 대한 궁금증을 로봇으로 구현합니다. 전국과학전람회 대통령상·국무총리상을 받은 뒤, KAIST 기계공학과에서 로봇과 소프트웨어를 함께 다루며 직접 만드는 일에 집중하고 있습니다.",
+  "heroDescriptionEn": "I turn curiosity about how things work into robots. After the Presidential and Prime Minister's Awards at the National Science Exhibition, I'm now at KAIST Mechanical Engineering, focused on building across both robotics and software.",
+  "heroHighlights": ["대통령상·국무총리상"],
+  "heroHighlightsEn": ["Presidential and Prime Minister's Awards"],
   "achievements": [
     { "emoji": "🏆", "label": "전국과학전람회 대통령·국무총리상" },
     { "emoji": "🎓", "label": "KAIST 기계공학과" },

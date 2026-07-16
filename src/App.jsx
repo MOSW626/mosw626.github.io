@@ -1,18 +1,27 @@
 import { useState, useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { LanguageContext } from './i18n.js';
+import { getInitialTheme, setTheme } from './lib/theme.js';
 import ScrollToTop from './components/ScrollToTop.jsx';
 import Nav from './components/Nav.jsx';
 import Footer from './components/Footer.jsx';
 import Home from './pages/Home.jsx';
 import Works from './pages/Works.jsx';
+import WorkDetail from './pages/WorkDetail.jsx';
 import LogList from './pages/LogList.jsx';
 import LogPost from './pages/LogPost.jsx';
 import Cv from './pages/Cv.jsx';
 
 export default function App() {
   const [lang, setLang] = useState('ko');
+  const [theme, setThemeState] = useState(getInitialTheme);
   const location = useLocation();
+
+  const toggleTheme = () => {
+    const next = theme === 'dark' ? 'light' : 'dark';
+    setTheme(next);
+    setThemeState(next);
+  };
 
   // 라우트가 바뀔 때마다 현재 화면의 .reveal 요소를 다시 관찰
   useEffect(() => {
@@ -40,11 +49,12 @@ export default function App() {
   return (
     <LanguageContext.Provider value={{ lang, setLang }}>
       <ScrollToTop />
-      <Nav />
+      <Nav theme={theme} onToggleTheme={toggleTheme} />
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/works" element={<Works />} />
+          <Route path="/works/:slug" element={<WorkDetail />} />
           <Route path="/notes" element={<LogList />} />
           <Route path="/notes/:slug" element={<LogPost />} />
           <Route path="/cv" element={<Cv />} />

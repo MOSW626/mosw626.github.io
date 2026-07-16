@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer className="footer">
       <div className="container">
-        <span>© 2024 안연수 · Yeonsu An</span>
+        <span>© {new Date().getFullYear()} 안연수 · Yeonsu An</span>
         <span>{t(lang, 'Vite + React로 제작', 'Built with Vite + React')}</span>
       </div>
     </footer>
