@@ -38,3 +38,21 @@ export function periodStartKey(period) {
 export function sortByPeriodDesc(works) {
   return [...works].sort((a, b) => periodStartKey(b.period).localeCompare(periodStartKey(a.period)));
 }
+
+/** slug로 단일 작업물 조회 (group 부착), 없으면 null */
+export function findWorkBySlug(slug, d = data) {
+  return flattenWorks(d).find((w) => w.slug === slug) || null;
+}
+
+/** 상세 페이지가 있는(slug 보유) 작업물만, flatten 순서 유지 */
+export function detailWorks(d = data) {
+  return flattenWorks(d).filter((w) => !!w.slug);
+}
+
+/** detailWorks 기준 이전/다음 (끝단은 null) */
+export function adjacentWorks(slug, d = data) {
+  const list = detailWorks(d);
+  const i = list.findIndex((w) => w.slug === slug);
+  if (i === -1) return { prev: null, next: null };
+  return { prev: list[i - 1] || null, next: list[i + 1] || null };
+}

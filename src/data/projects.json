@@ -2,6 +2,8 @@
   "robotDevelopment": [
     {
       "featured": true,
+      "slug": "juljuri",
+      "image": "/works/juljuri/hero.webp",
       "title": "줄줄이 — 줄다리기 로봇 (대통령상)",
       "titleEn": "Jul-jul-i — Tug-of-War Robot (Presidential Prize)",
       "description": "셀프 밸런싱에서 출발해, 누운 각도를 PID로 유지하며 줄을 당기는 줄다리기 로봇. '최적 각도를 유지하다 몸이 들리면 앞으로, 누우면 뒤로 당긴다'는 줄다리기의 핵심 메커니즘을 직접 밝혀 구현했습니다. 제68회 전국과학전람회 대통령상(2,607팀 중 1점) 수상작.",
@@ -14,10 +16,34 @@
         "IMU",
         "Arduino"
       ],
-      "youtube": "https://www.youtube.com/watch?v=pkX618hViWA"
+      "youtube": "https://www.youtube.com/watch?v=pkX618hViWA",
+      "github": "https://github.com/MOSW626/Tug_of_War_Robot_Project_-2022-",
+      "team": "3인 팀 — 노수빈·안연수·이원호 (줄줄연수원)",
+      "teamEn": "Team of 3 — Subin Noh, Yeonsu An, Wonho Lee",
+      "videos": [
+        { "src": "/works/juljuri/demo-1.mp4", "poster": "/works/juljuri/demo-1-poster.webp", "label": "오징어게임 전술 시연", "labelEn": "Squid Game tactic demo" },
+        { "src": "/works/juljuri/demo-2.mp4", "poster": "/works/juljuri/demo-2-poster.webp", "label": "팀 소개", "labelEn": "Team introduction" },
+        { "src": "/works/juljuri/demo-3.mp4", "poster": "/works/juljuri/demo-3-poster.webp", "label": "사람 줄다리기 시연", "labelEn": "Human tug-of-war demo" },
+        { "src": "/works/juljuri/demo-4.mp4", "poster": "/works/juljuri/demo-4-poster.webp", "label": "원호 장력 실험", "labelEn": "Wonho's tension experiment" },
+        { "src": "/works/juljuri/demo-5.mp4", "poster": "/works/juljuri/demo-5-poster.webp", "label": "박스 시연", "labelEn": "Box demo" },
+        { "src": "/works/juljuri/demo-6.mp4", "poster": "/works/juljuri/demo-6-poster.webp", "label": "도르래 시연", "labelEn": "Pulley demo" }
+      ],
+      "award": { "title": "대통령상", "titleEn": "Presidential Award", "event": "제68회 전국과학전람회", "eventEn": "68th National Science Exhibition", "year": 2022, "scan": "/works/juljuri/award.webp" },
+      "press": [
+        { "outlet": "세계일보", "title": "'오징어게임'의 줄다리기 전술, 과학적 근거 있다", "url": "" },
+        { "outlet": "경향신문", "title": "운동 방정식 적용 '줄다리기 최적화된 로봇' 개발…충북과학고 2학년생 '과학전람회 대통령상' 수상", "url": "https://m.khan.co.kr/people/people-general/article/202211082201075" },
+        { "outlet": "중부매일", "title": "줄다리기 로봇 만든 충북과고생들, '제68회 전국과학전람회' 대통령상", "url": "" },
+        { "outlet": "충북일보", "title": "줄다리기 로봇 만든 충북과고생들, '제68회 전국과학전람회' 대통령상", "url": "" },
+        { "outlet": "MBC충북", "title": "줄다리기 로봇 만든 충북과고생들, '제68회 전국과학전람회' 대통령상", "url": "" },
+        { "outlet": "동양일보", "title": "줄다리기 로봇 만든 충북과고생들, '제68회 전국과학전람회' 대통령상", "url": "" },
+        { "outlet": "충청매일", "title": "줄다리기 로봇 만든 충북과고생들, '제68회 전국과학전람회' 대통령상", "url": "" },
+        { "outlet": "충청타임즈", "title": "줄다리기 로봇 만든 충북과고생들, '제68회 전국과학전람회' 대통령상", "url": "" }
+      ]
     },
     {
       "featured": true,
+      "slug": "geungeuni",
+      "image": "/works/geungeuni/hero.webp",
       "title": "근근이 — 그네타기 로봇 (국무총리상)",
       "titleEn": "Geun-geun-i — Swing-Riding Robot (Prime Minister's Award)",
       "description": "스스로 진폭을 키워 그네를 타는 로봇. 무게중심 위치에 따라 그네 타기 전략이 달라진다는 점을 탐구하고, 초음파·IMU·IR을 거쳐 반응속도가 빠른 게이트 센서로 특정 위치에서 몸을 접고 펴도록 구현했습니다. 제67회 전국과학전람회 국무총리상(2,308팀 중 1점) 수상작.",
@@ -30,9 +56,18 @@
         "초음파 센서",
         "Arduino"
       ],
-      "youtube": "https://www.youtube.com/watch?v=j30aW_tBtJ8"
+      "youtube": "https://www.youtube.com/watch?v=j30aW_tBtJ8",
+      "github": "https://github.com/MOSW626/Swinging_on_a_swing_Robot_Project_-2021-",
+      "team": "3인 팀 — 노수빈·안연수·이승환",
+      "teamEn": "Team of 3 — Subin Noh, Yeonsu An, Seunghwan Lee",
+      "videos": [
+        { "src": "/works/geungeuni/demo-1.mp4", "poster": "/works/geungeuni/demo-1-poster.webp", "label": "그네타기 시연", "labelEn": "Swing-riding demo" }
+      ],
+      "award": { "title": "국무총리상", "titleEn": "Prime Minister's Award", "event": "제67회 전국과학전람회", "eventEn": "67th National Science Exhibition", "year": 2021, "scan": "/works/geungeuni/award.webp" }
     },
     {
+      "slug": "taektaeki",
+      "image": "/works/taektaeki/hero.webp",
       "title": "택택이 — 자율주행 택배 배달 로봇",
       "titleEn": "Taek-taek-i — Autonomous Delivery Robot",
       "description": "건물 층간 이동 문제를 풀고자 만든 자율주행 배달 로봇. LiDAR SLAM으로 매핑·주행하고, 로봇팔과 OCR·CNN으로 엘리베이터 버튼을 인식해 누릅니다. 흔들림은 드론 원리를 참고한 이중 PID로 잡았고, 이후 U-Net 객체 인식으로 버튼 인식을 고도화했습니다.",
@@ -46,9 +81,12 @@
         "CNN",
         "OCR",
         "Python"
-      ]
+      ],
+      "github": "https://github.com/MOSW626/delivery_cbsh"
     },
     {
+      "slug": "tamtami",
+      "image": "/works/tamtami/hero.webp",
       "title": "탐탐이 — 행성 탐사 로봇",
       "titleEn": "Tam-tam-i — Planetary Exploration Robot",
       "description": "라이다와 아두이노 센서를 결합해 화성 용암동굴 같은 미지의 공간을 SLAM으로 매핑하는 행성 탐사 로봇.",
@@ -63,6 +101,8 @@
       ]
     },
     {
+      "slug": "gosaengi",
+      "image": "/works/gosaengi/hero.webp",
       "title": "고생이 — 고양이 생체모방 착지 로봇",
       "titleEn": "Go-saeng-i — Cat-Inspired Landing Robot",
       "description": "'고양이는 왜 떨어져도 안 다칠까?'에서 출발해, 떨어지는 순간 꼬리와 몸을 돌려 균형을 잡는 고양이를 생체 모방한 로봇. 게이트·거리·자이로 센서로 낙하를 감지하고, 두 바퀴가 공중에 뜬 순간 IMU로 원하는 착지 자세를 만듭니다. 2023 YSC 발표대회 선정.",
@@ -74,9 +114,22 @@
         "IMU",
         "게이트 센서",
         "각운동량 보존"
+      ],
+      "github": "https://github.com/MOSW626/automobile-stability-control_ionic-Robotic-Cat",
+      "gallery": [
+        { "src": "/works/gosaengi/note-01.webp", "alt": "고생이 탐구일지 1장", "altEn": "Research notebook p.1" },
+        { "src": "/works/gosaengi/note-04.webp", "alt": "고생이 탐구일지 4장", "altEn": "Research notebook p.4" },
+        { "src": "/works/gosaengi/note-07.webp", "alt": "고생이 탐구일지 7장", "altEn": "Research notebook p.7" },
+        { "src": "/works/gosaengi/note-10.webp", "alt": "고생이 탐구일지 10장", "altEn": "Research notebook p.10" },
+        { "src": "/works/gosaengi/note-13.webp", "alt": "고생이 탐구일지 13장", "altEn": "Research notebook p.13" },
+        { "src": "/works/gosaengi/note-16.webp", "alt": "고생이 탐구일지 16장", "altEn": "Research notebook p.16" },
+        { "src": "/works/gosaengi/note-19.webp", "alt": "고생이 탐구일지 19장", "altEn": "Research notebook p.19" },
+        { "src": "/works/gosaengi/note-22.webp", "alt": "고생이 탐구일지 22장", "altEn": "Research notebook p.22" }
       ]
     },
     {
+      "slug": "pyeongtani",
+      "image": "/works/pyeongtani/hero.webp",
       "title": "평탄이 — 흔들림 방지 장치",
       "titleEn": "Pyeong-tan-i — Anti-Shake Stabilizer",
       "description": "쿼드콥터의 제어 원리를 응용해 배달물의 흔들림을 능동적으로 잡아주는 안정화 장치. 택택이 배달 로봇의 적재 안정성을 높이기 위한 후속 탐구.",
@@ -87,9 +140,11 @@
         "PID 제어",
         "IMU",
         "쿼드콥터 원리"
-      ]
+      ],
+      "github": "https://github.com/MOSW626/Increased-delivery-item-stability-using-gimbal"
     },
     {
+      "slug": "isp",
       "title": "ISP — PID 모터 제어 연구",
       "titleEn": "ISP — PID Motor Control Study",
       "description": "PID 제어 기반 DC 모터 제어 시스템을 개발하고, IMU 센서의 해상도 한계를 극복하기 위한 방법을 연구한 STEAM 연구개발(RnE) 프로젝트.",
@@ -107,6 +162,8 @@
       "github": "https://github.com/MOSW626/automobile-stability-control_ISP"
     },
     {
+      "slug": "titration",
+      "image": "/works/titration/hero.webp",
       "title": "자동 중화 적정 기기 (장관상)",
       "titleEn": "Automatic Titration Device (Minister's Award)",
       "description": "중화적정의 유량 조절이 까다롭다는 문제에서 출발해, 지시약 색을 컬러센서로 읽어 RGB 색공간을 27구획으로 나눠 pH를 측정·적정하는 기기. 색 변화를 인지하기 어려운 사람도 실험할 수 있게 했습니다. 2020 대학부설 과학영재교육원 사사과정 발표대회 최우수상(과기정통부 장관상).",
@@ -118,7 +175,41 @@
         "Arduino",
         "RGB 색공간",
         "자동 제어"
-      ]
+      ],
+      "team": "4인 팀",
+      "teamEn": "Team of 4"
+    },
+    {
+      "slug": "mr24-quadrupedal",
+      "title": "KAIST MR 4족보행 로봇",
+      "titleEn": "KAIST MR Quadrupedal Robot",
+      "description": "KAIST MR(Mobile Robotics) 동아리에서 진행하는 4족보행 로봇 프로젝트. 설계·회로·소스코드를 아우르는 팀 레포지토리에 참여하고 있습니다.",
+      "descriptionEn": "A quadrupedal robot project at KAIST's MR (Mobile Robotics) club — I contribute to the team repo covering design, circuits, and source code.",
+      "period": "2024.08 - 2024.10",
+      "category": "로봇 개발",
+      "technologies": [
+        "4족보행",
+        "로봇 설계",
+        "회로 설계"
+      ],
+      "github": "https://github.com/MOSW626/mr24_Quadrupedal"
+    },
+    {
+      "slug": "mecha-ws",
+      "title": "메카트로닉스 자율주행 로봇 (ME203)",
+      "titleEn": "Mechatronics Autonomous Driving Robot (ME203)",
+      "description": "KAIST 메카트로닉스 시스템 설계(ME203) 수업에서 만든 라즈베리파이 기반 자율주행 로봇. 카메라로 차선·신호등을 인식해 주행하고, 초음파 센서로 벽 사이 중앙을 유지합니다.",
+      "descriptionEn": "A Raspberry Pi autonomous driving robot built for KAIST's Mechatronics System Design course (ME203) — it follows lanes and traffic lights via camera, then keeps centered between walls using ultrasonic sensors.",
+      "period": "2025.12",
+      "category": "로봇 개발",
+      "technologies": [
+        "Raspberry Pi",
+        "OpenCV",
+        "TensorFlow Lite",
+        "초음파 센서",
+        "Python"
+      ],
+      "github": "https://github.com/MOSW626/mecha_ws"
     }
   ],
   "videoProduction": [
@@ -139,7 +230,6 @@
       "period": "2023.12.18 - 2023.12",
       "category": "영상 제작",
       "duration": "3:42",
-      "link": "https://mosw.notion.site/",
       "youtube": "https://youtu.be/IOqnhKe1itQ?si=XGXTZe0Ehs-9pNYU",
       "achievements": [
         "공식 졸업영상 제작",
@@ -164,8 +254,6 @@
       "period": "2023.12.14",
       "category": "영상 제작",
       "duration": "4:03:10",
-      "link": "https://mosw.notion.site/",
-      "youtube": "",
       "achievements": [
         "실시간 라이브 방송",
         "멀티 카메라 시스템 구축",
@@ -189,8 +277,6 @@
       "period": "2023.06.10",
       "category": "영상 제작",
       "duration": "3:40",
-      "link": "https://mosw.notion.site/",
-      "youtube": "",
       "achievements": [
         "홍보영상 제작",
         "효과적인 스토리텔링",
@@ -204,16 +290,16 @@
       "featured": true,
       "title": "Roboticus — 대학생 로봇 빌더 커뮤니티",
       "titleEn": "Roboticus — University Robot-Builder Community",
-      "description": "KAIST·SNU 로봇 동아리가 함께 시작한 대학생 로봇 빌더 네트워크. 해커톤·교육·네트워킹으로 흩어진 로봇 메이커들을 잇는 커뮤니티를 공동창립했습니다.",
-      "descriptionEn": "A university robot-builder network started together by the KAIST and SNU robotics clubs. I co-founded this community connecting scattered robot makers through hackathons, education, and networking.",
+      "description": "KAIST·SNU 로봇 동아리가 함께 시작한 대학생 로봇 빌더 네트워크. 해커톤·교육·네트워킹으로 흩어진 로봇 메이커들을 잇는 커뮤니티를 공동창립·회장으로 이끌고 있습니다.",
+      "descriptionEn": "A university robot-builder network started together by the KAIST and SNU robotics clubs. I co-founded this community — connecting scattered robot makers through hackathons, education, and networking — and serve as its president.",
       "period": "2026.06 - 현재",
       "category": "프로젝트",
       "technologies": [
-        "공동창립",
+        "공동창립·회장",
         "Next.js",
         "Vercel"
       ],
-      "demo": "https://roboticus.vercel.app"
+      "demo": "https://robotic-us.com"
     },
     {
       "featured": true,
@@ -256,6 +342,21 @@
         "Firebase"
       ],
       "demo": "https://reels-processing.web.app/"
+    },
+    {
+      "slug": "algorithmic-self",
+      "title": "Algorithmic Self — AI 디지털 인문학 실험",
+      "titleEn": "Algorithmic Self — AI Digital-Humanities Experiment",
+      "description": "AI와의 대화를 통해 기록으로 한 사람의 판단을 재구성하고, 데이터로 환원되지 않는 '어긋남'을 드러내는 디지털 인문학 실험.",
+      "descriptionEn": "A digital-humanities experiment built in dialogue with AI — reconstructing a person's judgment from their records to reveal what the data can't capture.",
+      "period": "2026.06",
+      "category": "프로젝트",
+      "technologies": [
+        "Python",
+        "LLM",
+        "디지털 인문학"
+      ],
+      "github": "https://github.com/MOSW626/algorithmic-self"
     }
   ]
 }

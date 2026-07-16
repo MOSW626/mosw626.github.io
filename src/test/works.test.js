@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { flattenWorks, featuredWorks, worksInGroup, periodStartKey, sortByPeriodDesc } from '../lib/works.js';
+import { findWorkBySlug, detailWorks, adjacentWorks } from '../lib/works.js';
 
 const fixture = {
   robotDevelopment: [
@@ -48,5 +49,38 @@ describe('sortByPeriodDesc', () => {
     const sorted = sortByPeriodDesc(input);
     expect(sorted.map((w) => w.title)).toEqual(['C', 'B', 'A']);
     expect(input.map((w) => w.title)).toEqual(['A', 'B', 'C']);
+  });
+});
+
+const FIX = {
+  robotDevelopment: [
+    { title: 'A', slug: 'a', period: '2022.01' },
+    { title: 'B', period: '2021.01' },
+    { title: 'C', slug: 'c', period: '2020.01' },
+  ],
+  videoProduction: [], softwareProjects: [],
+};
+
+describe('work detail helpers', () => {
+  it('findWorkBySlug returns the matching work with group attached', () => {
+    expect(findWorkBySlug('a', FIX).title).toBe('A');
+    expect(findWorkBySlug('a', FIX).group).toBe('robot');
+  });
+  it('findWorkBySlug returns null for unknown slug', () => {
+    expect(findWorkBySlug('nope', FIX)).toBeNull();
+  });
+  it('detailWorks returns only slugged works in flatten order', () => {
+    expect(detailWorks(FIX).map((w) => w.slug)).toEqual(['a', 'c']);
+  });
+  it('adjacentWorks returns prev/next with nulls at edges', () => {
+    expect(adjacentWorks('a', FIX).prev).toBeNull();
+    expect(adjacentWorks('a', FIX).next.slug).toBe('c');
+    expect(adjacentWorks('c', FIX).prev.slug).toBe('a');
+    expect(adjacentWorks('c', FIX).next).toBeNull();
+  });
+  it('every real robotDevelopment entry has a unique slug', () => {
+    const slugs = flattenWorks().filter((w) => w.group === 'robot').map((w) => w.slug);
+    expect(slugs.every(Boolean)).toBe(true);
+    expect(new Set(slugs).size).toBe(slugs.length);
   });
 });
