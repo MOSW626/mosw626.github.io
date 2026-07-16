@@ -235,8 +235,10 @@ function Gallery({ work, lang }) {
 function AwardPress({ work, lang }) {
   const award = work.award;
   const press = Array.isArray(work.press) ? work.press : [];
-  const hasScan = award && award.scan;
-  if (!award && press.length === 0) return null;
+  const hasScan = !!(award && award.scan);
+  // award가 있어도 scan이 없으면 이 섹션엔 그릴 게 없다 (뱃지는 Meta에서 별도 렌더) —
+  // press도 없다면 빈 제목 섹션을 렌더하지 않는다.
+  if (!hasScan && press.length === 0) return null;
 
   return (
     <section className="wd-section reveal">

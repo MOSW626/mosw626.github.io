@@ -200,7 +200,8 @@
         "자동 제어"
       ],
       "team": "4인 팀",
-      "teamEn": "Team of 4"
+      "teamEn": "Team of 4",
+      "award": { "title": "최우수상 (과기정통부 장관상)", "titleEn": "Top Prize (Minister of Science & ICT Award)", "event": "대학부설 과학영재교육원 사사과정 발표대회", "eventEn": "University-Affiliated Gifted Education Research Showcase", "year": 2021 }
     },
     {
       "slug": "mr24-quadrupedal",
