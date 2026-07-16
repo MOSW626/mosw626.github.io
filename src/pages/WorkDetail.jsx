@@ -292,7 +292,10 @@ function Links({ work, lang }) {
   if (work.slug === 'juljuri') {
     pdfs.push({ href: '/docs/juljuri-report.pdf', label: t(lang, '연구 리포트 PDF', 'Research Report PDF') });
   }
-  pdfs.push({ href: '/docs/robot-history.pdf', label: t(lang, '개발 일대기 PDF', 'Development Story PDF') });
+  // '개발 일대기' PDF는 로봇 개발 상세 페이지에서만 노출 (스펙 정합성)
+  if (work.group === 'robot') {
+    pdfs.push({ href: '/docs/robot-history.pdf', label: t(lang, '개발 일대기 PDF', 'Development Story PDF') });
+  }
 
   if (links.length === 0 && pdfs.length === 0) return null;
 
