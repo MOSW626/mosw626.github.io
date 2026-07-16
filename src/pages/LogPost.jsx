@@ -3,12 +3,20 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { useLang, t } from '../i18n.js';
 import { getPost } from '../lib/logPosts.js';
+import { usePageMeta } from '../lib/meta.js';
 import './Pages.css';
 
 export default function LogPost() {
   const { slug } = useParams();
   const { lang } = useLang();
   const post = getPost(slug);
+  const variantForMeta = post ? post[lang] || post.ko || post.en : null;
+
+  // 훅은 조건부 return 이전에 호출 — post가 null이어도 안전하게 처리
+  usePageMeta({
+    title: variantForMeta ? variantForMeta.title : undefined,
+    description: variantForMeta ? variantForMeta.summary : undefined,
+  });
 
   if (!post) {
     return (

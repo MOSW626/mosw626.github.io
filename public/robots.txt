@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mosw626.github.io/sitemap.xml

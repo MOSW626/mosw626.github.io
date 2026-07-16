@@ -3,6 +3,7 @@ import { useLang, pick, t } from '../i18n.js';
 import profile from '../data/profile.json';
 import skills from '../data/skills.json';
 import { flattenWorks, sortByPeriodDesc } from '../lib/works.js';
+import { usePageMeta } from '../lib/meta.js';
 import './Cv.css';
 
 const EDUCATION = [
@@ -38,6 +39,14 @@ const AWARDS = [
 
 export default function Cv() {
   const { lang } = useLang();
+  usePageMeta({
+    title: 'CV',
+    description: t(
+      lang,
+      '안연수의 이력서 — 학력, 경험, 주요 프로젝트, 수상 내역.',
+      "Yeonsu An's CV — education, experience, selected projects, and awards."
+    ),
+  });
   // 주요 프로젝트: 소프트웨어 그룹 전체 + 대표작(featured) — 시작일 역순
   const projects = sortByPeriodDesc(
     flattenWorks().filter((w) => w.group === 'project' || w.featured)

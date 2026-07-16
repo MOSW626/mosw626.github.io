@@ -6,6 +6,7 @@ import {
 } from 'react-icons/fa';
 import { findWorkBySlug, adjacentWorks } from '../lib/works.js';
 import { useLang, pick, t } from '../i18n.js';
+import { usePageMeta } from '../lib/meta.js';
 import './WorkDetail.css';
 
 const LINK_META = {
@@ -19,6 +20,13 @@ export default function WorkDetail() {
   const { slug } = useParams();
   const { lang } = useLang();
   const work = findWorkBySlug(slug);
+
+  // 훅은 조건부 return 이전에 호출 — work가 null이어도 안전하게 처리
+  usePageMeta({
+    title: work ? pick(work, 'title', lang) : undefined,
+    description: work ? pick(work, 'description', lang) : undefined,
+    image: work ? work.image : undefined,
+  });
 
   // 알 수 없는 slug → 목록으로
   if (!work) return <Navigate to="/works" replace />;

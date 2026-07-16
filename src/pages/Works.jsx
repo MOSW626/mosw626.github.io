@@ -2,11 +2,20 @@ import { useState, useEffect } from 'react';
 import { useLang, t } from '../i18n.js';
 import ProjectCard from '../components/ProjectCard.jsx';
 import { flattenWorks, worksInGroup, sortByPeriodDesc } from '../lib/works.js';
+import { usePageMeta } from '../lib/meta.js';
 import '../components/Projects.css';
 import './Pages.css';
 
 export default function Works() {
   const { lang } = useLang();
+  usePageMeta({
+    title: t(lang, '작업', 'Works'),
+    description: t(
+      lang,
+      '로봇 개발부터 소프트웨어 프로젝트까지, 안연수의 작업 아카이브.',
+      'A robotics-to-software project archive by Yeonsu An.'
+    ),
+  });
   const [group, setGroup] = useState('all');
   const filters = [
     { key: 'all', label: t(lang, '전체', 'All') },
