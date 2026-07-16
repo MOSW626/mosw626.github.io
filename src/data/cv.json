@@ -1,0 +1,32 @@
+{
+  "education": [
+    { "period": "2025 – Present", "detail": "KAIST 기계공학과", "detailEn": "KAIST — Mechanical Engineering" },
+    { "period": "2021 – 2024", "detail": "충북과학고등학교", "detailEn": "Chungbuk Science High School" }
+  ],
+  "experience": [
+    {
+      "period": "2026.06 – Present",
+      "role": "공동창립자·회장",
+      "roleEn": "Co-founder & President",
+      "org": "Roboticus — 대학생 로봇 빌더 커뮤니티",
+      "orgEn": "Roboticus — University Robot-Builder Community",
+      "desc": "KAIST·SNU 로봇 동아리를 기반으로 커뮤니티를 공동창립하고 해커톤·교육·네트워킹을 운영.",
+      "descEn": "Co-founded a community based on the KAIST and SNU robotics clubs; run hackathons, education, and networking."
+    },
+    {
+      "period": "2025 – 2026",
+      "role": "개발 총괄",
+      "roleEn": "Lead Developer",
+      "org": "KAIST 기계공학과 학생회 플랫폼 (MESC)",
+      "orgEn": "KAIST Mech. Eng. Student Council Platform (MESC)",
+      "desc": "공지·학생회비 조회·예산 투명성·자료실을 통합한 웹서비스를 기획부터 개발·운영·보수까지 총괄.",
+      "descEn": "Owned an integrated web service end to end — announcements, fee lookup, budget transparency, and resources."
+    }
+  ],
+  "awards": [
+    { "year": "2022", "detail": "제68회 전국과학전람회 대통령상 — 줄다리기 로봇 ‘줄줄이’ (2,607팀 중 1점)", "detailEn": "Presidential Prize, 68th National Science Exhibition — tug-of-war robot ‘Jul-jul-i’ (1 of 2,607 teams)" },
+    { "year": "2021", "detail": "제67회 전국과학전람회 국무총리상 — 그네타기 로봇 ‘근근이’ (2,308팀 중 1점)", "detailEn": "Prime Minister’s Award, 67th National Science Exhibition — swing robot ‘Geun-geun-i’ (1 of 2,308 teams)" },
+    { "year": "2020", "detail": "과학기술정보통신부 장관상 (최우수상) — 자동 중화 적정 기기", "detailEn": "Minister of Science & ICT Award (Top Prize) — automatic titration device" },
+    { "year": "2023", "detail": "YSC 발표대회 선정", "detailEn": "Selected for YSC (Young Scientist Contest)" }
+  ]
+}
