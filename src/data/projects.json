@@ -30,14 +30,14 @@
       ],
       "award": { "title": "대통령상", "titleEn": "Presidential Award", "event": "제68회 전국과학전람회", "eventEn": "68th National Science Exhibition", "year": 2022, "scan": "/works/juljuri/award.webp" },
       "press": [
-        { "outlet": "세계일보", "title": "'오징어게임'의 줄다리기 전술, 과학적 근거 있다", "url": "" },
+        { "outlet": "세계일보", "title": "'오징어게임'의 줄다리기 전술, 과학적 근거 있다" },
         { "outlet": "경향신문", "title": "운동 방정식 적용 '줄다리기 최적화된 로봇' 개발…충북과학고 2학년생 '과학전람회 대통령상' 수상", "url": "https://m.khan.co.kr/people/people-general/article/202211082201075" },
-        { "outlet": "중부매일", "title": "줄다리기 로봇 만든 충북과고생들, '제68회 전국과학전람회' 대통령상", "url": "" },
-        { "outlet": "충북일보", "title": "줄다리기 로봇 만든 충북과고생들, '제68회 전국과학전람회' 대통령상", "url": "" },
-        { "outlet": "MBC충북", "title": "줄다리기 로봇 만든 충북과고생들, '제68회 전국과학전람회' 대통령상", "url": "" },
-        { "outlet": "동양일보", "title": "줄다리기 로봇 만든 충북과고생들, '제68회 전국과학전람회' 대통령상", "url": "" },
-        { "outlet": "충청매일", "title": "줄다리기 로봇 만든 충북과고생들, '제68회 전국과학전람회' 대통령상", "url": "" },
-        { "outlet": "충청타임즈", "title": "줄다리기 로봇 만든 충북과고생들, '제68회 전국과학전람회' 대통령상", "url": "" }
+        { "outlet": "중부매일" },
+        { "outlet": "충북일보" },
+        { "outlet": "MBC충북" },
+        { "outlet": "동양일보" },
+        { "outlet": "충청매일" },
+        { "outlet": "충청타임즈" }
       ]
     },
     {
