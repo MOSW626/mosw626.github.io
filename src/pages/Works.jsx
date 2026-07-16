@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useLang, t } from '../i18n.js';
 import ProjectCard from '../components/ProjectCard.jsx';
 import { flattenWorks, worksInGroup, sortByPeriodDesc } from '../lib/works.js';
@@ -15,6 +15,25 @@ export default function Works() {
     { key: 'video', label: t(lang, '영상 제작', 'Video') },
   ];
   const items = sortByPeriodDesc(worksInGroup(flattenWorks(), group));
+
+  // 필터 전환 시 카드가 remount 되므로(App 전역 옵저버는 라우트 변경에만 반응)
+  // 새로 붙은 .reveal 카드를 다시 관찰해 stagger 등장을 재생한다.
+  useEffect(() => {
+    const els = document.querySelectorAll('.projects__grid .reveal:not(.is-visible)');
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add('is-visible');
+            io.unobserve(e.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+    els.forEach((el) => io.observe(el));
+    return () => io.disconnect();
+  }, [group]);
 
   return (
     <section className="section page">
@@ -33,7 +52,7 @@ export default function Works() {
         </div>
         <div className="projects__grid">
           {items.map((p, i) => (
-            <ProjectCard key={`${group}-${i}`} project={p} />
+            <ProjectCard key={`${group}-${i}`} work={p} index={i} />
           ))}
         </div>
       </div>

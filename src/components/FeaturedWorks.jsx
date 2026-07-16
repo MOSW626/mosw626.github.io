@@ -11,9 +11,9 @@ export default function FeaturedWorks() {
     <section id="works" className="section">
       <div className="container">
         <h2 className="section__title">{t(lang, '대표 작업', 'Featured Work')}</h2>
-        <div className="projects__grid reveal">
+        <div className="projects__grid">
           {items.map((p, i) => (
-            <ProjectCard key={i} project={p} />
+            <ProjectCard key={i} work={p} index={i} />
           ))}
         </div>
         <p className="featured__more">
