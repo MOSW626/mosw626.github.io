@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { LanguageContext } from './i18n.js';
+import { getInitialTheme, setTheme } from './lib/theme.js';
 import ScrollToTop from './components/ScrollToTop.jsx';
 import Nav from './components/Nav.jsx';
 import Footer from './components/Footer.jsx';
@@ -12,7 +13,14 @@ import Cv from './pages/Cv.jsx';
 
 export default function App() {
   const [lang, setLang] = useState('ko');
+  const [theme, setThemeState] = useState(getInitialTheme);
   const location = useLocation();
+
+  const toggleTheme = () => {
+    const next = theme === 'dark' ? 'light' : 'dark';
+    setTheme(next);
+    setThemeState(next);
+  };
 
   // 라우트가 바뀔 때마다 현재 화면의 .reveal 요소를 다시 관찰
   useEffect(() => {
@@ -40,7 +48,7 @@ export default function App() {
   return (
     <LanguageContext.Provider value={{ lang, setLang }}>
       <ScrollToTop />
-      <Nav />
+      <Nav theme={theme} onToggleTheme={toggleTheme} />
       <main>
         <Routes>
           <Route path="/" element={<Home />} />

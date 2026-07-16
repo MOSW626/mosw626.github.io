@@ -10,6 +10,15 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* 다크 <-> 라이트 전환에만 부드러운 색 전환 */
+body,
+.nav,
+.section--alt,
+.pill,
+.log-card {
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
 a { color: inherit; text-decoration: none; }
 
 h1, h2, h3 { line-height: 1.25; font-weight: 700; letter-spacing: -0.02em; }
@@ -47,6 +56,7 @@ h1, h2, h3 { line-height: 1.25; font-weight: 700; letter-spacing: -0.02em; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; transition: none; }
+  body, .nav, .section--alt, .pill, .log-card { transition: none; }
 }
 
 @media (max-width: 600px) {

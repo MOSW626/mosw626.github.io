@@ -1,10 +1,10 @@
 import { Link, NavLink } from 'react-router-dom';
-import { FaGithub } from 'react-icons/fa';
+import { FaGithub, FaSun, FaMoon } from 'react-icons/fa';
 import { useLang, t } from '../i18n.js';
 import profile from '../data/profile.json';
 import './Nav.css';
 
-export default function Nav() {
+export default function Nav({ theme, onToggleTheme }) {
   const { lang, setLang } = useLang();
   const links = [
     { to: '/works', label: t(lang, '작업', 'Works') },
@@ -31,6 +31,13 @@ export default function Nav() {
             aria-label="Toggle language"
           >
             {lang === 'en' ? '한국어' : 'EN'}
+          </button>
+          <button
+            className="nav__theme"
+            onClick={onToggleTheme}
+            aria-label={theme === 'dark' ? '라이트 모드로 전환' : '다크 모드로 전환'}
+          >
+            {theme === 'dark' ? <FaSun /> : <FaMoon />}
           </button>
           <a
             className="nav__gh"
