@@ -29,6 +29,15 @@
         { "src": "/works/juljuri/demo-6.mp4", "poster": "/works/juljuri/demo-6-poster.webp", "label": "도르래 시연", "labelEn": "Pulley demo" }
       ],
       "award": { "title": "대통령상", "titleEn": "Presidential Award", "event": "제68회 전국과학전람회", "eventEn": "68th National Science Exhibition", "year": 2022, "scan": "/works/juljuri/award.webp" },
+      "timeline": [
+        { "version": "0~1호", "versionEn": "Prototypes 0–1", "desc": "수직을 유지하는 걸 목표로 한 첫 시범 모델과 가로형 개선판. 아직 줄을 묶어 당기지도, 특정 각도를 버티지도 못했다.", "descEn": "A first proof-of-concept aimed at just staying upright, plus a horizontal revision. It still couldn't tie onto the rope and pull, or hold a set angle." },
+        { "version": "2~3호", "versionEn": "Prototypes 2–3", "desc": "세로형으로 바꿔 수직은 잡았고, 줄 묶는 위치와 무게중심을 특정 위치로 고정했다. 내구도가 과제로 남았다.", "descEn": "A vertical layout finally held the angle; I fixed the rope-anchor point and the center of mass in place. Durability was still the weak spot." },
+        { "version": "4~5호", "versionEn": "Prototypes 4–5", "desc": "볼트·너트 체결로 내구도를 높였다. 급격한 각도 변화에 반응이 느려 사포 바퀴와 3D 프린팅 바퀴로 바꿔 반응속도를 끌어올렸다.", "descEn": "Bolt-and-nut assembly cut part breakage. Response to sharp angle changes was sluggish, so I swapped in sandpaper-wrapped and 3D-printed wheels to speed it up." },
+        { "version": "6~7호", "versionEn": "Prototypes 6–7", "desc": "바퀴 설계를 정교화하고 큰 rpm·스텝 모터를 시험했다. 고무 패킹으로 마찰력을 키우고, 모터를 쉽게 교체할 수 있게 차체를 새로 짰다.", "descEn": "Refined the wheel design and tried higher-rpm and stepper motors. Rubber packing raised friction, and I rebuilt the chassis so motors could be swapped easily." },
+        { "version": "8~9호", "versionEn": "Prototypes 8–9", "desc": "연마봉을 여러 홀에 끼워 줄 묶는 위치를 바꿀 수 있게 하고, 팔 구조와 Y자 매듭으로 실제 줄다리기처럼 줄을 잡게 했다.", "descEn": "A polishing rod slotting into various holes let me move the rope anchor, and an arm structure with a Y-knot let it grip the rope like a real tug-of-war." },
+        { "version": "도르래 실험 장치", "versionEn": "Pulley test rig", "desc": "제대로 된 줄다리기 실험을 위해 프로파일로 줄 간섭을 줄였다. 물체가 다 올라와 진폭이 커지는 문제에는 가이드를 세워 잡았다.", "descEn": "For a clean tug-of-war test I used aluminum profiles to reduce rope interference, and added a guide to tame the growing amplitude once the load rose all the way up." },
+        { "version": "10호", "versionEn": "Prototype 10", "desc": "배터리 팩으로 전원선 없이 실험이 가능하게 최종 완성했다. 반동 모델에 맞춰 배터리를 상단에 배치했다.", "descEn": "The final build ran on a battery pack, freeing it from a power cord. To match the recoil model, I placed the battery up top." }
+      ],
       "press": [
         { "outlet": "세계일보", "title": "'오징어게임'의 줄다리기 전술, 과학적 근거 있다" },
         { "outlet": "경향신문", "title": "운동 방정식 적용 '줄다리기 최적화된 로봇' 개발…충북과학고 2학년생 '과학전람회 대통령상' 수상", "url": "https://m.khan.co.kr/people/people-general/article/202211082201075" },
@@ -63,7 +72,15 @@
       "videos": [
         { "src": "/works/geungeuni/demo-1.mp4", "poster": "/works/geungeuni/demo-1-poster.webp", "label": "그네타기 시연", "labelEn": "Swing-riding demo" }
       ],
-      "award": { "title": "국무총리상", "titleEn": "Prime Minister's Award", "event": "제67회 전국과학전람회", "eventEn": "67th National Science Exhibition", "year": 2021, "scan": "/works/geungeuni/award.webp" }
+      "award": { "title": "국무총리상", "titleEn": "Prime Minister's Award", "event": "제67회 전국과학전람회", "eventEn": "67th National Science Exhibition", "year": 2021, "scan": "/works/geungeuni/award.webp" },
+      "timeline": [
+        { "version": "1호", "versionEn": "Prototype 1", "desc": "과학상자로 간단히 만든 초기 모델. 마찰이 심해 곧바로 다시 만들기 시작했다.", "descEn": "A quick first build from a science kit. Friction was severe, so I started over almost immediately." },
+        { "version": "2호", "versionEn": "Prototype 2", "desc": "과학상자와 음료병 등 주변 재료로 다시 제작했다. 시행착오로 주기를 재서 팔을 접고 펴는 타이밍을 맞췄다.", "descEn": "Rebuilt from whatever was around — a science kit, drink bottles. I measured the period by trial and error to time the folding and extending." },
+        { "version": "3호", "versionEn": "Prototype 3", "desc": "크기가 작아 최대 진폭이 부족했다. 프로파일과 아크릴로 몸체를 새로 키워 만들었다.", "descEn": "Too small to reach much amplitude, so I rebuilt a larger body from aluminum profiles and acrylic." },
+        { "version": "4~6호", "versionEn": "Prototypes 4–6", "desc": "0.001초 단위 타이밍을 손으로 맞추기 어려워 위치 센서로 옮겨갔다. 거리 센서(4호)는 분해능이 부족했고 IMU(5호) 제어도 까다로웠으며, IR 센서(6호)로 색 변화를 읽어 타이밍을 잡았다.", "descEn": "Timing to the millisecond by hand was hopeless, so I moved to position sensing. A distance sensor (4) lacked resolution, IMU control (5) was finicky, and finally an IR sensor (6) read a color change to catch the timing." },
+        { "version": "7호", "versionEn": "Prototype 7", "desc": "IR 센서는 거리가 일정하지 않아 측정이 자주 실패했다. 스티커로 기준점을 잡고 Tracker로 무게중심 변화를 분석했다.", "descEn": "The IR reading failed often because the distance kept shifting. I marked reference points with stickers and analyzed the center-of-mass shift in Tracker." },
+        { "version": "8호", "versionEn": "Prototype 8", "desc": "실험 중 판이 움직이는 문제를 게이트 센서와 막대 연결 방식으로 풀어, 특정 위치를 안정적으로 감지하게 했다.", "descEn": "The reference plate kept moving mid-test, so I linked a gate sensor to a rod — a fast, reliable way to detect a fixed position." }
+      ]
     },
     {
       "slug": "taektaeki",
@@ -116,6 +133,12 @@
         "각운동량 보존"
       ],
       "github": "https://github.com/MOSW626/automobile-stability-control_ionic-Robotic-Cat",
+      "timeline": [
+        { "version": "착안", "versionEn": "Concept", "desc": "떨어지는 고양이가 꼬리와 몸을 틀어 자세를 바로잡는 원리에서 출발해, 배달 로봇의 안정적인 착지를 목표로 삼았다.", "descEn": "Starting from how a falling cat rights itself by twisting its tail and body, I set out to give a delivery robot a stable landing." },
+        { "version": "1호", "versionEn": "Prototype 1", "desc": "바퀴의 효과를 확인하려 간단히 만들었다. 무게가 너무 무거워 낙하 상황이 잘 구현되지 않아 수정에 들어갔다.", "descEn": "A simple build to check the wheels' effect. It was too heavy to reproduce a real fall, so it needed reworking." },
+        { "version": "2호", "versionEn": "Prototype 2", "desc": "무게와 데이터 송신 문제를 풀고자 경량화했다. 떨어지는 타이밍을 IR·자이로·거리 센서로 시험한 끝에 IMU로 판단하게 했다.", "descEn": "Lightened to fix the weight and data-transmission issues. After trying IR, gyro, and distance sensors for the fall timing, I settled on an IMU." },
+        { "version": "3호", "versionEn": "Prototype 3", "desc": "꼬리부를 더해 자세제어 효과를 확인하고, 털가죽까지 붙여 고양이 형태에 가깝게 다듬었다.", "descEn": "Added a tail section to verify its effect on attitude control, and even fur to make it look more like a cat." }
+      ],
       "gallery": [
         { "src": "/works/gosaengi/note-01.webp", "alt": "고생이 탐구일지 1장", "altEn": "Research notebook p.1" },
         { "src": "/works/gosaengi/note-04.webp", "alt": "고생이 탐구일지 4장", "altEn": "Research notebook p.4" },
