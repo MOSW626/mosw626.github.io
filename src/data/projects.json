@@ -123,7 +123,8 @@
         "Arduino",
         "환경 센서",
         "카메라 모니터링"
-      ]
+      ],
+      "report": "/docs/tamtami-report.pdf"
     },
     {
       "slug": "gosaengi",
@@ -184,6 +185,7 @@
         "https://github.com/MOSW626/Increased-delivery-item-stability-using-gimbal",
         "https://github.com/MOSW626/automobile-stability-control_ISP"
       ],
+      "report": "/docs/pyeongtani-report.pdf",
       "award": { "title": "부총리 겸 교육부 장관상", "titleEn": "Deputy Prime Minister & Minister of Education Award", "event": "2023 융합형 연구과제(STEAM R&E) 성과발표회 (전국 12팀)", "eventEn": "2023 STEAM R&E Research Showcase (1 of 12 national teams)", "year": 2023 }
     },
     {
@@ -203,6 +205,7 @@
       ],
       "team": "4인 팀",
       "teamEn": "Team of 4",
+      "report": "/docs/titration-report.pdf",
       "award": { "title": "최우수상 (과학기술정보통신부 장관상)", "titleEn": "Top Prize (Minister of Science & ICT Award)", "event": "2020년 대학부설 과학영재교육원 사사과정 연구 성과 발표대회", "eventEn": "2020 University-Affiliated Science Gifted Education Center Mentorship Research Showcase", "year": 2021 }
     },
     {
