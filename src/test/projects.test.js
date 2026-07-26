@@ -10,6 +10,13 @@ describe('projectLinks', () => {
     const links = projectLinks({ link: 'https://n', github: 'https://g', youtube: 'https://y' });
     expect(links.map((l) => l.kind)).toEqual(['notion', 'github', 'youtube']);
   });
+  it('expands an array of github urls into one link each', () => {
+    const links = projectLinks({ github: ['https://g1', 'https://g2'] });
+    expect(links).toEqual([
+      { kind: 'github', url: 'https://g1' },
+      { kind: 'github', url: 'https://g2' },
+    ]);
+  });
   it('returns empty array when no links', () => {
     expect(projectLinks({})).toEqual([]);
   });

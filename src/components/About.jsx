@@ -7,10 +7,12 @@ import './About.css';
 const TIMELINE = [
   { year: '~2020', ko: '중학교 때부터 로봇 제작 시작', en: 'Started building robots in middle school' },
   { year: '2021–2024', ko: '충북과학고등학교 재학', en: 'Chungbuk Science High School' },
+  { year: '2021', ko: '과학기술정보통신부 장관상 (자동 중화 적정 기기)', en: 'Minister of Science & ICT Award (automatic titration device)' },
   { year: '2021', ko: '전국과학전람회 국무총리상 (그네타기 로봇 ‘근근이’)', en: 'Prime Minister’s Award, National Science Exhibition (‘Geun-geun-i’)' },
   { year: '2022', ko: '전국과학전람회 대통령상 (줄다리기 로봇 ‘줄줄이’)', en: 'Presidential Prize, National Science Exhibition (‘Jul-jul-i’)' },
-  { year: '2023', ko: 'YSC 발표대회 선정', en: 'Selected for YSC' },
-  { year: '2025', ko: 'KAIST 기계공학과 입학', en: 'Entered KAIST, Mechanical Engineering' },
+  { year: '2023', ko: '부총리 겸 교육부 장관상 (STEAM R&E 성과발표회, 전국 12팀)', en: 'Deputy PM & Minister of Education Award (STEAM R&E showcase, 1 of 12 teams)' },
+  { year: '2023', ko: '청소년 과학프로젝트 발표대회 참가 선정', en: 'Selected for the Youth Science Project Contest' },
+  { year: '2024', ko: 'KAIST 기계공학과 입학', en: 'Entered KAIST, Mechanical Engineering' },
   { year: '2025–2026', ko: '기계공학과 학생회 플랫폼(MESC) 개발 총괄', en: 'Led the Mech. Eng. Student Council platform (MESC)' },
   { year: '2026', ko: 'Roboticus 공동창립 · 개인 프로젝트 다수', en: 'Co-founded Roboticus · multiple personal projects' },
 ];

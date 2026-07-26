@@ -1,6 +1,6 @@
 {
   "education": [
-    { "period": "2025 – Present", "detail": "KAIST 기계공학과", "detailEn": "KAIST — Mechanical Engineering" },
+    { "period": "2024 – Present", "detail": "KAIST 기계공학과", "detailEn": "KAIST — Mechanical Engineering" },
     { "period": "2021 – 2024", "detail": "충북과학고등학교", "detailEn": "Chungbuk Science High School" }
   ],
   "experience": [
@@ -21,12 +21,27 @@
       "orgEn": "KAIST Mech. Eng. Student Council Platform (MESC)",
       "desc": "공지·학생회비 조회·예산 투명성·자료실을 통합한 웹서비스를 기획부터 개발·운영·보수까지 총괄.",
       "descEn": "Owned an integrated web service end to end — announcements, fee lookup, budget transparency, and resources."
+    },
+    {
+      "period": "2024.08 – 2025.10",
+      "role": "하드웨어 인턴",
+      "roleEn": "Hardware Intern",
+      "org": "라이온로보틱스 (Raion Robotics)",
+      "orgEn": "Raion Robotics",
+      "desc": "4족보행 로봇 라이보(RaiBo)의 전원 분배 보드(PDB, 배터리 충전 보호 회로 포함) 설계·생산, 모터 드라이버 개발·생산 지원, 액추에이터용 프레임리스 모터 사내 제작(권선·조립·검사).",
+      "descEn": "Designed and produced the power distribution board (with battery charging and protection circuitry) for the RaiBo quadruped; supported motor driver development and production; in-house manufacturing of frameless motors."
     }
   ],
   "awards": [
+    { "year": "2023", "detail": "부총리 겸 교육부 장관상 — 2023 융합형 연구과제(STEAM R&E) 성과발표회 (전국 12팀)", "detailEn": "Deputy Prime Minister & Minister of Education Award — 2023 STEAM R&E Research Showcase (1 of 12 national teams)" },
+    { "year": "2023", "detail": "제50회 사이언스데이 콘텐츠 공모전 최우수상 (국립중앙과학관장)", "detailEn": "Top Prize, 50th Science Day Content Competition (Director of the National Science Museum)" },
+    { "year": "2023", "detail": "2023년 청소년 과학프로젝트 발표대회 참가 선정 — 고양이 생체모방 착지 로봇 ‘고생이’", "detailEn": "Selected for the 2023 Youth Science Project Contest — cat-inspired landing robot ‘Go-saeng-i’" },
     { "year": "2022", "detail": "제68회 전국과학전람회 대통령상 — 줄다리기 로봇 ‘줄줄이’ (2,607팀 중 1점)", "detailEn": "Presidential Prize, 68th National Science Exhibition — tug-of-war robot ‘Jul-jul-i’ (1 of 2,607 teams)" },
+    { "year": "2022", "detail": "2022년 청소년과학탐구반(YSC) 융합탐구과제 고교부 우수상 (한국과학창의재단) — 택배 배달 로봇 ‘택택이’", "detailEn": "Excellence Award, 2022 Youth Science Club (YSC) Convergence Research Project, High School Division (KOFAC) — delivery robot ‘Taek-taek-i’" },
+    { "year": "2022", "detail": "청소년과학페어 고교부 동상", "detailEn": "Bronze Prize, Youth Science Fair, High School Division" },
+    { "year": "2022", "detail": "충청북도과학전람회 특상", "detailEn": "Special Prize, Chungcheongbuk-do Science Exhibition" },
     { "year": "2021", "detail": "제67회 전국과학전람회 국무총리상 — 그네타기 로봇 ‘근근이’ (2,308팀 중 1점)", "detailEn": "Prime Minister’s Award, 67th National Science Exhibition — swing robot ‘Geun-geun-i’ (1 of 2,308 teams)" },
     { "year": "2021", "detail": "과학기술정보통신부 장관상 (최우수상) — 자동 중화 적정 기기", "detailEn": "Minister of Science & ICT Award (Top Prize) — automatic titration device" },
-    { "year": "2023", "detail": "YSC 발표대회 선정", "detailEn": "Selected for YSC (Young Scientist Contest)" }
+    { "year": "2021", "detail": "충청북도과학전람회 특상", "detailEn": "Special Prize, Chungcheongbuk-do Science Exhibition" }
   ]
 }

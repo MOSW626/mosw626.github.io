@@ -6,16 +6,17 @@
       "image": "/works/juljuri/hero.webp",
       "title": "줄줄이 — 줄다리기 로봇 (대통령상)",
       "titleEn": "Jul-jul-i — Tug-of-War Robot (Presidential Prize)",
-      "description": "셀프 밸런싱에서 출발해, 누운 각도를 PID로 유지하며 줄을 당기는 줄다리기 로봇. '최적 각도를 유지하다 몸이 들리면 앞으로, 누우면 뒤로 당긴다'는 줄다리기의 핵심 메커니즘을 직접 밝혀 구현했습니다. 제68회 전국과학전람회 대통령상(2,607팀 중 1점) 수상작.",
-      "descriptionEn": "A tug-of-war robot that holds a leaning angle with PID control and pulls the rope — built by uncovering the core mechanism myself: hold the optimal angle, lunge forward when tipping up, pull back when lying down. Won the Presidential Prize at the 68th National Science Exhibition (1 of 2,607 teams).",
+      "description": "셀프 밸런싱에서 출발해, 누운 각도를 PID로 유지하며 줄을 당기는 줄다리기 로봇. '최적 각도를 유지하다 몸이 들리면 앞으로, 누우면 뒤로 당긴다'는 줄다리기의 핵심 메커니즘을 직접 밝혀 구현했습니다. 정역학 실험에서 '최대한 누울수록 유리하다'는 속설을 확인했고, 동역학 탐구에서는 각도를 시간에 따라 변화시켜 수직 반동을 활용하면 한정된 상황에서 더 무거운 물체를 끌 수 있다는 결론을 얻었습니다. 제68회 전국과학전람회 대통령상(2,607팀 중 1점) 수상작.",
+      "descriptionEn": "A tug-of-war robot that holds a leaning angle with PID control and pulls the rope — built by uncovering the core mechanism myself: hold the optimal angle, lunge forward when tipping up, pull back when lying down. Statics experiments confirmed that leaning back as far as possible pays off, and the dynamics study showed that varying the angle over time to exploit vertical recoil lets the robot drag a heavier load under constrained conditions. Won the Presidential Prize at the 68th National Science Exhibition (1 of 2,607 teams).",
       "period": "2022.03 - 2022.11",
       "category": "로봇 개발",
       "technologies": [
         "PID 제어",
         "셀프 밸런싱",
-        "IMU",
+        "IMU (MPU-6050)",
         "Arduino"
       ],
+      "report": "/docs/juljuri-report.pdf",
       "youtube": "https://www.youtube.com/watch?v=pkX618hViWA",
       "github": "https://github.com/MOSW626/Tug_of_War_Robot_Project_-2022-",
       "team": "3인 팀 — 노수빈·안연수·이원호 (줄줄연수원)",
@@ -28,7 +29,7 @@
         { "src": "/works/juljuri/demo-5.mp4", "poster": "/works/juljuri/demo-5-poster.webp", "label": "박스 시연", "labelEn": "Box demo" },
         { "src": "/works/juljuri/demo-6.mp4", "poster": "/works/juljuri/demo-6-poster.webp", "label": "도르래 시연", "labelEn": "Pulley demo" }
       ],
-      "award": { "title": "대통령상", "titleEn": "Presidential Award", "event": "제68회 전국과학전람회", "eventEn": "68th National Science Exhibition", "year": 2022, "scan": "/works/juljuri/award.webp" },
+      "award": { "title": "대통령상", "titleEn": "Presidential Award", "event": "제68회 전국과학전람회", "eventEn": "68th National Science Exhibition", "year": 2022, "date": "2022.11.30", "scan": "/works/juljuri/award.webp" },
       "timeline": [
         { "version": "0~1호", "versionEn": "Prototypes 0–1", "desc": "수직을 유지하는 걸 목표로 한 첫 시범 모델과 가로형 개선판. 아직 줄을 묶어 당기지도, 특정 각도를 버티지도 못했다.", "descEn": "A first proof-of-concept aimed at just staying upright, plus a horizontal revision. It still couldn't tie onto the rope and pull, or hold a set angle." },
         { "version": "2~3호", "versionEn": "Prototypes 2–3", "desc": "세로형으로 바꿔 수직은 잡았고, 줄 묶는 위치와 무게중심을 특정 위치로 고정했다. 내구도가 과제로 남았다.", "descEn": "A vertical layout finally held the angle; I fixed the rope-anchor point and the center of mass in place. Durability was still the weak spot." },
@@ -57,7 +58,7 @@
       "titleEn": "Geun-geun-i — Swing-Riding Robot (Prime Minister's Award)",
       "description": "스스로 진폭을 키워 그네를 타는 로봇. 무게중심 위치에 따라 그네 타기 전략이 달라진다는 점을 탐구하고, 초음파·IMU·IR을 거쳐 반응속도가 빠른 게이트 센서로 특정 위치에서 몸을 접고 펴도록 구현했습니다. 제67회 전국과학전람회 국무총리상(2,308팀 중 1점) 수상작.",
       "descriptionEn": "A robot that pumps a swing by growing its own amplitude. I explored how the strategy changes with the center of mass and — after ultrasonic, IMU, and IR sensors — used a fast gate sensor to fold and extend at the right positions. Won the Prime Minister's Award at the 67th National Science Exhibition (1 of 2,308 teams).",
-      "period": "2021.03 - 2021.12",
+      "period": "2021.04 - 2021.12",
       "category": "로봇 개발",
       "technologies": [
         "게이트 센서",
@@ -65,6 +66,7 @@
         "초음파 센서",
         "Arduino"
       ],
+      "report": "/docs/geungeuni-report.pdf",
       "youtube": "https://www.youtube.com/watch?v=j30aW_tBtJ8",
       "github": "https://github.com/MOSW626/Swinging_on_a_swing_Robot_Project_-2021-",
       "team": "3인 팀 — 노수빈·안연수·이승환",
@@ -87,34 +89,40 @@
       "image": "/works/taektaeki/hero.webp",
       "title": "택택이 — 자율주행 택배 배달 로봇",
       "titleEn": "Taek-taek-i — Autonomous Delivery Robot",
-      "description": "건물 층간 이동 문제를 풀고자 만든 자율주행 배달 로봇. LiDAR SLAM으로 매핑·주행하고, 로봇팔과 OCR·CNN으로 엘리베이터 버튼을 인식해 누릅니다. 흔들림은 드론 원리를 참고한 이중 PID로 잡았고, 이후 U-Net 객체 인식으로 버튼 인식을 고도화했습니다.",
-      "descriptionEn": "An autonomous delivery robot built to solve moving between floors. It maps and navigates with LiDAR SLAM and uses a robot arm plus OCR/CNN to recognize and press elevator buttons. Shake is handled with a drone-inspired dual-PID loop, and button recognition was later upgraded with U-Net.",
+      "description": "급식 시간에 무거운 물통을 층마다 옮기던 번거로움에서 출발해, 건물 층간 배달 문제를 풀고자 만든 자율주행 배달 로봇. LiDAR SLAM으로 매핑·주행하고, 3축 구동 막대(버튼 조작 기구)로 엘리베이터 버튼을 누릅니다. 버튼 인식은 그레이스케일 전처리와 엣지 검출, EAST 텍스트 검출, pytesseract OCR에 ANN 분류를 결합해 구현했습니다.",
+      "descriptionEn": "An autonomous delivery robot that grew out of hauling heavy water jugs between floors at lunchtime — built to solve inter-floor delivery. It maps and navigates with LiDAR SLAM, and presses elevator buttons with a 3-axis actuated rod. Button recognition combines grayscale preprocessing and edge detection with EAST text detection, pytesseract OCR, and an ANN classifier.",
       "period": "2022 - 2023",
       "category": "로봇 개발",
       "technologies": [
         "ROS",
         "LiDAR SLAM",
         "OpenCV",
-        "CNN",
-        "OCR",
+        "OCR (pytesseract)",
+        "ANN",
         "Python"
       ],
-      "github": "https://github.com/MOSW626/delivery_cbsh"
+      "team": "3인 팀 — 안연수·노수빈·이원호 (동아리 Genie, 지도교사 권영택)",
+      "teamEn": "Team of 3 — Yeonsu An, Subin Noh, Wonho Lee (Genie club, advisor Youngtaek Kwon)",
+      "github": "https://github.com/MOSW626/delivery_cbsh",
+      "report": "/docs/taektaeki-report.pdf",
+      "award": { "title": "우수상", "titleEn": "Excellence Award", "event": "2022년 청소년과학탐구반(YSC) 융합탐구과제 고교부 · 한국과학창의재단", "eventEn": "2022 Youth Science Club (YSC) Convergence Research Project, High School Division · KOFAC", "year": 2022, "date": "2022.12.10" }
     },
     {
       "slug": "tamtami",
       "image": "/works/tamtami/hero.webp",
       "title": "탐탐이 — 행성 탐사 로봇",
       "titleEn": "Tam-tam-i — Planetary Exploration Robot",
-      "description": "라이다와 아두이노 센서를 결합해 화성 용암동굴 같은 미지의 공간을 SLAM으로 매핑하는 행성 탐사 로봇.",
-      "descriptionEn": "A planetary exploration robot that fuses LiDAR with Arduino sensors to map unknown spaces — like Martian lava caves — using SLAM.",
+      "description": "라이다와 아두이노 센서를 결합해 화성 용암동굴 같은 미지의 공간을 SLAM으로 매핑하는 행성 탐사 로봇. 온습도·방사선·미세먼지·기압·조도 센서로 환경을 측정하고, 카메라로 내부를 실시간 모니터링합니다.",
+      "descriptionEn": "A planetary exploration robot that fuses LiDAR with Arduino sensors to map unknown spaces — like Martian lava caves — using SLAM. Temperature/humidity, radiation, particulate, barometric, and illuminance sensors log the environment while a camera streams the interior.",
       "period": "2022",
       "category": "로봇 개발",
       "technologies": [
         "LiDAR",
         "SLAM",
         "ROS",
-        "Arduino"
+        "Arduino",
+        "환경 센서",
+        "카메라 모니터링"
       ]
     },
     {
@@ -122,17 +130,20 @@
       "image": "/works/gosaengi/hero.webp",
       "title": "고생이 — 고양이 생체모방 착지 로봇",
       "titleEn": "Go-saeng-i — Cat-Inspired Landing Robot",
-      "description": "'고양이는 왜 떨어져도 안 다칠까?'에서 출발해, 떨어지는 순간 꼬리와 몸을 돌려 균형을 잡는 고양이를 생체 모방한 로봇. 게이트·거리·자이로 센서로 낙하를 감지하고, 두 바퀴가 공중에 뜬 순간 IMU로 원하는 착지 자세를 만듭니다. 2023 YSC 발표대회 선정.",
-      "descriptionEn": "Inspired by 'why don't cats get hurt when they fall?', a bio-mimetic robot that rights itself like a cat twisting its tail and body mid-air. Gate, distance, and gyro sensors detect the fall, and an IMU drives the desired landing pose once both wheels leave the ground. Selected for YSC 2023.",
+      "description": "'고양이는 왜 떨어져도 안 다칠까?'에서 출발해, 떨어지는 순간 꼬리와 몸을 돌려 균형을 잡는 고양이를 생체 모방한 로봇. IR·자이로·거리 센서를 차례로 시험한 끝에 IMU로 낙하를 판단하고, 바퀴가 공중에 뜬 순간 원하는 착지 자세를 만듭니다. 실험 결과 바퀴의 각운동량을 이용한 자세 제어 효과는 미미했고, 모든 바퀴가 정회전할 때 가장 안정적이었으며, 꼬리 회전이 바퀴보다 큰 제어 효과를 냈습니다. 2023년 청소년 과학프로젝트 발표대회(2023.09.16–17, 정부세종컨벤션센터) 참가 선정.",
+      "descriptionEn": "Inspired by 'why don't cats get hurt when they fall?', a bio-mimetic robot that rights itself like a cat twisting its tail and body mid-air. After trying IR, gyro, and distance sensors, an IMU detects the fall and sets the desired landing pose once the wheels leave the ground. Experiments showed the wheels' angular-momentum effect was marginal, that spinning all wheels forward was the most stable, and that rotating the tail had a larger effect than the wheels. Selected for the 2023 Youth Science Project Contest (Sep 16–17, 2023, Sejong Government Convention Center).",
       "period": "2023",
       "category": "로봇 개발",
       "technologies": [
         "생체 모방",
         "IMU",
-        "게이트 센서",
-        "각운동량 보존"
+        "각운동량 보존",
+        "Arduino"
       ],
+      "team": "3인 팀 — 안연수·박서휘·이호선 (동아리 지니, 지도교사 정도일)",
+      "teamEn": "Team of 3 — Yeonsu An, Seohwi Park, Hoseon Lee (Genie club, advisor Doil Jeong)",
       "github": "https://github.com/MOSW626/automobile-stability-control_ionic-Robotic-Cat",
+      "report": "/docs/gosaengi-report.pdf",
       "timeline": [
         { "version": "착안", "versionEn": "Concept", "desc": "떨어지는 고양이가 꼬리와 몸을 틀어 자세를 바로잡는 원리에서 출발해, 배달 로봇의 안정적인 착지를 목표로 삼았다.", "descEn": "Starting from how a falling cat rights itself by twisting its tail and body, I set out to give a delivery robot a stable landing." },
         { "version": "1호", "versionEn": "Prototype 1", "desc": "바퀴의 효과를 확인하려 간단히 만들었다. 무게가 너무 무거워 낙하 상황이 잘 구현되지 않아 수정에 들어갔다.", "descEn": "A simple build to check the wheels' effect. It was too heavy to reproduce a real fall, so it needed reworking." },
@@ -153,36 +164,27 @@
     {
       "slug": "pyeongtani",
       "image": "/works/pyeongtani/hero.webp",
-      "title": "평탄이 — 흔들림 방지 장치",
-      "titleEn": "Pyeong-tan-i — Anti-Shake Stabilizer",
-      "description": "쿼드콥터의 제어 원리를 응용해 배달물의 흔들림을 능동적으로 잡아주는 안정화 장치. 택택이 배달 로봇의 적재 안정성을 높이기 위한 후속 탐구.",
-      "descriptionEn": "An active stabilizer that applies quadcopter control principles to cancel out cargo shake — a follow-up to improve load stability for the Taek-taek-i delivery robot.",
-      "period": "2023",
+      "title": "평탄이(ISP) — 흔들림 예측 1차원 자동 평형 균형제어시스템 (장관상)",
+      "titleEn": "Pyeong-tan-i (ISP) — 1-DOF Self-Balancing Stabilization System (Minister's Award)",
+      "description": "배달물의 흔들림을 미리 예측해 능동적으로 잡아주는 1차원 자동 평형 균형제어시스템. 'ISP'는 시스템 이름이고 '평탄이'는 이를 구현한 하드웨어의 애칭입니다. 짐벌 구조에 1축 DC 모터를 달아 PID로 적재판의 수평을 유지하며, IMU 센서의 해상도 한계를 극복하는 방법도 함께 연구했습니다. 택택이 배달 로봇의 적재 안정성을 높이기 위한 후속 탐구로, 2023 융합형 연구과제(STEAM R&E)로 수행했습니다.",
+      "descriptionEn": "A one-dimensional self-balancing stabilization system that predicts and actively cancels cargo shake. 'ISP' is the system name; 'Pyeong-tan-i' is the nickname of the hardware that implements it. A single-axis DC motor on a gimbal keeps the load platform level under PID control, and the study also tackled the resolution limits of the IMU. A follow-up to improve load stability for the Taek-taek-i delivery robot, carried out as a 2023 STEAM R&E project.",
+      "period": "2023.05 - 2023.11",
       "category": "로봇 개발",
       "technologies": [
         "PID 제어",
-        "IMU",
-        "쿼드콥터 원리"
-      ],
-      "github": "https://github.com/MOSW626/Increased-delivery-item-stability-using-gimbal"
-    },
-    {
-      "slug": "isp",
-      "title": "ISP — PID 모터 제어 연구",
-      "titleEn": "ISP — PID Motor Control Study",
-      "description": "PID 제어 기반 DC 모터 제어 시스템을 개발하고, IMU 센서의 해상도 한계를 극복하기 위한 방법을 연구한 STEAM 연구개발(RnE) 프로젝트.",
-      "descriptionEn": "A STEAM R&E project developing a PID-based DC motor control system and researching ways to overcome the resolution limits of an IMU sensor.",
-      "period": "2023.07 - 2023.11",
-      "category": "로봇 개발",
-      "technologies": [
-        "PID 제어",
+        "짐벌",
         "DC 모터",
         "IMU",
-        "ROS",
-        "Python"
+        "Arduino (C++)"
       ],
+      "team": "3인 팀 — 안연수·박서휘·이호선 (지도교사 정도일, 외부자문 고두열(KIMM)·임세혁(KIST))",
+      "teamEn": "Team of 3 — Yeonsu An, Seohwi Park, Hoseon Lee (advisor Doil Jeong; external advisors Duyeol Ko (KIMM), Sehyuk Yim (KIST))",
       "link": "https://mosw.notion.site/ISP-90474110b9a248d5897c7ad48a59afde?source=copy_link",
-      "github": "https://github.com/MOSW626/automobile-stability-control_ISP"
+      "github": [
+        "https://github.com/MOSW626/Increased-delivery-item-stability-using-gimbal",
+        "https://github.com/MOSW626/automobile-stability-control_ISP"
+      ],
+      "award": { "title": "부총리 겸 교육부 장관상", "titleEn": "Deputy Prime Minister & Minister of Education Award", "event": "2023 융합형 연구과제(STEAM R&E) 성과발표회 (전국 12팀)", "eventEn": "2023 STEAM R&E Research Showcase (1 of 12 national teams)", "year": 2023 }
     },
     {
       "slug": "titration",
@@ -201,14 +203,14 @@
       ],
       "team": "4인 팀",
       "teamEn": "Team of 4",
-      "award": { "title": "최우수상 (과기정통부 장관상)", "titleEn": "Top Prize (Minister of Science & ICT Award)", "event": "대학부설 과학영재교육원 사사과정 발표대회", "eventEn": "University-Affiliated Gifted Education Research Showcase", "year": 2021 }
+      "award": { "title": "최우수상 (과학기술정보통신부 장관상)", "titleEn": "Top Prize (Minister of Science & ICT Award)", "event": "2020년 대학부설 과학영재교육원 사사과정 연구 성과 발표대회", "eventEn": "2020 University-Affiliated Science Gifted Education Center Mentorship Research Showcase", "year": 2021 }
     },
     {
       "slug": "mr24-quadrupedal",
       "title": "KAIST MR 4족보행 로봇",
       "titleEn": "KAIST MR Quadrupedal Robot",
-      "description": "KAIST MR(Mobile Robotics) 동아리에서 진행하는 4족보행 로봇 프로젝트. 설계·회로·소스코드를 아우르는 팀 레포지토리에 참여하고 있습니다.",
-      "descriptionEn": "A quadrupedal robot project at KAIST's MR (Mobile Robotics) club — I contribute to the team repo covering design, circuits, and source code.",
+      "description": "KAIST MR(Microrobot Research) 동아리에서 진행하는 4족보행 로봇 프로젝트. 설계·회로·소스코드를 아우르는 팀 레포지토리에 참여하고 있습니다.",
+      "descriptionEn": "A quadrupedal robot project at KAIST's MR (Microrobot Research) club — I contribute to the team repo covering design, circuits, and source code.",
       "period": "2024.08 - 2024.10",
       "category": "로봇 개발",
       "technologies": [
@@ -239,74 +241,44 @@
   "videoProduction": [
     {
       "title": "2024 충북과학고 졸업영상",
-      "description": "충북과학고등학교 2024 33기 졸업 영상 제작",
-      "fullDescription": "충북과학고등학교 33기 졸업을 기념하는 공식 졸업 영상을 제작했습니다.\n      학생들의 추억과 성장 과정을 담아 감동적인 영상으로 완성했습니다.\n      촬영, 편집, 후반 작업을 모두 담당했습니다.",
+      "titleEn": "2024 Chungbuk Science High School Graduation Film",
+      "description": "충북과학고등학교 33기 졸업 영상 제작 — 촬영·편집·후반 작업 담당.",
+      "descriptionEn": "Graduation film for the 33rd class of Chungbuk Science High School — shooting, editing, and post-production.",
       "technologies": [
         "영상 편집",
         "촬영",
-        "후반 작업",
         "Premiere Pro",
         "After Effects"
       ],
-      "tags": [
-        "학교 졸업영상 제작"
-      ],
       "period": "2023.12.18 - 2023.12",
       "category": "영상 제작",
-      "duration": "3:42",
-      "youtube": "https://youtu.be/IOqnhKe1itQ?si=XGXTZe0Ehs-9pNYU",
-      "achievements": [
-        "공식 졸업영상 제작",
-        "전체 제작 과정 담당",
-        "감동적인 스토리텔링"
-      ],
-      "files": []
+      "youtube": "https://youtu.be/IOqnhKe1itQ?si=XGXTZe0Ehs-9pNYU"
     },
     {
       "title": "2023 충북과학고 축제 라이브",
-      "description": "2023 충북과학고등학교 사름제 라이브 방송",
-      "fullDescription": "충북과학고등학교의 주요 행사인 사름제를 라이브로 방송했습니다.\n      실시간 스트리밍 기술을 활용하여 온라인으로도 행사를 즐길 수 있도록 했습니다.\n      멀티 카메라 시스템과 실시간 편집을 통해 전문적인 방송을 구현했습니다.",
+      "titleEn": "2023 Chungbuk Science High School Festival Live Stream",
+      "description": "학교 축제 '사름제'를 멀티 카메라로 실시간 중계.",
+      "descriptionEn": "Live multi-camera stream of the school festival 'Sareumje'.",
       "technologies": [
         "라이브 스트리밍",
         "멀티 카메라",
-        "실시간 편집",
         "OBS"
       ],
-      "tags": [
-        "행사 라이브"
-      ],
       "period": "2023.12.14",
-      "category": "영상 제작",
-      "duration": "4:03:10",
-      "achievements": [
-        "실시간 라이브 방송",
-        "멀티 카메라 시스템 구축",
-        "온라인 시청자 대응"
-      ],
-      "files": []
+      "category": "영상 제작"
     },
     {
       "title": "2023 충북과학고 홍보영상",
-      "description": "충북과학고등학교 홍보영상 제작",
-      "fullDescription": "충북과학고등학교를 소개하는 홍보영상을 제작했습니다.\n      학교의 교육 철학과 학생들의 활동을 효과적으로 보여주는 영상으로 완성했습니다.\n      다양한 촬영 기법과 편집 기술을 활용했습니다.",
+      "titleEn": "2023 Chungbuk Science High School Promotional Film",
+      "description": "학교를 소개하는 홍보영상 촬영·편집.",
+      "descriptionEn": "Shot and edited the school's promotional film.",
       "technologies": [
         "홍보 영상",
         "촬영",
-        "편집",
         "Premiere Pro"
       ],
-      "tags": [
-        "학교 홍보영상 제작"
-      ],
       "period": "2023.06.10",
-      "category": "영상 제작",
-      "duration": "3:40",
-      "achievements": [
-        "홍보영상 제작",
-        "효과적인 스토리텔링",
-        "전문적인 영상 퀄리티"
-      ],
-      "files": []
+      "category": "영상 제작"
     }
   ],
   "softwareProjects": [

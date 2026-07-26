@@ -5,6 +5,7 @@ import {
   FaFilePdf, FaArrowLeft, FaArrowRight, FaTrophy,
 } from 'react-icons/fa';
 import { findWorkBySlug, adjacentWorks } from '../lib/works.js';
+import { projectLinks } from '../lib/projects.js';
 import { useLang, pick, t } from '../i18n.js';
 import { usePageMeta } from '../lib/meta.js';
 import './WorkDetail.css';
@@ -256,7 +257,7 @@ function AwardPress({ work, lang }) {
             <figcaption className="wd-award__cap">
               <strong>{pick(award, 'title', lang)}</strong>
               {pick(award, 'event', lang) && <span> · {pick(award, 'event', lang)}</span>}
-              {award.year && <span> · {award.year}</span>}
+              {(award.date || award.year) && <span> · {award.date || award.year}</span>}
             </figcaption>
           </figure>
         )}
@@ -292,15 +293,11 @@ function AwardPress({ work, lang }) {
 
 /* ── links ────────────────────────────────────────────── */
 function Links({ work, lang }) {
-  const links = [];
-  if (work.demo) links.push({ kind: 'demo', url: work.demo });
-  if (work.link) links.push({ kind: 'notion', url: work.link });
-  if (work.github) links.push({ kind: 'github', url: work.github });
-  if (work.youtube) links.push({ kind: 'youtube', url: work.youtube });
+  const links = projectLinks(work);
 
   const pdfs = [];
-  if (work.slug === 'juljuri') {
-    pdfs.push({ href: '/docs/juljuri-report.pdf', label: t(lang, '연구 리포트 PDF', 'Research Report PDF') });
+  if (work.report) {
+    pdfs.push({ href: work.report, label: t(lang, '연구 리포트 PDF', 'Research Report PDF') });
   }
   // '개발 일대기' PDF는 로봇 개발 상세 페이지에서만 노출 (스펙 정합성)
   if (work.group === 'robot') {
@@ -317,7 +314,7 @@ function Links({ work, lang }) {
           const M = LINK_META[kind];
           const Icon = M.icon;
           return (
-            <a key={kind} className="wd-btn" href={url} target="_blank" rel="noopener noreferrer">
+            <a key={url} className="wd-btn" href={url} target="_blank" rel="noopener noreferrer">
               <Icon aria-hidden="true" /> {M.label}
             </a>
           );

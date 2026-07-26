@@ -79,7 +79,7 @@ export default function ProjectCard({ work, index = 0 }) {
               const M = LINK_META[kind];
               const Icon = M.icon;
               return (
-                <a key={kind} href={url} target="_blank" rel="noopener noreferrer">
+                <a key={url} href={url} target="_blank" rel="noopener noreferrer">
                   <Icon /> {M.label}
                 </a>
               );
